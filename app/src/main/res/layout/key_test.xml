@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/s_key_volume_up"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/key_volume_up"
+        android:textSize="20sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/s_key_volume_down"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_volume_up"
+        android:gravity="center"
+        android:text="@string/key_volume_down"
+        android:textSize="20sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/s_key_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_volume_down"
+        android:gravity="center"
+        android:text="@string/key_menu"
+        android:textSize="20sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/s_key_home"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_menu"
+        android:gravity="center"
+        android:text="@string/key_home"
+        android:textSize="20sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/s_key_back"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_home"
+        android:gravity="center"
+        android:text="@string/key_back"
+        android:textSize="20sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <!--
+    <TextView
+    	android:id="@+id/s_key_search"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/s_key_back"
+    	android:textSize="20dp"
+    	android:text="@string/key_search"
+    	android:gravity="center"
+    	android:textStyle="bold">
+    </TextView>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/s_key_test_pass"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/pass"
+            android:textSize="20sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/s_key_test_false"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/falsed"
+            android:textSize="20sp" >
+        </Button>
+    </LinearLayout>
+
+</RelativeLayout>

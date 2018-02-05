@@ -1,0 +1,10 @@
+# ninja log v5
+0	121	0	src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/gpio_jni.c.o	780e326f4859ccd2
+2	204	0	src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/meta_gpio.c.o	37f190e8e92e08b7
+205	288	0	../../../../build/intermediates/cmake/debug/obj/x86/libnewmobi_gpio_jni.so	a1bef15e6f60ee40
+1	251	0	src/main/jni/SerialPort/CMakeFiles/libnewmobiSerialPort.dir/SerialPort.cpp.o	341beeddc517c2ab
+251	309	0	../../../../build/intermediates/cmake/debug/obj/x86/liblibnewmobiSerialPort.so	dbf31a1c537b6d1f
+2	163	0	src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/gSensorCaliJni.cpp.o	42fef9f028959208
+0	205	0	src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_AlspsCali.cpp.o	e0fe2785d5452adf
+1	206	0	src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_LcdPowerControl.cpp.o	6400eeaf4c889fab
+206	266	0	../../../../build/intermediates/cmake/debug/obj/x86/libcom_zte_engineer_jni.so	10bd3c1d72aca1c5

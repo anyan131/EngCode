@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/test_flag_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp"
+        android:layout_marginTop="5sp"
+        android:gravity="center"
+        android:text="@string/test_flag_title"
+        android:textSize="20sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_TD_Calibration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/TD_Calibration"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_GSM_Calibration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/GSM_Calibration"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_TD_FinalTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/TD_FinalTest"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_GSM_FinalTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/GSM_FinalTest"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_CMMB_Chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/CMMB_Chip"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_CMMB_Coupling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/CMMB_Coupling"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_GPS_Chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/GPS_Chip"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_GSP_Coupling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/GSP_Coupling"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_WIFI_Chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/WIFI_Chip"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_WIFI_Coupling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/WIFI_Coupling"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_SENSOR_ACCELEROMETER_Chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/SENSOR_ACCELEROMETER_Chip"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_SENSOR_MAGNETIC_FIELD_Chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/SENSOR_MAGNETIC_FIELD_Chip"
+        android:textSize="15sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/flag_TD_Coupling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="2sp"
+        android:gravity="center"
+        android:text="@string/TD_Coupling"
+        android:textSize="15sp" >
+    </TextView>
+
+    <Button
+        android:id="@+id/flag_test_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginTop="20sp"
+        android:text="@android:string/ok" >
+    </Button>
+
+</LinearLayout>

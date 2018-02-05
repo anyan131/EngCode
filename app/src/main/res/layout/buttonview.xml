@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/singlebutton_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/multibutton_textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff"
+        android:textSize="6pt" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/multibutton_textview_summy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multibutton_textview_title"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff"
+        android:textSize="4pt" >
+    </TextView>
+
+    <Button
+        android:id="@+id/multibutton_button_1"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multibutton_textview_summy"
+        android:layout_centerHorizontal="true" >
+    </Button>
+
+    <Button
+        android:id="@+id/multibutton_button_2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multibutton_button_1"
+        android:layout_centerHorizontal="true" >
+    </Button>
+
+    <Button
+        android:id="@+id/multibutton_button_3"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multibutton_button_2"
+        android:layout_centerHorizontal="true" >
+    </Button>
+
+    <Button
+        android:id="@+id/multibutton_button_4"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multibutton_button_3"
+        android:layout_centerHorizontal="true" >
+    </Button>
+
+    <Button
+        android:id="@+id/multibutton_button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@android:string/ok" >
+    </Button>
+
+</RelativeLayout>

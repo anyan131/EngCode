@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="bt_name">
+		<item>触屏</item>
+		<item>LCD</item>
+		<item>GPS</item>
+		<item>电源</item>
+		<item>按键</item>
+		<item>喇叭</item>
+		<item>耳机</item>
+		<item>IMEI</item>
+		<item>听筒</item>
+		<item>WiFi</item>
+		<item>蓝牙</item>
+		<item>震动</item>
+		<item>电话</item>
+		<item>背景灯</item>
+		<item>内存</item>
+		<item>重力感应</item>
+		<item>T 卡</item>
+		<item>后置摄像头</item>
+		<item>前置摄像头</item>
+		<item>收音机</item>
+		<item>SIM 卡</item>
+	</string-array>
+</resources>

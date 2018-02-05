@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('G:/6735About/platform.keystore')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.zte.engineer"
+
+        sourceSets.main {
+            jni.srcDirs = ["src/main/jni"]
+            println jni.srcDirs
+        }
+        ndk {
+            ldLibs "log"
+            ldLibs "EGL"
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+}
+
+dependencies {
+    compileOnly files('libs/framework.jar')
+    provided files('libs/mediatek-framework.jar')
+    provided files('libs/telephony-common.jar')
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+}

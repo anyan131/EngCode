@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- newmobi alextao 2017-12-07 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- android:minHeight="?android:attr/listPreferredItemHeight" -->
+
+    <TextView
+        android:id="@+id/testItemText"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dip"
+        android:paddingLeft="6dip"
+        android:paddingTop="10dip"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" >
+    </TextView>
+	<!--
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/text"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="center_vertical" >
+    </CheckBox>
+	-->
+	<TextView
+		android:paddingTop="10dip"
+		android:textSize="20dip"
+		android:paddingBottom="10dip"
+		android:id="@+id/testItemResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignRight="@id/testItemText"
+		android:gravity="center_vertical"/>
+		
+	
+
+</RelativeLayout>

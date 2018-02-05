@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zte.engineer"
+          android:sharedUserId="android.uid.phone"
+          android:versionCode="1"
+          android:versionName="1.0"> <!-- 这里是用来测试强行提高api的。 -->
+
+    <uses-sdk
+        android:minSdkVersion="14"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.DIAGNOSTIC"/>
+    <uses-permission android:name="android.permission.HARDWARE_TEST"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.DEVICE_POWER"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/> <!-- zhangle add for movego -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+    <!--
+	            <intent-filter>
+                <action android:name="com.zte.engineer.action.TEST_LIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter> 
+    -->
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+    >
+        <activity android:name=".EngineerCode"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.TEST_LIST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TestPhoneActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- zhangle add for movego -->
+
+        <activity
+            android:name=".UsbMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- zhangle add for movego -->
+
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:label="BootReceiver">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <action android:name="com.zte.engineer.action.LAUNCHER_TEST"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".AutoTest"
+            android:process="com.android.phone"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.SELF_TEST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MGAutoTest"
+            android:process="com.android.phone"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.MG_SELF_TEST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MGTestCustomiztion"
+            android:process="com.android.phone"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.MG_TEST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AeonAutoTest"
+            android:process="com.android.phone"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.AEON_SELF_TEST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NotSupportNotification"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BatteryLog"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.BATTERY_LOG"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LcdTestActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".TestResultsShow"
+            android:screenOrientation="portrait"/>
+
+        <!-- modified by alextao1207. for check the test report -->
+        <activity
+            android:name=".TestReportActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".TestReport"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BacklightTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".VibratorTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".RingerTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".KeyTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LcdOffTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SDcardTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MemoryTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BTAddressTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".WifiAddressTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".AudioLoopTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ReciverTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ImeiTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".VersionTest"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity
+            android:name=".CalibrationTest"
+            android:process="com.android.phone"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ImsiTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SensorTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".GSensorTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".PSensorTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".HallTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".WifiTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BlutoothTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".FMTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".CameraTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ResultList"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".FlashLightTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".DeviceInfo"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".FactoryReset"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".TouchScreenTest"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity
+            android:name=".AeonTouchScreenTest"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SIMTest"
+            android:process="com.android.phone"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".EngineerCodeListView">
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.EngineerCodeListView"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ProduceInfoListView"
+            android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TestFlag"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EarPhoneAudioLoopTest"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BoardCode"
+            android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".NetlockInfo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".TestReceiveActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AlexWiFiTest">
+		<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AlexBackCameraTest">
+		<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AlexFrontCamera">
+		<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+		<activity android:name=".GPIO">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+		<activity android:name=".SerialPort">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+		</activity>
+        <activity android:name=".AlexFMTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, EngineerCode!</string>
+    <string name="back">back</string>
+    <string name="next">OK</string>
+    <string name="app_name">EngineerCode</string>
+    <string name="completed">Completed:</string>
+    <string name="test_item">Test Item</string>
+    <string name="key_test">Key Test</string>
+    <string name="audio_loop">AudioLoop</string>
+    <string name="battery_info">Battery Info</string>
+    <string name="lcd">LCD Test</string>
+    <string name="backlight">Backlight Test</string>
+    <string name="vibrator">Vibrator Test</string>
+    <string name="ringer">Ringer Test</string>
+    <string name="lcd_off">LCD Off</string>
+    <string name="sd_info">SD Info</string>
+    <string name="sd2_info">SD2 Info</string>
+    <string name="otg_info">OTG Info</string>
+    <string name="memory">Memory</string>
+    <string name="bt_address">BT Address</string>
+    <string name="bt_detect">BT Detect</string>
+    <string name="wifi_address">Wifi Mac Address</string>
+    <string name="wifi_detect">Wifi Detect</string>
+    <string name="radio_info">Radio Info</string>
+    <string name="touchscreen">TouchScreen Test</string>
+    <string name="audioloop">Audio Loop</string>
+    <string name="fm_test">FM Test</string>
+    <string name="camera">Camera Test</string>
+    <!-- FN0001234:Added by shihaijun start-->
+    <string name="camera_back">Back Camera Test</string>
+    <string name="camera_front">Front Camera Test</string>
+    <!-- FN0001234:Added by shihaijun end-->
+    <string name="imei">IMEI</string>
+    <string name="imsi">IMSI</string>
+    <string name="sensor">Sensor</string>
+    <string name="gps">GPS</string>
+    <string name="touchpanel">Touch Panel</string>
+    <string name="unknown">Unknown</string>
+    <string name="on">on</string>
+    <string name="off">off</string>
+    <string name="power">Power Info</string>
+
+    <!--BatteryLog part-->
+    <string name="battery_info_s">s</string>
+    <string name="battery_info_status_label">Battery status:</string>
+    <string name="battery_info_scale_label">Battery scale:</string>
+    <string name="battery_info_level_label">Battery level:</string>
+    <string name="battery_info_health_label">Battery health:</string>
+    <string name="battery_info_technology_label">Battery technology:</string>
+    <string name="battery_info_voltage_label">Battery voltage:</string>
+    <string name="battery_info_current_label">Battery Charging Current:</string>
+    <string name="battery_info_voltage_units">mV</string>
+    <string name="battery_info_current_units">mA</string>
+    <string name="battery_info_temperature_label">Battery temperature:</string>
+    <string name="battery_info_temperature_units">\u00B0 C</string>
+    <string name="battery_info_uptime">Time since boot:</string>
+    <string name="battery_info_status_unknown">Unknown</string>
+    <string name="battery_info_status_charging">Charging</string>
+    <string name="battery_info_status_charging_ac">(AC)</string>
+    <string name="battery_info_status_charging_usb">(USB)</string>
+    <string name="battery_info_status_discharging">Discharging</string>
+    <string name="battery_info_status_not_charging">Not charging</string>
+    <string name="battery_info_status_full">Full</string>
+    <string name="battery_info_health_unknown">Unknown</string>
+    <string name="battery_info_health_good">Good</string>
+    <string name="battery_info_health_overheat">Overheat</string>
+    <string name="battery_info_health_dead">Dead</string>
+    <string name="battery_info_health_over_voltage">Over voltage</string>
+    <string name="battery_info_health_unspecified_failure">Unknown error</string>
+    <string name="key_power">POWER</string>
+    <string name="key_volume_up">VOLUME UP</string>
+    <string name="key_volume_down">VOLUME DOWN</string>
+    <string name="key_menu">MENU</string>
+    <string name="key_home">HOME</string>
+    <string name="key_back">BACK</string>
+    <string name="key_search">SEARCH</string>
+    <string name="key_headset_hook">HEADSET HOOK</string>
+
+    <string name="sd_title">SDcard%1s Information</string>
+    <string name="state">State:</string>
+    <string name="sd_mounted">State: Mounted</string>
+    <string name="sd_removed">State: Removed</string>
+    <string name="sd_total">Total: %1sMB</string>
+    <string name="sd_used">Used: %1sMB</string>
+    <string name="sd_available">Available: %1sMB</string>
+    <string name="bt_status">BT Status: %1s</string>
+    <string name="bt_address_is">BT Address: %1s</string>
+    <string name="bt_read_address">Reading, please wait&#8230;</string>
+    <string name="wifi_status">Wifi Status: %1s</string>
+    <string name="wifi_address_is">Wifi Address: %1s</string>
+    <string name="display_IMEI">IMEI: %1s</string>
+    <string name="display_IMEI_1">IMEI 1: %1s</string>
+    <string name="display_IMEI_2">IMEI 2: %1s</string>
+    <string name="display_IMSI">IMSI: %1s</string>
+    <string name="display_IMSI_1">IMSI 1: %1s</string>
+    <string name="display_IMSI_2">IMSI 2: %1s</string>
+    <string name="x_is">"X: "</string>
+    <string name="y_is">"Y: "</string>
+    <string name="z_is">"Z: "</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="magnetic">Magnetic</string>
+    <string name="gyroscope">Gyroscope</string>
+    <string name="light">Light</string>
+    <string name="light_is">%1s Lux</string>
+    <string name="proximity">Proximity</string>
+    <string name="touch_test">Pointer number detected: </string>
+    <string name="test_flag">Test Flag</string>
+    <string name="serialnumber">Serial number: %1s</string>
+    <string name="device_info">Device Information</string>
+    <string name="baseband_is">Baseband Version: %s</string>
+    <string name="buildversion_is">Build Version: %s</string>
+    <string name="SIM">SIM</string>
+    <string name="display_SIM_1">SIM 1: %1s</string>
+    <string name="display_SIM_2">SIM 2: %1s</string>
+    <string name="display_SIM">SIM: %1s</string>
+    <string name="SIM_INSERT">insert</string>
+    <string name="SIM_NOT_INSERT">not insert</string>
+    <string name="audio_receiver">Receiver</string>
+    <string name="produce_information">Produce Information</string>
+    <string name="phone_test">Phone Test</string>
+    <string name="recover_settings">Recover Settings</string>
+    <string name="battery_information">Battery Information</string>
+    <string name="software_version">Software Version</string>
+    <string name="hardware_version">Hardware_Version</string>
+    <string name="PSN_code">IMEI</string>
+    <string name="Board_serial">Board_serial</string>
+    <string name="Bluetooth_address">Bluetooth Address</string>
+    <string name="smssecurity">SMS Security</string>
+    <string name="flash_type">Flash Type</string>
+    <string name="flag">Test Flag</string>
+    <string name="test_flag_title">Test Flag</string>
+    <string name="TD_Calibration">TD Calibration:</string>
+    <string name="GSM_Calibration">GSM Calibration:</string>
+    <string name="TD_FinalTest">TD FinalTest:</string>
+    <string name="GSM_FinalTest">GSM FinalTest:</string>
+    <string name="CMMB_Chip">CMMB Chip:</string>
+    <string name="CMMB_Coupling">CMMB Coupling:</string>
+    <string name="GPS_Chip">GPS Chip:</string>
+    <string name="GSP_Coupling">GSP Coupling:</string>
+    <string name="WIFI_Chip">WIFI Chip:</string>
+    <string name="WIFI_Coupling">WIFI Coupling:</string>
+    <string name="SENSOR_ACCELEROMETER_Chip">SENSOR ACCELEROMETER Chip:</string>
+    <string name="SENSOR_MAGNETIC_FIELD_Chip">SENSOR MAGNETIC FIELD Chip:</string>
+    <string name="TD_Coupling">TD Coupling:</string>
+    <string name="falsed">false</string>
+    <string name="pass">pass</string>
+    <string name="insert_earphone_warning">Please insert earphone</string>
+    <string name="earphone_audio_loop">EarPhone Audio Loop</string>
+
+    <drawable name="bkcolor">#ffffff</drawable>
+    <string name="non_front_camera">No Front Camera</string>
+
+
+    <string name="btn_text_ok">OK</string>
+    <string name="btn_text_cancel">Cancel</string>
+    <string name="dialog_title">Set Proximity</string>
+
+    <!--zhangle add for movego-->
+    <string name="test_phone">打电话测试</string>
+    <string name="China_Telecom">中国电信电话: </string>
+    <string name="China_Telecom_num">10000</string>
+    <string name="China_Unicom">中国联通电话: </string>
+    <string name="China_Unicom_num">10010</string>
+    <string name="China_Mobile">中国移动电话: </string>
+    <string name="China_Mobile_num">10086 </string>
+    <string name="others">手动输入号码拨打: </string>
+    <string name="ring"> 拨打  </string>
+    <string name="no"> 失败  </string>
+    <string name="note_phone"> 号码不符合要求! </string>
+    <string name="sd_info_lable"> SD Info and Gallery </string>
+    <string name="getInfo">获取电池状态</string>
+    <string name="bt_pass">通过</string>
+    <string name="bt_no">失败</string>
+    <string name="hbt">手动测试</string>
+    <string name="abt">自动测试</string>
+    <string name="wifi_test_info">WiFi测试是否通过</string>
+    <string name="bt_test_info">蓝牙测试是否通过</string>
+    <string name="fm_test_info">FM测试是否通过</string>
+    <string name="bt_test">蓝牙测试</string>
+    <string name="wifi_test">WIFI测试</string>
+    <string name="camera_test_info">相机测试是否通过</string>
+    <string name="camera_test">相机测试</string>
+    <string name="totel">总计：</string>
+    <string name="totel_pass">成功：</string>
+    <string name="totel_fail">失败:</string>
+    <string name="audio_receiver_new">Receiver</string>
+    <string name="version_number">Version Number</string>
+    <string name="calibration_string">Calibration</string>
+    <string name="flash">Flash light Test</string>
+    <string name="full_check">Full check flag</string>
+    <string name="no_action">NA</string>
+    <string name="partial_passed">0</string>
+    <string name="all_passed">1</string>
+    <string name="clear_result">Clear</string>
+
+    <string name="sn_number_label">SN号：</string>
+    <string name="bt_wifi_flag_label">BT/WIFI标志位：</string>
+    <string name="gsm_flag_label">GSM标志位：</string>
+    <string name="td_flag_label">TD标志位：</string>
+    <string name="wcdma_flag_label">WCDMA标志位：</string>
+    <string name="lte_flag_label">LTE标志位：</string>
+    <string name="coupling_flag_label">射频耦合标志位：</string>
+    <string name="test_flag_label">测试结果标志位：</string>
+
+    <string name="tp_version">TP版本</string>
+
+    <string name="gsensor_calibration">请将机器放置水平位置，然后进行校准</string>
+    <string name="calibration">校准</string>
+    <string name="hall_test">霍尔器件</string>
+    <string name="hall_status">状态：</string>
+    <string name="hall_open">未感应到磁铁</string>
+    <string name="hall_close">磁铁已靠近</string>
+    <string name="hall_description">使用磁铁靠近霍尔开关</string>
+	<!--modified by alextao.-->
+    <string name="g_sensor">重力传感器</string>
+    <string name="p_sensor">光感/距离传感器</string>
+    <string name="wifi_info">WIFI信息</string>
+	
+	<string name="gpio_test">GPIO</string>
+	<string name="gpio_hint">input gpio index</string>
+    <string name="gpio_btn_setInput">Set Input</string>
+    <string name="gpio_btn_setOutput">Set Output</string>
+    <string name="gpio_btn_setHigh">Set High</string>
+    <string name="gpio_btn_setLow">Set Low</string>
+	
+	<string name="serial_port">串口测试</string>
+	<string name="serial_port_test1">串口1测试</string>
+	<string name="serial_port_test2">串口2测试</string>
+	<string name="serial_port_test3">串口3测试</string>
+	<!--Alextao block here. just for the future needs.-->
+	<!--<string name="serial_port_test4">串口4测试</string>-->
+	<string name="stop1">停止测试1</string>
+	<string name="stop2">停止测试2</string>
+	<string name="stop3">停止测试3</string>
+	<string name="receive_bytes">收到：</string>
+	<string name="sending_bytes">发送：</string>
+	<string name="lost_bytes">丢失：</string>
+	<string name="zero">0</string>
+    <string name="alextao_gps_test">新移GPS测试</string>
+    <string name="alextao_fm_test">新移FM测试</string>
+    <string name="fm_87_5mhz">FM 87.5Mhz</string>
+
+
+</resources>

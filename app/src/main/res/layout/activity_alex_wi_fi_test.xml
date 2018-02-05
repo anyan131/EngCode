@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AlexWiFiTest" >
+
+    <TextView
+
+        android:textSize="25sp"
+        android:text="@string/wifi_info"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ListView
+        android:divider="#ff0"
+        android:id="@+id/list_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+    <LinearLayout
+        android:layout_marginBottom="23dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/pass"
+            android:text="@string/pass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/fail"
+            android:text="@string/fail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

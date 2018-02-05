@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/sensor_linear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/g_sensor_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/info_sensor"
+                    android:text="@string/accelerometer" />
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/x_is" />
+
+                    <TextView
+                        android:id="@+id/g_sensor_x"
+                        style="@style/info_value" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/y_is" />
+
+                    <TextView
+                        android:id="@+id/g_sensor_y"
+                        style="@style/info_value" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/z_is" />
+
+                    <TextView
+                        android:id="@+id/g_sensor_z"
+                        style="@style/info_value" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gyroscope_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/info_sensor"
+                    android:text="@string/gyroscope" />
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/x_is" />
+
+                    <TextView
+                        android:id="@+id/gyroscope_x"
+                        style="@style/info_value" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/y_is" />
+
+                    <TextView
+                        android:id="@+id/gyroscope_y"
+                        style="@style/info_value" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/z_is" />
+
+                    <TextView
+                        android:id="@+id/gyroscope_z"
+                        style="@style/info_value" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/magnetic_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/info_sensor"
+                    android:text="@string/magnetic" />
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/x_is" />
+
+                    <TextView
+                        android:id="@+id/magnetic_x"
+                        style="@style/info_value" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/y_is" />
+
+                    <TextView
+                        android:id="@+id/magnetic_y"
+                        style="@style/info_value" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/z_is" />
+
+                    <TextView
+                        android:id="@+id/magnetic_z"
+                        style="@style/info_value" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/light_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/info_sensor"
+                    android:text="@string/light" />
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        android:id="@+id/light_lux"
+                        style="@style/info_sensor" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/proximity_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/info_sensor"
+                    android:text="@string/proximity" />
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        android:id="@+id/proximity"
+                        style="@style/info_sensor" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/sensor_linear"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/sensor_pass"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="@string/pass" >
+            </Button>
+
+            <Button
+                android:id="@+id/sensor_false"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="@string/falsed" >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/singlebutton_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/normal_textlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/normal_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview9"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview10"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview12"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/normal_textview13"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffffff"
+            android:textSize="8pt" >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/normal_pass_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pass"
+            android:textSize="8pt" >
+        </Button>
+
+        <Button
+            android:id="@+id/normal_false_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/falsed"
+            android:textSize="8pt" >
+        </Button>
+    </LinearLayout>
+
+</RelativeLayout>

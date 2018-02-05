@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/singlebutton_view"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+<LinearLayout style="@style/info_layout">        
+
+    <!-- SN Number -->
+    <LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/sn_number_label" style="@style/info_label" />
+        <TextView android:id="@+id/sn_number" style="@style/info_value" />
+    </LinearLayout>
+	
+    <!-- BT/WIFI Flag -->
+    <LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/bt_wifi_flag_label" style="@style/info_label" />
+        <TextView android:id="@+id/bt_wifi_flag" style="@style/info_value" />
+    </LinearLayout>
+
+    <!-- GSM Flag -->
+    <LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/gsm_flag_label" style="@style/info_label" />
+        <TextView android:id="@+id/gsm_flag" style="@style/info_value" />
+    </LinearLayout>
+
+	<!-- WCDMA Flag -->
+    <LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/wcdma_flag_label" style="@style/info_label" />
+        <TextView android:id="@+id/wcdma_flag" style="@style/info_value" />
+    </LinearLayout>
+	
+    <!-- TD Flag -->
+    <!--<LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/td_flag_label" style="@style/info_label" />
+        <TextView android:id="@+id/td_flag" style="@style/info_value" />
+    </LinearLayout> -->
+    
+    <!-- LTE Flag -->
+    <LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/lte_flag_label" style="@style/info_label" />
+        <TextView android:id="@+id/lte_flag" style="@style/info_value" />
+    </LinearLayout>
+
+    <!-- Coupling Flag -->
+    <LinearLayout style="@style/entry_layout">
+        <TextView android:text="@string/coupling_flag_label" style="@style/info_label" />
+        <TextView android:id="@+id/coupling_flag" style="@style/info_value" />
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true">
+	<Button
+		android:id="@+id/singlebutton_pass_button"
+		android:layout_width="150dp"
+		android:layout_height="wrap_content"
+		android:text="@string/pass"
+		></Button>
+	<Button
+		android:id="@+id/singlebutton_false_button"
+		android:layout_width="150dp"
+		android:layout_height="wrap_content"
+		android:text="@string/falsed"
+		></Button>
+		</LinearLayout>
+	
+</RelativeLayout>

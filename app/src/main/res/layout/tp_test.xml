@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- android:visibility="gone" -->
+    <!-- aeon.marine.test.DrawCircleView -->
+
+    <com.zte.engineer.DrawCircleView
+        android:id="@+id/circleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true" />
+
+    <com.zte.engineer.DrawRectView
+        android:id="@+id/rectangleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" />
+
+</FrameLayout>

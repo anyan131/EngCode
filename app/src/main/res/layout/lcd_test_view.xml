@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/fullscreen_linelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fullscreen_linelayout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/lcd_test_pass_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pass" >
+        </Button>
+
+        <Button
+            android:id="@+id/lcd_test_false_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/falsed" >
+        </Button>
+    </LinearLayout>
+
+</RelativeLayout>
