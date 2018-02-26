@@ -1,2 +1,10 @@
-/app/build
-/app/.externalNativeBuild
+.git
+.gradle
+.idea
+app/.externalNativeBuild
+app/build
+app/iml
+import-summary.txt
+local.properties
+newEngCode.iml
+
