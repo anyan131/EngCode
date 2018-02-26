@@ -4,7 +4,7 @@
     android:sharedUserId="android.uid.phone"
     android:versionCode="1"
     android:versionName="1.0" > <!-- 这里是用来测试强行提高api的。 -->
-    <uses-sdk android:minSdkVersion="14" />
+    <uses-sdk android:minSdkVersion="19" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
@@ -334,6 +334,13 @@
             </intent-filter>
         </activity>
         <activity android:name="com.zte.engineer.AlexFMTest" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zte.engineer.AlexGPSTest" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

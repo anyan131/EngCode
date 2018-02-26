@@ -98,6 +98,7 @@ public class EngineerCode extends Activity {
                     //	R.string.serial_port, //alextao block here for future development.
                     R.string.alextao_gps_test,
                     R.string.alextao_fm_test,
+                    R.string.alextao_i2c_test,
 
             };
 
@@ -182,7 +183,7 @@ public class EngineerCode extends Activity {
             }
         };
         list.setOnItemClickListener(mOnItemClickListener);
-        Toast.makeText(this, "open fm " + FmRadioNative.openDev(), Toast.LENGTH_SHORT).show();
+
     }
 
     private void implementItemClick(int position) {
@@ -224,7 +225,7 @@ public class EngineerCode extends Activity {
             }
             break;
             /*
-    		case R.string.key_test:
+            case R.string.key_test:
     		{
     			intent.setClass(this, KeyTest.class);
     		}
@@ -262,8 +263,8 @@ public class EngineerCode extends Activity {
                 intent.setClassName(Launcher.WIFI_SETTINGS_PACKAGE, Launcher.WIFI_SETTINGS_CLASS);
             }
             break;
-    		/*case R.string.radio_info:
-    		{
+            /*case R.string.radio_info:
+            {
     			intent.setClassName(Launcher.RADIO_INFO_PACKAGE, 
     								Launcher.RADIO_INFO_TARGET_CLASS);
     		}
@@ -286,8 +287,8 @@ public class EngineerCode extends Activity {
                 intent.setClass(this, ReciverTest.class);
             }
             break;			
-    		/*
-    	R.string.touchscreen,
+            /*
+        R.string.touchscreen,
     		 */
             case R.string.fm_test: {
                 intent.setClassName(Launcher.FM_TEST_PACKAGES,
@@ -301,9 +302,9 @@ public class EngineerCode extends Activity {
                 intent.putExtra("android.intent.extras.CAMERA_FACING", 0);
             }
             break;
-    		
+
     		/*case R.string.camera_front:
-    		{
+            {
     			intent.setClassName(Launcher.CAMERA_PACKAGE, 
 						Launcher.CAMERA_TARGET_CLASS);
 					intent.putExtra("android.intent.extras.CAMERA_FACING", 1);   			
@@ -394,6 +395,17 @@ public class EngineerCode extends Activity {
             }
             case R.string.alextao_fm_test: {
                 intent.setClass(this, AlexFMTest.class);
+            }
+            break;
+            case R.string.alextao_gps_test: {
+            intent.setClass(this,AlexGPSTest.class);
+            }
+            break;
+            case R.string.alextao_i2c_test:
+            {
+
+                intent.setClass(this,AlexIICTest.class);
+
             }
             break;
             default: {

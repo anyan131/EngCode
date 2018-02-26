@@ -240,7 +240,12 @@
 	<string name="zero">0</string>
     <string name="alextao_gps_test">新移GPS测试</string>
     <string name="alextao_fm_test">新移FM测试</string>
-    <string name="fm_87_5mhz">FM 87.5Mhz</string>
+    <string name="fm_90_1mhz">FM 90.1Mhz</string>
+    <string name="gps_search">GPS 搜索</string>
+    <string name="alextao_i2c_test">新移I2C测试</string>
+    <string name="iic1test">iic1测试</string>
+    <string name="iic2">iic2测试</string>
+    <string name="iic3">iic3测试</string>
 
 
 </resources>

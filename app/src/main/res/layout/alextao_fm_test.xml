@@ -6,10 +6,12 @@
 
 
     <TextView
-        android:text="@string/fm_87_5mhz"
-        android:textSize="55sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/fm_90_1mhz"
+        android:textSize="55sp" />
 
 
     <LinearLayout

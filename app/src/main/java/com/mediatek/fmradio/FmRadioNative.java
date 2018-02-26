@@ -13,9 +13,9 @@ public class FmRadioNative {
     /**
      * Open FM device, call before power up
      *
-     * @return (true,success; false, failed)
+     * @return (true, success; false, failed)
      */
-   public static native boolean openDev();
+    public static native boolean openDev();
 
     /**
      * Close FM device, call after power down
@@ -28,7 +28,6 @@ public class FmRadioNative {
      * power up FM with frequency use long antenna
      *
      * @param frequency frequency(50KHZ, 87.55; 100KHZ, 87.5)
-     *
      * @return (true, success; false, failed)
      */
     public static native boolean powerUp(float frequency);
@@ -37,7 +36,6 @@ public class FmRadioNative {
      * Power down FM
      *
      * @param type (0, FMRadio; 1, FMTransimitter)
-     *
      * @return (true, success; false, failed)
      */
     public static native boolean powerDown(int type);
@@ -46,7 +44,6 @@ public class FmRadioNative {
      * tune to frequency
      *
      * @param frequency frequency(50KHZ, 87.55; 100KHZ, 87.5)
-     *
      * @return (true, success; false, failed)
      */
     public static native boolean tune(float frequency);
@@ -55,8 +52,7 @@ public class FmRadioNative {
      * seek with frequency in direction
      *
      * @param frequency frequency(50KHZ, 87.55; 100KHZ, 87.5)
-     * @param isUp (true, next channel; false previous channel)
-     *
+     * @param isUp      (true, next channel; false previous channel)
      * @return frequency(float)
      */
     public static native float seek(float frequency, boolean isUp);
@@ -80,7 +76,6 @@ public class FmRadioNative {
      * Open or close rds fuction
      *
      * @param rdson The rdson (true, open; false, close)
-     *
      * @return rdsset
      */
     public static native int setRds(boolean rdson);
@@ -90,14 +85,14 @@ public class FmRadioNative {
      *
      * @return rds event type
      */
-   public static native short readRds();
+    public static native short readRds();
 
     /**
      * Get program service(program name)
      *
      * @return The program name
      */
-    static native byte[] getPs();
+    public static native byte[] getPs();
 
     /**
      * Get radio text, RDS standard not support Chinese character
@@ -107,7 +102,7 @@ public class FmRadioNative {
     public static native byte[] getLrText();
 
     /**
-     *Active alternative frequencies
+     * Active alternative frequencies
      *
      * @return The frequency(float)
      */
@@ -117,7 +112,6 @@ public class FmRadioNative {
      * Mute or unmute FM voice
      *
      * @param mute (true, mute; false, unmute)
-     *
      * @return (true, success; false, failed)
      */
     public static native int setMute(boolean mute);
@@ -133,75 +127,78 @@ public class FmRadioNative {
      * Switch antenna
      *
      * @param antenna antenna (0, long antenna, 1 short antenna)
-     *
      * @return (0, success; 1 failed; 2 not support)
      */
-    static native int switchAntenna(int antenna);
+    public static native int switchAntenna(int antenna);
 
     /**
      * Set Fm status to tell native RX or TX is on
+     *
      * @param which 0 is RX, 1 is TX
-     * @param on true is on
+     * @param on    true is on
      * @return
      */
     public static native boolean setFmStatus(int which, boolean on);
 
     /**
      * Get the native Fm status
+     *
      * @param which 0 is RX ON, 1 is TX ON, 2 is TX Scaning
      * @return true if dothing
      */
-    static native boolean getFmStatus(int which);
+    public static native boolean getFmStatus(int which);
 
     // FM EM start
+
     /**
      * get rssi from hardware(use for engineer mode)
      *
      * @return rssi value
      */
-    static native int readRssi();
+    public static native int readRssi();
 
     /**
      * Inquiry if fm stereo mono(true, stereo; false mono)
      *
      * @return (true, stereo; false, mono)
      */
-    static native boolean stereoMono();
+    public static native boolean stereoMono();
 
     /**
      * Force set to stero/mono mode
      *
-     * @param isMono
-     *            (true, mono; false, stereo)
+     * @param isMono (true, mono; false, stereo)
      * @return (true, success; false, failed)
      */
-    static native boolean setStereoMono(boolean isMono);
+    public static native boolean setStereoMono(boolean isMono);
 
     /**
      * Read cap array of short antenna
      *
      * @return cap array value
      */
-    static native short readCapArray();
+    public static native short readCapArray();
 
     /**
      * read rds bler
      *
      * @return rds bler value
      */
-    static native short readRdsBler();
+    public static native short readRdsBler();
 
     /**
      * send variables to native, and get some variables return.
+     *
      * @param val send to native
      * @return get value from native
      */
-    static native short[] emcmd(short[] val);
+    public static native short[] emcmd(short[] val);
 
     /**
      * set RSSI, desense RSSI, mute gain soft
+     *
      * @param index flag which will execute
-     * (0:rssi threshold,1:desense rssi threshold,2: SGM threshold)
+     *              (0:rssi threshold,1:desense rssi threshold,2: SGM threshold)
      * @param value send to native
      * @return execute ok or not
      */
@@ -211,7 +208,7 @@ public class FmRadioNative {
      * get hardware version
      *
      * @return hardware version information array(0, ChipId; 1, EcoVersion; 2, PatchVersion; 3,
-     *         DSPVersion)
+     * DSPVersion)
      */
     public static native int[] getHardwareVersion();
     // FM EM end
