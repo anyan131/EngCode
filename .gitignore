@@ -1,10 +1,10 @@
-.git
+*.iml
 .gradle
-.idea
-app/.externalNativeBuild
-app/build
-app/iml
-import-summary.txt
-local.properties
-newEngCode.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
 
