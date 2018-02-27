@@ -1,4 +1,0 @@
-#Tue Feb 06 17:21:51 CST 2018
-base.0=E\:\\XY3501_6735\\newEngCode\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex

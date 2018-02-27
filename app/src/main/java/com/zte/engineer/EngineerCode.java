@@ -95,7 +95,7 @@ public class EngineerCode extends Activity {
                     R.string.software_version,
                     R.string.board_code,
                     R.string.gpio_test,
-                    	R.string.serial_port, //alextao block here for future development.
+                    R.string.serial_port, //alextao block here for future development.
                     R.string.alextao_gps_test,
                     R.string.alextao_fm_test,
                     R.string.alextao_i2c_test,
@@ -392,13 +392,14 @@ public class EngineerCode extends Activity {
             case R.string.serial_port: //modified by newmobi alextao.
             {
                 intent.setClass(this, SerialPort.class);
+                break;
             }
             case R.string.alextao_fm_test: {
                 intent.setClass(this, AlexFMTest.class);
             }
             break;
             case R.string.alextao_gps_test: {
-            intent.setClass(this,AlexGPSTest.class);
+            intent.setClass(this,AlexNewGPSTest.class);
             }
             break;
             case R.string.alextao_i2c_test:

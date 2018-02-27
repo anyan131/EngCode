@@ -32,8 +32,8 @@
     <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/jni/SerialPort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni/GPIO" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/jni/SerialPort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni/Sensors" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/debug" isTestSource="false" generated="true" />
@@ -123,6 +123,7 @@
     <orderEntry type="library" name="__local_aars__:E.\XY3501_6735\newEngCode\app\libs\framework.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:E.\XY3501_6735\newEngCode\app\libs\mediatek-framework.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:E.\XY3501_6735\newEngCode\app\libs\telephony-common.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="org.jetbrains:annotations-java5:15.0@jar" level="project" />
     <orderEntry type="library" name="com.squareup.leakcanary:leakcanary-android-1.5.4" level="project" />
     <orderEntry type="library" name="com.squareup.leakcanary:leakcanary-analyzer-1.5.4" level="project" />
     <orderEntry type="library" name="com.squareup.leakcanary:leakcanary-watcher:1.5.4@jar" level="project" />

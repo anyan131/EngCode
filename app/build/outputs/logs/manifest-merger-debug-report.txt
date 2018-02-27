@@ -1,14 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
-INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
-INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
-INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
+ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
 MERGED from [com.squareup.leakcanary:leakcanary-android:1.5.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.5.4.aar\5aea36e6e9fc4b58b9362dce1f5608da\AndroidManifest.xml:17:1-61:12
 MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.5.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.5.4.aar\520b66eba76062697d5754e820466bd5\AndroidManifest.xml:17:1-25:12
-INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
-INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
-INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-347:12
+INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
+INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:2:1-354:12
 	package
 		ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:3:11-37
 		INJECTED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml
@@ -134,7 +134,7 @@ MERGED from [com.squareup.leakcanary:leakcanary-android:1.5.4] C:\Users\Administ
 	android:name
 		ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:36:22-77
 application
-ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:45:5-345:19
+ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:45:5-352:19
 MERGED from [com.squareup.leakcanary:leakcanary-android:1.5.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.5.4.aar\5aea36e6e9fc4b58b9362dce1f5608da\AndroidManifest.xml:26:5-59:19
 MERGED from [com.squareup.leakcanary:leakcanary-android:1.5.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.5.4.aar\5aea36e6e9fc4b58b9362dce1f5608da\AndroidManifest.xml:26:5-59:19
 MERGED from [com.squareup.leakcanary:leakcanary-analyzer:1.5.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\leakcanary-analyzer-1.5.4.aar\520b66eba76062697d5754e820466bd5\AndroidManifest.xml:23:5-20
@@ -555,10 +555,10 @@ activity#com.zte.engineer.AlexFMTest
 ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:333:9-338:20
 	android:name
 		ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:333:19-45
-activity#com.zte.engineer.AlexGPSTest
-ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:339:9-344:20
+activity#com.zte.engineer.AlexNewGPSTest
+ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:346:9-351:20
 	android:name
-		ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:339:19-46
+		ADDED from E:\XY3501_6735\newEngCode\app\src\main\AndroidManifest.xml:346:19-49
 service#com.squareup.leakcanary.internal.HeapAnalyzerService
 ADDED from [com.squareup.leakcanary:leakcanary-android:1.5.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\leakcanary-android-1.5.4.aar\5aea36e6e9fc4b58b9362dce1f5608da\AndroidManifest.xml:27:9-30:45
 	android:process

@@ -1,6 +1,6 @@
 E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
 E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir
-E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/src/main/jni/SerialPort/CMakeFiles/libnewmobiSerialPort.dir
+E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/src/main/jni/SerialPort/CMakeFiles/newmobiSerialPort.dir
 E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/src/main/jni/SerialPort/CMakeFiles/edit_cache.dir
 E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/src/main/jni/SerialPort/CMakeFiles/rebuild_cache.dir
 E:/XY3501_6735/newEngCode/app/.externalNativeBuild/cmake/release/x86/src/main/jni/Sensors/CMakeFiles/edit_cache.dir

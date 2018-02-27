@@ -45,4 +45,5 @@ dependencies {
     provided files('libs/mediatek-framework.jar')
     provided files('libs/telephony-common.jar')
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    compile 'org.jetbrains:annotations-java5:15.0'
 }

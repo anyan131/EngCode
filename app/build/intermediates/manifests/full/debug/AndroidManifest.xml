@@ -340,7 +340,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.zte.engineer.AlexGPSTest" >
+        <!-- <activity android:name=".AlexGPSTest"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN"/> -->
+        <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+        <activity android:name="com.zte.engineer.AlexNewGPSTest" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

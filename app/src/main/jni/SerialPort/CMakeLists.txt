@@ -1,1 +1,1 @@
-ADD_LIBRARY(libnewmobiSerialPort SHARED SerialPort.cpp)
+ADD_LIBRARY(newmobiSerialPort SHARED SerialPort.cpp)

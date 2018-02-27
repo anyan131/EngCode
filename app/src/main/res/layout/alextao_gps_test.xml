@@ -4,26 +4,16 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/tv1"
+    <com.zte.engineer.GPSUtils.SatelliteSignalChartView
+        android:id="@+id/chartView1"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_alignParentTop="true"
-        android:gravity="center_horizontal"
-        android:text="@string/gps_search" />
-
-    <TextView
-        android:id="@+id/num_of_sate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv1"
-        android:gravity="center_horizontal"
-        android:textSize="50dp" />
+        android:layout_height="300dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:orientation="horizontal">
 
         <Button
