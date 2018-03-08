@@ -5,4 +5,6 @@ Please enter the dialer,and input *983*0#.
 ### Author
 Alextao commit in 2018/02/05.
 ### Todo
-we need to add some more test items like FM,GPS,i2c and the physical buttons.
+we need to fix some bugs and make it more portable and more stable.
+I changed the GPS test UI and make it more beautiful than before.
+We need to do some work like fix the sound of the FM,and the uart.
