@@ -235,7 +235,9 @@
 	<string name="stop2">停止测试2</string>
 	<string name="stop3">停止测试3</string>
 	<string name="receive_bytes">收到：</string>
-	<string name="sending_bytes">发送：</string>
+	<string name="serial_port1">串口1</string>
+	<string name="serial_port2">串口2</string>
+	<string name="serial_port3">串口3</string>
 	<string name="lost_bytes">丢失：</string>
 	<string name="zero">0</string>
     <string name="alextao_gps_test">新移GPS测试</string>
@@ -246,6 +248,88 @@
     <string name="iic1test">iic1测试</string>
     <string name="iic2">iic2测试</string>
     <string name="iic3">iic3测试</string>
+    <string name="default_station_name">New Channel</string>
+
+
+    <!--
+      Copyright Statement:
+
+      This software/firmware and related documentation ("MediaTek Software") are
+      protected under relevant copyright laws. The information contained herein is
+      confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+      the prior written permission of MediaTek inc. and/or its licensors, any
+      reproduction, modification, use or disclosure of MediaTek Software, and
+      information contained herein, in whole or in part, shall be strictly
+      prohibited.
+
+      MediaTek Inc. (C) 2011-2014. All rights reserved.
+
+      BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+      THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+      RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+      ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+      WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+      NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+      RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+      INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+      TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+      RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+      OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+      SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+      RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+      STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+      ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+      RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+      MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+      CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+      The following software/firmware and/or related documentation ("MediaTek
+      Software") have been modified by MediaTek Inc. All revisions are subject to
+      any receiver's applicable license agreements with MediaTek Inc.
+    -->
+
+
+    <string name="FMR_Freq_text" translatable="false">Freq(MHz)</string>
+    <string name="FMR_Freq_tune" translatable="false">Tune</string>
+    <string name="FMR_Antenna_text" translatable="false">Antenna Type</string>
+    <string name="FMR_Antenna_short" translatable="false">Short</string>
+    <string name="FMR_Antenna_long" translatable="false">EarPhone</string>
+    <string name="FMR_Status_text" translatable="false">Status</string>
+    <string name="FMR_Force_Stereomono_text" translatable="false">Force Set:</string>
+    <string name="FMR_Status_Stereomono_text" translatable="false">Stereo/Mono:</string>
+    <string name="FMR_Stereomono_stereo" translatable="false">Stereo</string>
+    <string name="FMR_Stereomono_mono" translatable="false">Mono</string>
+    <string name="FMR_Status_Stereomono" translatable="false">detecting...</string>
+    <string name="FMR_Status_RSSI_text" translatable="false">RSSI(dBm):</string>
+    <string name="FMR_Status_RSSI" translatable="false">detecting...</string>
+    <string name="FMR_Status_Caparray_text" translatable="false">CapArray(pF):</string>
+    <string name="FMR_Status_Caparray" translatable="false">detecting...</string>
+    <string name="FMR_RDS_text" translatable="false">RDS</string>
+    <string name="FMR_RDS_Ratio_text" translatable="false">Ratio:</string>
+    <string name="FMR_RDS_Ratio" translatable="false">detecting...</string>
+    <string name="FMR_RDS_PS_text" translatable="false">PS:</string>
+    <string name="FMR_RDS_PS" translatable="false">None.</string>
+    <string name="FMR_RDS_RT_text" translatable="false">RT:</string>
+    <string name="FMR_RDS_RT" translatable="false">None.</string>
+    <string name="FMR_Hardware_version" translatable="false">Hardware Version</string>
+    <string name="FMR_Chip_ID_text" translatable="false">Chip ID</string>
+    <string name="FMR_Chip_ID" translatable="false">None.</string>
+    <string name="FMR_ECO_Version_text" translatable="false">ECO Version</string>
+    <string name="FMR_ECO_Version" translatable="false">None.</string>
+    <string name="FMR_Patch_Version_text" translatable="false">Patch Version</string>
+    <string name="FMR_Patch_Version" translatable="false">None.</string>
+    <string name="FMR_DSP_Version_text" translatable="false">DSP Version</string>
+    <string name="FMR_DSP_Version" translatable="false">None.</string>
+    <string name="FMR_EM_RSSI_THRESHOLD_text" translatable="false">RSSI THRESHOLD</string>
+    <string name="FMR_EM_MUTE_GAIN_text" translatable="false">SMG</string>
+    <string name="FMR_EM_DESENSE_RSSI_text" translatable="false">Desense RSSI</string>
+    <string name="FMR_EM_OK_TEXT" translatable="false">OK</string>
+    <string name="FMR_EM_CMD_text" translatable="false">0X</string>
+    <string name="FMR_EM_CMD_title" translatable="false">CMD EXPAND</string>
+    <string name="FMR_EM_CMD_return" translatable="false">CMD EXPAND RETURN VALUE</string>
+    <string name="FMR_EM_DEFAULT_VALUE" translatable="false">0</string>
+
 
 
 </resources>

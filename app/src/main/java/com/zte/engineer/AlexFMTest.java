@@ -2,27 +2,33 @@ package com.zte.engineer;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.media.AudioManager;
 import android.media.AudioSystem;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
+import android.os.storage.StorageManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.mediatek.fmradio.FmRadioNative;
+import com.zte.engineer.Services.AlextaoFMService;
 
 import java.io.IOException;
 
 import static com.mediatek.fmradio.FmRadioNative.setMute;
+import static com.mediatek.fmradio.FmRadioNative.stopScan;
 
 
 /**
@@ -33,6 +39,7 @@ import static com.mediatek.fmradio.FmRadioNative.setMute;
 public class AlexFMTest extends Activity {
 
 
+    private static final int TEST_STATION = 1043;
     private static final int CURRENT_RX_ON = 0;
     private static final int CURRENT_TX_ON = 1;
     private boolean DEBUG = true;
@@ -43,12 +50,16 @@ public class AlexFMTest extends Activity {
     private boolean mIsDeviceOpened = false;
     private boolean mIsPowerUp = false;
 
+    private boolean mIsServiceStarted = false;
+    private boolean ismIsServiceBinded = false;
+
     // Record whether is speaker used
     private boolean mIsSpeakerUsed = false;
     //play the sound.
     private MediaPlayer mFmPlayer = null;
 
     private Context mContext;
+    private AlextaoFMService mService;
     //here we use the stable station 90.1mHZ.
     private float mCurrentStation = Float.valueOf("90.1");
 
@@ -73,37 +84,54 @@ public class AlexFMTest extends Activity {
         }
     }
 
+    private final ServiceConnection mServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.d(TAG, "onServiceConnected: start");
+            AlextaoFMService.ServiceBinder serviceBinder = (AlextaoFMService.ServiceBinder) service;
+            mService = serviceBinder.getService();
+            if (mService == null) {
+                Log.e(TAG, "onServiceConnected: cannot getService");
+                finish();
+                return;
+            }
+
+            if (!mService.ismIsServiceInited()) {
+                mService.initSerivce(TEST_STATION);
+                powerUpFM();
+            } else {
+                Log.d(TAG, "onServiceConnected: the service is already inited.");
+                mIsPlaying = mService.ismIsPowerUp();
+
+
+            }
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
+    //power up the fm. actually,it will call the method in service.
+    //service will call method in it's method in handlerThread.
+    //finally,it will call the method in JNI.
+    private void powerUpFM() {
+        mService.powerUpAsync(104.3f);
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: <<<");
-        setContentView(R.layout.alextao_fm_test);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        setContentView(R.layout.alextao_fm_test);
         bindView();
 
         mContext = getApplicationContext();
-        headSetBroadcastReceiver = new HeadSetBroadcastReceiver();
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_HEADSET_PLUG);
-        this.registerReceiver(headSetBroadcastReceiver, filter);
-
-
         audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        passBtn.setEnabled(false);
-        HandlerThread handlerThread = new HandlerThread("AlexTaoThread");
-        handlerThread.start();
-        alexTaoFmTestHandler = new AlexTaoFmTestHandler(handlerThread.getLooper());
-
-        if (!initFmPlayer()) {
-            Log.e(TAG, "onCreate: >> init FM player failed");
-            return;
-        }
-
-        openDevice();
-
-        //set the FM audio not from the speaker.
-        setSpeakPhoneOn(mIsSpeakerUsed);
         Log.d(TAG, "AlexFMTest.onCreate: >>>");
 
     }
@@ -116,11 +144,26 @@ public class AlexFMTest extends Activity {
 
     @Override
     protected void onStart() {
-        alexTaoFmTestHandler.removeMessages(MESSAGE_POWER_UP);
-        Message msg = alexTaoFmTestHandler.obtainMessage(MESSAGE_POWER_UP);
-        alexTaoFmTestHandler.sendMessage(msg);
-
         super.onStart();
+        // here we start the fm service.
+        AlextaoFMService.setsIsActivityOnStop(false);
+        Log.d(TAG, "onStart: start");
+        //should start service first.
+        if (null == startService(new Intent(AlexFMTest.this, AlextaoFMService.class))) {
+            Log.e(TAG, "onStart: cannot start service");
+            return;
+        }
+        mIsServiceStarted = true;
+
+        ismIsServiceBinded = bindService(new Intent(AlexFMTest.this, AlextaoFMService.class)
+                , mServiceConnection, BIND_AUTO_CREATE);
+        if (!ismIsServiceBinded){
+            finish();
+            return;
+        }
+        Log.e(TAG,"cannot bind service");
+
+
     }
 
     /**
@@ -268,7 +311,7 @@ public class AlexFMTest extends Activity {
     protected void onDestroy() {
         //at this stage,we need to stop and release.
         this.unregisterReceiver(headSetBroadcastReceiver);
-        if (mIsPlaying){
+        if (mIsPlaying) {
             setMute(true);
             mFmPlayer.stop();
         }
@@ -301,13 +344,13 @@ public class AlexFMTest extends Activity {
 
     private boolean startPlayFM() {
         Log.d(TAG, "startPlayFM: >>>");
-        if (mFmPlayer == null || !mIsPowerUp){
-            Log.e(TAG, "startPlayFM: "+mIsPowerUp );
-            Log.e(TAG, "startPlayFM: mFmPlayer is null when start play" );
+        if (mFmPlayer == null || !mIsPowerUp) {
+            Log.e(TAG, "startPlayFM: " + mIsPowerUp);
+            Log.e(TAG, "startPlayFM: mFmPlayer is null when start play");
             return false;
         }
 
-        if (mFmPlayer.isPlaying()){
+        if (mFmPlayer.isPlaying()) {
             Log.d(TAG, "startPlayFM: player is playing");
             return false;
         }
@@ -347,6 +390,17 @@ public class AlexFMTest extends Activity {
         setMute(true);
 
         return mIsPowerUp;
+    }
+
+    private void exitService() {
+        if (ismIsServiceBinded) {
+            unbindService(mServiceConnection);
+            ismIsServiceBinded = false;
+        }
+        if (mIsServiceStarted) {
+            stopService(new Intent(AlexFMTest.this, AlextaoFMService.class));
+            mIsServiceStarted = false;
+        }
     }
 
 }

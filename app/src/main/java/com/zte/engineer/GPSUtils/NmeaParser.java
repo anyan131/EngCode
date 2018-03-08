@@ -271,7 +271,7 @@ public class NmeaParser {
         if (ind != 0) {
             result = record.substring(--ind);
         }
-        //log("ori:"+ record + " res:" + result);
+        //logd("ori:"+ record + " res:" + result);
         return result;
     }
 
@@ -370,7 +370,7 @@ public class NmeaParser {
                 mLocationRecordMap.put(mCurrentTalker, loc);
             }
         } else {
-            //log("$GPRMC: Warning NOT A, so no position written: (" + warning + ")");
+            //logd("$GPRMC: Warning NOT A, so no position written: (" + warning + ")");
         }
 
     }
@@ -705,7 +705,7 @@ public class NmeaParser {
             }
         } else {
             mParseState = STATE_PARSE_OTHERS;
-            //log("undefined format");
+            //logd("undefined format");
         }
 
     }

@@ -17,4 +17,5 @@ ${LINK_DIR}
 add_subdirectory(src/main/jni/SerialPort)
 add_subdirectory(src/main/jni/Sensors)
 add_subdirectory(src/main/jni/GPIO)
+
 #add_subdirectory(src/main/jni/IIC)

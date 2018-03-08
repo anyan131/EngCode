@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.internal.telephony.HbpcdLookup;
+import com.mediatek.fmradio.FmAlexTaoActivity;
 import com.mediatek.fmradio.FmRadioNative;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -395,7 +396,7 @@ public class EngineerCode extends Activity {
                 break;
             }
             case R.string.alextao_fm_test: {
-                intent.setClass(this, AlexFMTest.class);
+                intent.setClass(this,FmAlexTaoActivity.class);
             }
             break;
             case R.string.alextao_gps_test: {
@@ -405,10 +406,10 @@ public class EngineerCode extends Activity {
             case R.string.alextao_i2c_test:
             {
 
-                intent.setClass(this,AlexIICTest.class);
+               // intent.setClass(this,AlexIICTest.class);
 
             }
-            break;
+
             default: {
                 intent.setClass(this, NotSupportNotification.class);
                 intent.putExtra("notification", getString(stringIDs[position]));

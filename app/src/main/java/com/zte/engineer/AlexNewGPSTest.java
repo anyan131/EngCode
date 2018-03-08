@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.android.server.NetworkManagementSocketTagger;
 import com.zte.engineer.GPSUtils.NmeaParser;
 import com.zte.engineer.GPSUtils.SatelliteInfo;
 import com.zte.engineer.GPSUtils.SatelliteInfoManager;
@@ -68,28 +67,7 @@ public class AlexNewGPSTest extends Activity {
         }
     };
     //this listener may about the view.
-    public final GpsStatus.Listener mGpsListener = new GpsStatus.Listener() {
 
-
-        @Override
-        public void onGpsStatusChanged(int event) {
-            Log.d(TAG, "onGpsStatusChanged: start");
-            try {
-                GpsStatus status = mLocationManager.getGpsStatus(null);
-            } catch (SecurityException e) {
-                Log.w(TAG, "onGpsStatusChanged: " + e.getLocalizedMessage());
-            }
-
-            switch (event) {
-                //here we can update the chart view here.
-                case GpsStatus.GPS_EVENT_SATELLITE_STATUS:
-
-
-                    break;
-            }
-
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +104,7 @@ public class AlexNewGPSTest extends Activity {
                 mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
                         mLocationListener);
 
-                mLocationManager.addGpsStatusListener(mGpsListener);
+
                 mLocationManager.addNmeaListener(nmeaListener);
             } else {
                 Log.w(TAG, "onCreate: locationManager failed.");
@@ -157,7 +135,7 @@ public class AlexNewGPSTest extends Activity {
         super.onStop();
         mLocationManager.removeUpdates(mLocationListener);
         mLocationManager.removeNmeaListener(nmeaListener);
-        mLocationManager.removeGpsStatusListener(mGpsListener);
+
         nmeaParser.removeSVUpdateListener(nmeaUpdateViewListener);
 
     }

@@ -19,6 +19,7 @@ public class GPIO extends Activity implements View.OnClickListener {
 
     private EditText gpioIndex;
     private Button btnSetInput, btnSetOutput, btnSetHigh, btnSetLow;
+    private Button pass ,fail;
 	private static final String TAG = "NewMobi";
 	
 	
@@ -51,6 +52,10 @@ public class GPIO extends Activity implements View.OnClickListener {
         btnSetHigh.setOnClickListener(this);
         btnSetLow = (Button) findViewById(R.id.gpio_btn_setLow);
         btnSetLow.setOnClickListener(this);
+        pass = (Button)findViewById(R.id.gpio_pass);
+        pass.setOnClickListener(this);
+        fail = (Button) findViewById(R.id.gpio_fail);
+        fail.setOnClickListener(this);
 		Log.i(TAG,GPIO_INDEX.length+"");
     }
 
@@ -98,12 +103,26 @@ public class GPIO extends Activity implements View.OnClickListener {
 				}
 			}
                 break;
+			case R.id.gpio_pass:
+				setResult(10);
+				finish();
+				break;
+			case R.id.gpio_fail:
+				setResult(20);
+				finish();
+				break;
 
 
         }
     }
-	
-	
+
+	@Override
+	public void onBackPressed() {
+		setResult(20);
+		finish();
+    	super.onBackPressed();
+	}
+
 	@Override
     protected void onDestroy() {
         EmGpio.gpioUnInit();

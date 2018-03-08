@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            keyPassword  "android"
             storeFile file('G:/6735About/platform.keystore')
-            storePassword 'android'
+            storePassword "android"
         }
     }
     compileSdkVersion 26
@@ -42,8 +42,8 @@ android {
 
 dependencies {
     compileOnly files('libs/framework.jar')
-    provided files('libs/mediatek-framework.jar')
-    provided files('libs/telephony-common.jar')
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    compile 'org.jetbrains:annotations-java5:15.0'
+    compileOnly files('libs/mediatek-framework.jar')
+    compileOnly files('libs/telephony-common.jar')
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    implementation 'org.jetbrains:annotations-java5:15.0'
 }
