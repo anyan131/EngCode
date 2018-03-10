@@ -5,6 +5,5 @@ Please enter the dialer,and input *983*0#.
 ### Author
 Alextao commit in 2018/02/05.
 ### Todo
-we need to fix some bugs and make it more portable and more stable.
-I changed the GPS test UI and make it more beautiful than before.
-We need to do some work like fix the sound of the FM,and the uart.
+This project is almost done.Just some little things to do.We need to call LongRuizhou to finish the serial port test functions 
+and Tangh for our IIC test.This is almost done. Of course,we need test this application to make sure it is stable and useful.
