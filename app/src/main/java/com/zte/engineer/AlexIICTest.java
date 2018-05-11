@@ -32,6 +32,7 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
     private TextView iic3_ret;
 
     int read_data = 0;
+    private MyHandler myHandler = new MyHandler(this);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,19 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
         iic1_ret = (TextView) findViewById(R.id.iic1_ret);
         iic2_ret = (TextView) findViewById(R.id.iic2_ret);
     }
+    @Override
+    protected void onDestroy() {
+        flag1 = 0; flag2 = 0;
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        flag1 = 0; flag2 = 0;
+        setResult(20);
+        finish();
+        super.onBackPressed();
+    }
 
     @Override
     public void onClick(View v) {
@@ -91,6 +105,7 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
                     iic1_ret.setTextColor(Color.RED);
                     iic2_ret.setTextColor(Color.RED);
                 }
+                myHandler.sendEmptyMessage(0x0A);
                 break;
             case R.id.iic3:
                 IICHelper.writeIIC(3, 0, 1);
@@ -106,6 +121,7 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
                     iic3_ret.setText(getResources().getString(R.string.fail));
                     iic3_ret.setTextColor(Color.RED);
                 }
+                myHandler.sendEmptyMessage(0x0A);
                 break;
 
             case R.id.iic_pass:
