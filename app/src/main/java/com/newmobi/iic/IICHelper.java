@@ -8,12 +8,8 @@ public class IICHelper {
     static {
         System.loadLibrary("iichelper");
     }
-    public static native boolean openIIC();
-
-
+    public static native int openIIC();
     public static native int closeIIC();
-
-    public static native int writeIIC(int IICNumber);
-
-    public static native byte readIIC();
+    public static native int writeIIC(int IICNumber , int reg_buf ,int len);
+    public static native int readIIC(int IICNumber,int len);
 }
