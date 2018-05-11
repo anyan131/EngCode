@@ -86,6 +86,7 @@
     <string name="key_7">7</string>
     <string name="key_8">8</string>
 
+    <string name="sd_test">SD Test</string>
     <string name="sd_title">SDcard%1s Information</string>
     <string name="state">State:</string>
     <string name="sd_mounted">State: Mounted</string>

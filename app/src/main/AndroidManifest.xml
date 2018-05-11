@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zte.engineer"
     android:sharedUserId="android.uid.phone"
-    android:versionCode="4"
-    android:versionName="4.0"> <!-- 这里是用来测试强行提高api的。 -->
+    android:versionCode="5"
+    android:versionName="5.0"> <!-- 这里是用来测试强行提高api的。 -->
 
     <uses-sdk android:minSdkVersion="21" />
 

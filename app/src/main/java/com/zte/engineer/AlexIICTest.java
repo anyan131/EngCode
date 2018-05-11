@@ -3,12 +3,17 @@ package com.zte.engineer;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.newmobi.iic.IICHelper;
+import com.zte.engineer.Services.AlextaoFMService;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Created by Administrator on 2018/2/6.
@@ -19,6 +24,8 @@ import com.newmobi.iic.IICHelper;
 public class AlexIICTest extends Activity implements View.OnClickListener {
     private Button iic1, iic2, iic3;
     private Button passBtn, failBtn;
+
+    static int flag1 = 0, flag2 = 0;
 
     private TextView iic1_ret;
     private TextView iic2_ret;
@@ -33,11 +40,10 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
 
         initWidget();
 
-       if(IICHelper.openIIC() < 0)
-          Toast.makeText(this, "can not open serial port 1", Toast.LENGTH_SHORT).show();
-       else
-           Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
-
+        if (IICHelper.openIIC() < 0)
+            Toast.makeText(this, "can not open serial port 1", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
 
 
     }
@@ -53,6 +59,7 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
         iic3 = (Button) findViewById(R.id.iic3);
         iic3.setOnClickListener(this);
         passBtn = (Button) findViewById(R.id.iic_pass);
+        passBtn.setEnabled(false);
         passBtn.setOnClickListener(this);
         failBtn = (Button) findViewById(R.id.iic_fail);
         failBtn.setOnClickListener(this);
@@ -67,31 +74,35 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.iic1:
             case R.id.iic2:
-                IICHelper.writeIIC(2,0,1 );
-                read_data = IICHelper.readIIC(2,1);
-                if(read_data == 249) {
+                IICHelper.writeIIC(2, 0, 1);
+                read_data = IICHelper.readIIC(2, 1);
+                if (read_data == 249) {
 //SUCCESS
+                    flag1 = 1;
                     iic1_ret.setText(getResources().getString(R.string.pass));
                     iic2_ret.setText(getResources().getString(R.string.pass));
                     iic1_ret.setTextColor(Color.GREEN);
                     iic2_ret.setTextColor(Color.GREEN);
                 } else {
 //FAIL
+                    flag1 = 0;
                     iic1_ret.setText(getResources().getString(R.string.fail));
                     iic2_ret.setText(getResources().getString(R.string.fail));
                     iic1_ret.setTextColor(Color.RED);
                     iic2_ret.setTextColor(Color.RED);
                 }
-                 break;
+                break;
             case R.id.iic3:
-                IICHelper.writeIIC(3,0,1 );
-                read_data = IICHelper.readIIC(3,1);
-                if(read_data == 249) {
+                IICHelper.writeIIC(3, 0, 1);
+                read_data = IICHelper.readIIC(3, 1);
+                if (read_data == 249) {
 //SUCCESS
+                    flag2 = 1;
                     iic3_ret.setText(getResources().getString(R.string.pass));
                     iic3_ret.setTextColor(Color.GREEN);
                 } else {
 //FAIL
+                    flag2 = 0;
                     iic3_ret.setText(getResources().getString(R.string.fail));
                     iic3_ret.setTextColor(Color.RED);
                 }
@@ -105,6 +116,28 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
                 setResult(20);
                 finish();
                 break;
+        }
+    }
+
+    static class MyHandler extends Handler {
+        WeakReference<AlexIICTest> testWeakReference;
+
+        MyHandler(AlexIICTest test) {
+            testWeakReference = new WeakReference<AlexIICTest>(test);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            AlexIICTest test = testWeakReference.get();
+            switch (msg.what) {
+                case 0x0a:
+                    if ((flag1 & flag2) > 0) {
+                        test.passBtn.setEnabled(true);
+                    }
+                    break;
+
+            }
+
         }
     }
 

@@ -91,7 +91,7 @@ public class TestReport extends Activity{
 		   }
 		   
 		   //读取文件，同时填入对应项里面。
-		   prefs = mContext.getSharedPreferences("engineer",MODE_PRIVATE);
+		   prefs = mContext.getSharedPreferences("engineer",MODE_MULTI_PROCESS);
 		   editor = prefs.edit();
 		   String key = getResources().getString(EngineerCode.stringIDs[position]);
 		   

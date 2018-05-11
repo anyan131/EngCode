@@ -24,9 +24,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.internal.telephony.HbpcdLookup;
 import com.mediatek.fmradio.FmAlexTaoActivity;
-import com.mediatek.fmradio.FmRadioNative;
 import com.squareup.leakcanary.LeakCanary;
 
 import java.util.ArrayList;
@@ -138,7 +136,7 @@ public class EngineerCode extends Activity {
         }
         setContentView(R.layout.main);
         Resources r = getResources();
-        prefs = getSharedPreferences("engineer", MODE_PRIVATE);
+        prefs = getSharedPreferences("engineer", MODE_MULTI_PROCESS);
         editor = prefs.edit();
         initButton();
         list = (ListView) findViewById(R.id.MainList);
@@ -229,11 +227,10 @@ public class EngineerCode extends Activity {
             }
             break;
 
-            case R.string.key_test:
-    		{
-    			intent.setClass(this, KeyTest.class);
-    		}
-    		break;
+            case R.string.key_test: {
+                intent.setClass(this, KeyTest.class);
+            }
+            break;
 
             case R.string.lcd_off: {
                 intent.setClass(this, LcdOffTest.class);
@@ -399,17 +396,16 @@ public class EngineerCode extends Activity {
                 break;
             }
             case R.string.NM_fm_test: {
-                intent.setClass(this,FmAlexTaoActivity.class);
+                intent.setClass(this, FmAlexTaoActivity.class);
             }
             break;
             case R.string.NM_gps_test: {
-            intent.setClass(this,AlexNewGPSTest.class);
+                intent.setClass(this, AlexNewGPSTest.class);
             }
             break;
-            case R.string.NM_i2c_test:
-            {
+            case R.string.NM_i2c_test: {
 
-                intent.setClass(this,AlexIICTest.class);
+                intent.setClass(this, AlexIICTest.class);
 
             }
             break;
@@ -519,10 +515,10 @@ public class EngineerCode extends Activity {
                 case R.string.camera_back:
                 case R.string.board_code://xu
                 case R.string.software_version://xu
-                //case R.string.gps:
-                    {
-					/*new AlertDialog.Builder(this)
-					.setTitle(stringIDs[requestCode])
+                    //case R.string.gps:
+                {
+                    /*new AlertDialog.Builder(this)
+                    .setTitle(stringIDs[requestCode])
 					.setPositiveButton(R.string.pass, new OnClickListener(){
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
