@@ -22,6 +22,7 @@ import android.provider.Settings;
 public class KeyTest extends ZteActivity {
 
 	private final static String TAG = "KeyTest";
+	Button BT_PASS;
 
 	private boolean querty = false; // default is false
 
@@ -108,8 +109,9 @@ public class KeyTest extends ZteActivity {
 					.setOnClickListener(this);
 		} else {
 			setContentView(R.layout.key_test);
-			((Button) findViewById(R.id.s_key_test_pass))
-					.setOnClickListener(this);
+			BT_PASS = ((Button) findViewById(R.id.s_key_test_pass));
+			BT_PASS.setOnClickListener(this);
+			BT_PASS.setEnabled(false);
 			((Button) findViewById(R.id.s_key_test_false))
 					.setOnClickListener(this);
 		}
@@ -182,6 +184,7 @@ public class KeyTest extends ZteActivity {
 
 		manager.remove(event.getKeyCode());
 		if (0 == manager.getRemainnings()) {
+			BT_PASS.setEnabled(true);
 			finishSelf(RESULT_PASS);
 		}
 	}
