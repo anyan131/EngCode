@@ -135,10 +135,14 @@ public class KeyTest extends ZteActivity {
 		// addItem(KeyEvent.KEYCODE_POWER, R.id.s_key_power);
 		addItem(KeyEvent.KEYCODE_VOLUME_UP, R.id.s_key_volume_up);
 		addItem(KeyEvent.KEYCODE_VOLUME_DOWN, R.id.s_key_volume_down);
-		addItem(KeyEvent.KEYCODE_MENU, R.id.s_key_menu);
-		addItem(KeyEvent.KEYCODE_HOME, R.id.s_key_home);
-		addItem(KeyEvent.KEYCODE_BACK, R.id.s_key_back);
-		// addItem(KeyEvent.KEYCODE_SEARCH, R.id.s_key_search);
+		addItem(KeyEvent.KEYCODE_1, R.id.s_key_1);
+		addItem(KeyEvent.KEYCODE_2, R.id.s_key_2);
+		addItem(KeyEvent.KEYCODE_3, R.id.s_key_3);
+		addItem(KeyEvent.KEYCODE_4, R.id.s_key_4);
+		addItem(KeyEvent.KEYCODE_5, R.id.s_key_5);
+		addItem(KeyEvent.KEYCODE_6, R.id.s_key_6);
+		addItem(KeyEvent.KEYCODE_7, R.id.s_key_7);
+		addItem(KeyEvent.KEYCODE_8, R.id.s_key_8);
 	}
 
 	private void initKeyAndTextIdArrayQwerty() // querty

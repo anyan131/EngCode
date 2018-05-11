@@ -2,6 +2,7 @@ package com.zte.engineer;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.GpsSatellite;
 import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationListener;
@@ -18,6 +19,7 @@ import com.zte.engineer.GPSUtils.SatelliteInfo;
 import com.zte.engineer.GPSUtils.SatelliteInfoManager;
 import com.zte.engineer.GPSUtils.SatelliteSignalChartView;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
@@ -32,6 +34,8 @@ public class AlexNewGPSTest extends Activity {
     private LocationManager mLocationManager;
     private SatelliteInfoManager satelliteInfoManager;
 
+    private ArrayList<GpsSatellite> satellites = new ArrayList<>();
+
 
     private NmeaParser nmeaParser = null;
     private NmeaParser.NmeaUpdateViewListener nmeaUpdateViewListener;
@@ -40,6 +44,26 @@ public class AlexNewGPSTest extends Activity {
         @Override
         public void onNmeaReceived(long timestamp, String nmea) {
             NmeaParser.getNmeaParser().parse(nmea);
+        }
+    };
+
+    GpsStatus.Listener listener = new GpsStatus.Listener() {
+        @Override
+        public void onGpsStatusChanged(int event) {
+            GpsStatus gpsStatus = mLocationManager.getGpsStatus(null);
+            satellites.clear();
+            int count = 0;
+            while (gpsStatus.getSatellites().iterator().hasNext() && count < gpsStatus.getMaxSatellites()) {
+                GpsSatellite satellite = gpsStatus.getSatellites().iterator().next();
+                satellites.add(satellite);
+                count++;
+            }
+            Log.d(TAG, "onGpsStatusChanged: "+satellites.size());
+            if (satellites.size() ==0){
+                pass.setEnabled(false);
+            }else {
+                pass.setEnabled(true);
+            }
         }
     };
 
@@ -85,6 +109,7 @@ public class AlexNewGPSTest extends Activity {
         //initial widgets.
         chartView = (SatelliteSignalChartView) findViewById(R.id.chartView1);
         pass = (Button) findViewById(R.id.gps_pass);
+        pass.setEnabled(false);
         fail = (Button) findViewById(R.id.gps_fail);
         if (nmeaParser == null) {
             nmeaParser = NmeaParser.getNmeaParser();
@@ -106,6 +131,7 @@ public class AlexNewGPSTest extends Activity {
 
 
                 mLocationManager.addNmeaListener(nmeaListener);
+                mLocationManager.addGpsStatusListener(listener);
             } else {
                 Log.w(TAG, "onCreate: locationManager failed.");
             }
@@ -135,7 +161,7 @@ public class AlexNewGPSTest extends Activity {
         super.onStop();
         mLocationManager.removeUpdates(mLocationListener);
         mLocationManager.removeNmeaListener(nmeaListener);
-
+        mLocationManager.removeGpsStatusListener(listener);
         nmeaParser.removeSVUpdateListener(nmeaUpdateViewListener);
 
     }

@@ -7,7 +7,10 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BoardCode extends Activity {
     private static final String TAG = "BoardCode";
@@ -16,12 +19,16 @@ public class BoardCode extends Activity {
 	long endtime = 0;
     int flag = 0;//default calibration flag. no calibration
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-		/*
-		 * IBinder binder= ServiceManager.getService("NvRAMAgent"); NvRAMAgent
+    private Button pass, fail;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.alextao_boardcode);
+
+        /*
+         * IBinder binder= ServiceManager.getService("NvRAMAgent"); NvRAMAgent
 		 * agent = NvRAMAgent.Stub.asInterface(binder); int file_lid=25;//The
 		 * lid of AP_CFG_REEB_PRODUCT_INFO_LID is 25 byte[] buff = null; try {
 		 * buff = agent.readFile(file_lid);//read buffer from
@@ -32,13 +39,17 @@ public class BoardCode extends Activity {
 		 * boardCode.append(isLetterOrNumber(buff[61])?buff[61]:"0"+"\n");
 		 * boardCode.append(isLetterOrNumber(buff[62])?buff[62]:"0");
 		 */
-		TextView text = new TextView(this);
-		text.setTextSize(20);
-		//TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-		//String barcode = null;
-		//barcode = TelephonyManager.getDefault().getSN();
-		//Phone mPhone = PhoneFactory.getDefaultPhone();
-		//String barcode = mPhone.getSN();
+        TextView text = (TextView) findViewById(R.id.text);
+        pass = (Button) findViewById(R.id.pass_btn);
+        fail = (Button) findViewById(R.id.fail_btn);
+        pass.setEnabled(false);
+
+        text.setTextSize(20);
+        //TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+        //String barcode = null;
+        //barcode = TelephonyManager.getDefault().getSN();
+        //Phone mPhone = PhoneFactory.getDefaultPhone();
+        //String barcode = mPhone.getSN();
         String barcode = SystemProperties.get("gsm.serial");
 		char a = barcode.length() < 63 ? '0' : barcode.charAt(62);
 		char b = barcode.length() < 62 ? '0' : barcode.charAt(61);
@@ -56,11 +67,14 @@ public class BoardCode extends Activity {
         } else if (b == '1' && c == '0') {
             flag = 1;//calibration fail
             boardCode.append("FAIL\n");
-        } else if (c == '1' && b == '0')
-        {
+        } else if (c == '1' && b == '0') {
             flag = 2;//calibration success.
+            pass.setEnabled(true);
             boardCode.append("PASS\n");
         }
+
+        pass.setOnClickListener(mClickListener);
+        fail.setOnClickListener(mClickListener);
         //boardCode.append((isLetterOrNumber(a) ? a : "0") + "\n");
         //boardCode.append("SW Version Status : \n");
         //boardCode.append((isLetterOrNumber(f) ? f : "0") + "\n");
@@ -137,14 +151,31 @@ public class BoardCode extends Activity {
         // starttime =System.currentTimeMillis();
         //	android.util.Log.i("dengyanjun", " DDDDDD boardCode runtime="+(starttime-endtime));
         //boardCode.append(boardcode);
-		text.setText(boardCode.toString());
-		setContentView(text);
+        text.setText(boardCode.toString());
+
 
 	}
 
 	private boolean isLetterOrNumber(char b) {
         return (b <= 'Z' && b >= 'A') || (b >= '0' && b <= '9') || (b <= 'z' && b >= 'a');
     }
+
+    View.OnClickListener mClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+      switch (v.getId()){
+          case R.id.pass_btn:
+              setResult(10);
+              finish();
+              break;
+          case R.id.fail_btn:
+              setResult(20);
+              finish();
+              break;
+      }
+        }
+    };
+
     @Override
     public void onBackPressed() {
         Log.i(TAG, "onBackPressed: "+flag);

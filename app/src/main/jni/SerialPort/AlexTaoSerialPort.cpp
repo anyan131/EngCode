@@ -171,7 +171,6 @@ jint UartTest(JNIEnv *env, jobject jobject1, jint uartno, jint Baud, jint Databi
 
         if (Ret > 0) {
             LOGD("Recv Data[%dB]:", Ret);
-            int i = 0;
 
             for (i = 0; i < Ret; i++) {
                 LOGD("%c ", rec_buf[i]);

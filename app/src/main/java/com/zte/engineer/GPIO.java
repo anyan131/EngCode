@@ -18,18 +18,25 @@ import android.view.WindowManager;
 public class GPIO extends Activity implements View.OnClickListener {
 
     private EditText gpioIndex;
-    private Button btnSetInput, btnSetOutput, btnSetHigh, btnSetLow;
+    private Button btnSetOutput, btnSetHigh, btnSetLow;
     private Button pass ,fail;
 	private static final String TAG = "NewMobi";
 	
 	
-	 private static final int GPIO_INDEX[] = new int[]{95,21,65,127,122,121,91,96,97,99,55,80,78,61,
-	 79,20,19,3,4,1,0,7,5,6,2,63,62,64,68,120
+	 private static final int GPIO_INDEX[] = new int[]{95,21,65,127,122,120,121,98,96,97,99,55,80,78,61,
+	 79,20,19,3,4,1,0,7,5,6,2,63,62,64,68,67,66
 	 };
 	
+	private static final int GPIO_OUT[] = new int[]{95,21,65,127,122,120,121,98,96,97,99,55,80,78,61,
+			79
+
+	};
+	private static final int GPIO_IN[] = new int[]{20,19,3,4,1,0,7,5,6,2,63,62,64,68,67,66
+
+	};
 
 
-    @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alex_tao_gpio);
@@ -44,8 +51,6 @@ public class GPIO extends Activity implements View.OnClickListener {
      */
     private void initWidgets() {
         gpioIndex = (EditText) findViewById(R.id.gpio_edittext_index);
-        btnSetInput = (Button) findViewById(R.id.gpio_btn_setInput);
-        btnSetInput.setOnClickListener(this);
         btnSetOutput = (Button) findViewById(R.id.gpio_btn_setOutput);
         btnSetOutput.setOnClickListener(this);
         btnSetHigh = (Button) findViewById(R.id.gpio_btn_setHigh);
@@ -64,7 +69,7 @@ public class GPIO extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.gpio_btn_setHigh:
 			for(int i = 0; i< GPIO_INDEX.length;i++){
-					boolean res = EmGpio.setGpioDataHigh(i);
+					boolean res = EmGpio.setGpioDataHigh(GPIO_INDEX[i]);
 					if(res == false){
 						Toast.makeText(GPIO.this,"set pin "+i+" datahigh error",Toast.LENGTH_SHORT).show();
 						break;
@@ -74,19 +79,9 @@ public class GPIO extends Activity implements View.OnClickListener {
                 break;
             case R.id.gpio_btn_setLow:
 			for(int i = 0; i< GPIO_INDEX.length;i++){
-					boolean res = EmGpio.setGpioDataLow(i);
+					boolean res = EmGpio.setGpioDataLow(GPIO_INDEX[i]);
 					if(res == false){
 						Toast.makeText(GPIO.this,"set pin "+i+" data low error",Toast.LENGTH_SHORT).show();
-						break;
-					}
-				}
-
-                break;
-            case R.id.gpio_btn_setInput:
-			for(int i = 0; i< GPIO_INDEX.length;i++){
-					boolean res = EmGpio.setGpioInput(i);
-					if(res == false){
-						Toast.makeText(GPIO.this,"set pin "+i+" input error",Toast.LENGTH_SHORT).show();
 						break;
 					}
 				}
@@ -95,7 +90,7 @@ public class GPIO extends Activity implements View.OnClickListener {
             case R.id.gpio_btn_setOutput:
 			{
 				for(int i = 0; i< GPIO_INDEX.length;i++){
-					boolean res = EmGpio.setGpioOutput(i);
+					boolean res = EmGpio.setGpioOutput(GPIO_INDEX[i]);
 					if(res == false){
 						Toast.makeText(GPIO.this,"set pin "+i+" output error",Toast.LENGTH_SHORT).show();
 						break;

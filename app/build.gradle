@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'androiddebugkey'
             keyPassword  "android"
-            storeFile file('G:/6735About/platform.keystore')
+            storeFile file('X:/6735About/platform.keystore')
             storePassword "android"
         }
     }
@@ -13,7 +13,7 @@ android {
     buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.zte.engineer"
-
+        multiDexEnabled true
         sourceSets.main {
             jni.srcDirs = ["src/main/jni"]
             println jni.srcDirs

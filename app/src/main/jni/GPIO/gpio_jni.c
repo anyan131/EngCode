@@ -74,5 +74,14 @@ JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_setGpioDataLow
     return (r.status == META_SUCCESS) ? JNI_TRUE : JNI_FALSE;
 }
 
+JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_getGpioData
+        (JNIEnv *env, jobject jobj, jint n) {
+    GPIO_REQ req;
+    memset(&req, 0, sizeof(GPIO_REQ));
+    req.pin = (int) n;
+    req.op = GET_DATA_IN;
 
+    GPIO_CNF r = Meta_GPIO_OP(req, 0, 0);
+    return r.data ;
+}
 

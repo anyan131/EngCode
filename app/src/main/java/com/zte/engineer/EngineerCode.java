@@ -59,48 +59,51 @@ public class EngineerCode extends Activity {
 
     public static final int[] stringIDs =
             {
+                    R.string.software_version,
                     R.string.battery_info,
-                    R.string.touchpanel,
-                    R.string.SIM,
-                    //R.string.audio_receiver,
-                    R.string.audio_loop,
-                    R.string.earphone_audio_loop,
+                    R.string.gpio_test,
                     R.string.lcd,
-//		R.string.audio_receiver_new,
                     R.string.backlight,
-                    R.string.vibrator,
-                    R.string.ringer,
-                    //R.string.key_test,
-                    //R.string.lcd_off,
-                    R.string.sd_info,
-//		R.string.memory,
-                    R.string.bt_address,
-                    //	R.string.bt_detect,//FN000007:Added by shihaijun
-                    R.string.wifi_address,
-                    //	R.string.wifi_detect,//FN000007:Added by shihaijun
-                    //R.string.radio_info,  //modify by zhengconglong 20120817
-                    //R.string.fm_test,
-                    R.string.imei,
-                    //R.string.imsi,
-                    //R.string.sensor,
-                    R.string.g_sensor,
-//		R.string.p_sensor,
-                    //FN0001234:Added by shihaijun
-//		R.string.camera,
+                    R.string.touchpanel,
                     R.string.camera_front,
                     R.string.camera_back,
-                    //End for FN0001234
-                    R.string.gps,
+                    R.string.key_test,
+                    R.string.vibrator,
+                    R.string.ringer,
+                    R.string.audio_loop,
+                    R.string.earphone_audio_loop,
                     R.string.audio_receiver_new,
-//		R.string.flash
-                    R.string.software_version,
-                    R.string.board_code,
-                    R.string.gpio_test,
-                    R.string.serial_port, //alextao block here for future development.
-                    R.string.alextao_gps_test,
-                    R.string.alextao_fm_test,
-                    R.string.alextao_i2c_test,
+                    R.string.SIM,
+                    R.string.imei,
+                    R.string.sd_info,
+                    R.string.bt_address,
+                    R.string.wifi_address,
+                    R.string.NM_fm_test,
 
+                    R.string.serial_port,
+                    R.string.NM_gps_test,
+                    R.string.NM_i2c_test,
+                    R.string.board_code,
+
+
+                    //R.string.audio_receiver,
+                    //R.string.audio_receiver_new,
+                    //R.string.lcd_off,
+                    //R.string.memory,
+                    //R.string.bt_detect,
+                    //R.string.wifi_detect,
+                    //R.string.radio_info,
+                    //R.string.fm_test,
+                    //R.string.imsi,
+                    //R.string.sensor,
+                    //R.string.g_sensor,
+                    //R.string.p_sensor,
+                    //FN0001234:Added by shihaijun
+                    //R.string.camera,
+
+                    //End for FN0001234
+                    //R.string.gps,
+                    //R.string.flash
             };
 
     ListView list;
@@ -225,13 +228,13 @@ public class EngineerCode extends Activity {
                 intent.setClass(this, RingerTest.class);
             }
             break;
-            /*
+
             case R.string.key_test:
     		{
     			intent.setClass(this, KeyTest.class);
     		}
     		break;
-    		*/
+
             case R.string.lcd_off: {
                 intent.setClass(this, LcdOffTest.class);
             }
@@ -363,11 +366,11 @@ public class EngineerCode extends Activity {
             }
             break;
 
-            case R.string.gps: {
+            /*case R.string.gps: {
                 intent.setClassName(Launcher.GPS_TEST_PACKAGE,
                         Launcher.GPS_TEST_TRAGET_CLASS);
             }
-            break;
+            break;*/
             case R.string.flash: {
                 intent.setClass(this, FlashLightTest.class);
             }
@@ -395,21 +398,21 @@ public class EngineerCode extends Activity {
                 intent.setClass(this, SerialPort.class);
                 break;
             }
-            case R.string.alextao_fm_test: {
+            case R.string.NM_fm_test: {
                 intent.setClass(this,FmAlexTaoActivity.class);
             }
             break;
-            case R.string.alextao_gps_test: {
+            case R.string.NM_gps_test: {
             intent.setClass(this,AlexNewGPSTest.class);
             }
             break;
-            case R.string.alextao_i2c_test:
+            case R.string.NM_i2c_test:
             {
 
-               // intent.setClass(this,AlexIICTest.class);
+                intent.setClass(this,AlexIICTest.class);
 
             }
-
+            break;
             default: {
                 intent.setClass(this, NotSupportNotification.class);
                 intent.putExtra("notification", getString(stringIDs[position]));
@@ -516,7 +519,8 @@ public class EngineerCode extends Activity {
                 case R.string.camera_back:
                 case R.string.board_code://xu
                 case R.string.software_version://xu
-                case R.string.gps: {
+                //case R.string.gps:
+                    {
 					/*new AlertDialog.Builder(this)
 					.setTitle(stringIDs[requestCode])
 					.setPositiveButton(R.string.pass, new OnClickListener(){

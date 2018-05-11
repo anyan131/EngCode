@@ -19,6 +19,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.ref.WeakReference;
+import java.net.PasswordAuthentication;
 import java.nio.charset.MalformedInputException;
 
 
@@ -31,6 +33,8 @@ import java.nio.charset.MalformedInputException;
 
 public class SerialPort extends Activity implements View.OnClickListener {
 
+    private final String TAG = SerialPort.this.getClass().getName();
+
     private static int flag1, flag2, flag3;
 
     private Button serialPortTest1, serialPortTest2, serialPortTest3;
@@ -39,7 +43,7 @@ public class SerialPort extends Activity implements View.OnClickListener {
 
     private TextView testResult1, testResult2, testResult3;
 
-
+    private MyHandler myHandler = new MyHandler(this);
 
 
     @Override
@@ -63,6 +67,8 @@ public class SerialPort extends Activity implements View.OnClickListener {
             Toast.makeText(this, "can not open serial port 3", Toast.LENGTH_SHORT).show();
             pass.setEnabled(false);
         }
+        //首先要禁用通过按钮。
+        pass.setEnabled(false);
 
 
     }
@@ -119,7 +125,7 @@ public class SerialPort extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.start_btn:
                 //serial port1
-                if (UartTest(1, 115200, 8, 0, 1) == 1) {
+                if (UartTest(1, 921600, 8, 0, 1) == 1) {
                     testResult1.setText("SUCCESS");
                     flag1 = 1;
                     testResult1.setTextColor(Color.GREEN);
@@ -128,10 +134,11 @@ public class SerialPort extends Activity implements View.OnClickListener {
                     testResult1.setText("FAIL");
                     testResult1.setTextColor(Color.RED);
                 }
+                myHandler.sendEmptyMessage(0x0A);
                 break;
             case R.id.start2_btn:
                 //serial port2
-                if (UartTest(2, 115200, 8, 0, 1) == 1) {
+                if (UartTest(2, 921600, 8, 0, 1) == 1) {
                     testResult2.setText("SUCCESS");
                     flag2 = 1;
                     testResult2.setTextColor(Color.GREEN);
@@ -140,13 +147,13 @@ public class SerialPort extends Activity implements View.OnClickListener {
                     testResult2.setText("FAIL");
                     testResult2.setTextColor(Color.RED);
                 }
-
+                myHandler.sendEmptyMessage(0x0A);
                 break;
 
             case R.id.start3_btn:
 
                 //serial port3
-                if (UartTest(3, 115200, 8, 0, 1) == 1) {
+                if (UartTest(3, 921600, 8, 0, 1) == 1) {
                     testResult3.setText("SUCCESS");
                     flag3 = 1;
                     testResult3.setTextColor(Color.GREEN);
@@ -155,7 +162,7 @@ public class SerialPort extends Activity implements View.OnClickListener {
                     testResult3.setText("FAIL");
                     testResult3.setTextColor(Color.RED);
                 }
-
+                myHandler.sendEmptyMessage(0x0A);
                 break;
             case R.id.pass:
                 setResult(10);
@@ -170,6 +177,30 @@ public class SerialPort extends Activity implements View.OnClickListener {
         }
     }
 
+
+    static class MyHandler extends Handler {
+        WeakReference<SerialPort> serialPortWeakReference;
+
+        MyHandler(SerialPort serialPort) {
+            serialPortWeakReference = new WeakReference<SerialPort>(serialPort);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            SerialPort serialPort = serialPortWeakReference.get();
+            switch (msg.what) {
+                case 0x0A:
+                    int ret = flag1 & flag2 & flag3;
+                    if (ret > 0) {
+                        serialPort.pass.setEnabled(true);
+                    } else {
+                        serialPort.pass.setEnabled(false);
+                    }
+
+                    break;
+            }
+        }
+    }
 
 }
 

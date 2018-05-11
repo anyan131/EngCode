@@ -26,50 +26,89 @@
     </TextView>
 
     <TextView
-        android:id="@+id/s_key_menu"
+        android:id="@+id/s_key_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/s_key_volume_down"
         android:gravity="center"
-        android:text="@string/key_menu"
+        android:text="@string/key_1"
         android:textSize="20sp"
         android:textStyle="bold" >
     </TextView>
 
     <TextView
-        android:id="@+id/s_key_home"
+        android:id="@+id/s_key_2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/s_key_menu"
+        android:layout_below="@+id/s_key_1"
         android:gravity="center"
-        android:text="@string/key_home"
+        android:text="@string/key_2"
         android:textSize="20sp"
         android:textStyle="bold" >
     </TextView>
 
     <TextView
-        android:id="@+id/s_key_back"
+        android:id="@+id/s_key_3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/s_key_home"
+        android:layout_below="@+id/s_key_2"
         android:gravity="center"
-        android:text="@string/key_back"
+        android:text="@string/key_3"
         android:textSize="20sp"
         android:textStyle="bold" >
     </TextView>
 
-    <!--
+
     <TextView
-    	android:id="@+id/s_key_search"
+    	android:id="@+id/s_key_5"
     	android:layout_width="fill_parent" 
     	android:layout_height="wrap_content"
-    	android:layout_below="@+id/s_key_back"
+    	android:layout_below="@+id/s_key_4"
     	android:textSize="20dp"
-    	android:text="@string/key_search"
+    	android:text="@string/key_5"
     	android:gravity="center"
     	android:textStyle="bold">
     </TextView>
-    -->
+    <TextView
+        android:id="@+id/s_key_6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_5"
+        android:textSize="20dp"
+        android:text="@string/key_6"
+        android:gravity="center"
+        android:textStyle="bold">
+    </TextView>
+    <TextView
+        android:id="@+id/s_key_7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_6"
+        android:textSize="20dp"
+        android:text="@string/key_7"
+        android:gravity="center"
+        android:textStyle="bold">
+    </TextView>
+    <TextView
+        android:id="@+id/s_key_8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_7"
+        android:textSize="20dp"
+        android:text="@string/key_8"
+        android:gravity="center"
+        android:textStyle="bold">
+    </TextView>
+    <TextView
+        android:id="@+id/s_key_4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_key_3"
+        android:textSize="20dp"
+        android:text="@string/key_4"
+        android:gravity="center"
+        android:textStyle="bold">
+    </TextView>
 
     <LinearLayout
         android:layout_width="wrap_content"
