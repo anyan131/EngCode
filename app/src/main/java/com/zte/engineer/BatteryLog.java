@@ -67,9 +67,12 @@ import android.os.Environment;
 
 public class BatteryLog extends Activity {
 
-	private int mLogRecordInterval = 10000;
-	private File mLogFile;
-	private boolean mIsRecording = false;
+
+    private Button pass_btn, fail_btn;
+
+    private int mLogRecordInterval = 10000;
+    private File mLogFile;
+    private boolean mIsRecording = false;
 
 	private File batterylog = null;
 
@@ -231,19 +234,37 @@ public class BatteryLog extends Activity {
 		mIntentFilterSDCard.addAction(Intent.ACTION_MEDIA_UNMOUNTED);
 		mIntentFilterSDCard.addDataScheme("file");
 
-		// check whether the sdcard exists, if yes, set up batterylog directory,
-		// and if not, notify user to plug in it
-		File sdcard = null;
-		if (!Environment.getExternalStorageState().equals(
-				Environment.MEDIA_REMOVED)) {
-			sdcard = Environment.getExternalStorageDirectory();
-			batterylog = new File(sdcard.getParent() + "/" + sdcard.getName()
-					+ "/batterylog/");
-			Log.e(TAG, sdcard.getParent() + "/" + sdcard.getName()
-					+ "/batterylog/");
-			if (!batterylog.isDirectory()) {
-				batterylog.mkdirs();
-			}
+        pass_btn = (Button) findViewById(R.id.bat_pass);
+        fail_btn = (Button) findViewById(R.id.bat_fail);
+
+        pass_btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(10);
+                finish();
+            }
+        });
+        fail_btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(10);
+                finish();
+            }
+        });
+
+        // check whether the sdcard exists, if yes, set up batterylog directory,
+        // and if not, notify user to plug in it
+        File sdcard = null;
+        if (!Environment.getExternalStorageState().equals(
+                Environment.MEDIA_REMOVED)) {
+            sdcard = Environment.getExternalStorageDirectory();
+            batterylog = new File(sdcard.getParent() + "/" + sdcard.getName()
+                    + "/batterylog/");
+            Log.e(TAG, sdcard.getParent() + "/" + sdcard.getName()
+                    + "/batterylog/");
+            if (!batterylog.isDirectory()) {
+                batterylog.mkdirs();
+            }
 
 		}
 

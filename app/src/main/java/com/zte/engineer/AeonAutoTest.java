@@ -88,7 +88,7 @@ public class AeonAutoTest extends Activity {
             ImeiTest.class,
             SDcardTest.class,
             BTAddressTest.class,
-            WifiAddressTest.class,
+            AlexWiFiTest.class,
             FmAlexTaoActivity.class,
             SerialPort.class,
             AlexNewGPSTest.class,
@@ -214,7 +214,7 @@ public class AeonAutoTest extends Activity {
         list.add(newIntent(this, BTAddressTest.class));
         result.add(res.getString(R.string.bt_address));
 
-        list.add(newIntent(this, WifiAddressTest.class));
+        list.add(newIntent(this, AlexWiFiTest.class));
         result.add(res.getString(R.string.wifi_address));
 
         list.add(newIntent(this, FmAlexTaoActivity.class));

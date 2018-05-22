@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,6 +39,8 @@ public class ProduceInfoListView extends Activity {
     private static final String PATH = "/proc/driver/";
     private static final String FILENAME = "nand";
 
+    private Button pass, fail;
+
     private BluetoothAdapter mBluetooth = null;
     private MyAdapter myAdapter = null;
     private boolean isManualTurnOn = false;
@@ -46,6 +49,7 @@ public class ProduceInfoListView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.produce_info_view);
         initStringList();
 //        mBluetooth = BluetoothAdapter.getDefaultAdapter();
 //        if (!mBluetooth.isEnabled()) {
@@ -58,12 +62,16 @@ public class ProduceInfoListView extends Activity {
 
         r = getResources();
         getInfos();
-        listView = new ListView(this);
+        listView = (ListView) findViewById(R.id.info_lv);
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         myAdapter = new MyAdapter(getBaseContext());
         listView.setAdapter(myAdapter);
         listView.setOnItemClickListener(new MyOnItemClickListener());
-        setContentView(listView);
+
+        pass = (Button) findViewById(R.id.pass_info);
+        fail = (Button) findViewById(R.id.fail_info);
+        pass.setOnClickListener(mClickListener);
+        fail.setOnClickListener(mClickListener);
 
     }
 
@@ -245,4 +253,12 @@ public class ProduceInfoListView extends Activity {
             return convertView;
         }
     }
+
+    View.OnClickListener mClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            setResult(10);
+            finish();
+        }
+    };
 }
