@@ -91,6 +91,8 @@
     <string name="clear_result">清除</string>
     <string name="board_code">射频校准标志</string>
 
+    <string name="led_test">LED三色灯</string>
+
     <!--Add by alextao1207 for check the test reports-->
     <string name="check_report">查看报告</string>
     <string name="test_report">测试报告</string>

@@ -338,7 +338,9 @@
     <string name="FMR_EM_CMD_title" translatable="false">CMD EXPAND</string>
     <string name="FMR_EM_CMD_return" translatable="false">CMD EXPAND RETURN VALUE</string>
     <string name="FMR_EM_DEFAULT_VALUE" translatable="false">0</string>
-
+    <string name="red_led">红色LED</string>
+    <string name="blue_led">蓝色LED</string>
+    <string name="green_led">绿色LED</string>
 
 
 </resources>

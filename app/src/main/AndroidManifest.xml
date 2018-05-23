@@ -352,6 +352,10 @@
         <activity android:name="com.mediatek.fmradio.FmAlexTaoActivity">
 
         </activity>
+        <activity android:name=".LedTest">
+
+        </activity>
+
         <service android:name="com.mediatek.fmradio.FmRadioService">
 
         </service>

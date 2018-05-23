@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.mediatek.fmradio.FmAlexTaoActivity;
+import com.newmobi.iic.LEDHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,6 +65,7 @@ public class AeonAutoTest extends Activity {
             R.string.NM_gps_test,
             R.string.NM_i2c_test,
             R.string.board_code,
+            R.string.led_test,
     };
 
     /**
@@ -94,6 +96,7 @@ public class AeonAutoTest extends Activity {
             AlexNewGPSTest.class,
             AlexIICTest.class,
             BoardCode.class,
+            LedTest.class,
     };
 
 
@@ -231,6 +234,8 @@ public class AeonAutoTest extends Activity {
 
         list.add(newIntent(this, BoardCode.class));
         result.add(res.getString(R.string.board_code));
+        list.add(newIntent(this,LedTest.class));
+        result.add(res.getString(R.string.led_test));
 
 
         //  list.add(newIntent(this, ResultList.class));
@@ -287,8 +292,13 @@ public class AeonAutoTest extends Activity {
 		/*add by zhoudawei for factory reset 20110729 start*/
 
         if (index >= list.size()) {
+//            finish();
+
+            Intent i  = new Intent(this,TestReport.class);
+            startActivity(i);
             finish();
             return;
+
         }
         if (index == list.size() - 2) {
             Intent intent = list.get(index);

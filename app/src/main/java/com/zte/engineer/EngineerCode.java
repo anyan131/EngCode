@@ -82,6 +82,8 @@ public class EngineerCode extends Activity {
                     R.string.NM_gps_test,
                     R.string.NM_i2c_test,
                     R.string.board_code,
+                    //alextao add for led test.
+                    R.string.led_test,
 
 
                     //R.string.audio_receiver,
@@ -409,6 +411,9 @@ public class EngineerCode extends Activity {
 
             }
             break;
+            case R.string.led_test:
+                intent.setClass(this,LedTest.class);
+                break;
             default: {
                 intent.setClass(this, NotSupportNotification.class);
                 intent.putExtra("notification", getString(stringIDs[position]));
