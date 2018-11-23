@@ -58,7 +58,7 @@ public class LcdTestActivity extends ZteActivity {
 		mBGColor = Color.WHITE;
 		mFSLl.setBackgroundColor(mBGColor);
 
-		mHandler.sendEmptyMessageDelayed(TIMER_EVENT_TICK, 1400);
+		mHandler.sendEmptyMessageDelayed(TIMER_EVENT_TICK, 500);
 	}
 
 	/*
@@ -111,7 +111,7 @@ public class LcdTestActivity extends ZteActivity {
 					mButton.setVisibility(View.VISIBLE);
 				} else {
 					changeLCDColor();
-					sendEmptyMessageDelayed(TIMER_EVENT_TICK, 1400);
+					sendEmptyMessageDelayed(TIMER_EVENT_TICK, 500);
 				}
 				break;
 			}
