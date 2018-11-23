@@ -2,11 +2,12 @@ package com.zte.engineer;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.newmobi.iic.LEDHelper;
-
+import com.newmobi.iic.TestSign;
 /**
  * Created by Alextao on 2018/5/22,星期二.
  * Email : tao_xue@new-mobi.com
@@ -16,6 +17,7 @@ public class LedTest extends Activity {
 
     private Button red, blue, green;
     private Button pass, fail;
+    //byte[] SignData;
 
     MyClickListener clickListener = new MyClickListener();
 
@@ -45,6 +47,12 @@ public class LedTest extends Activity {
                 case R.id.red_led:
                     flag = 0;
                    boolean i= LEDHelper.JNIcontrolLed(flag);
+                   //TestSign.JNISignflagAllClear();
+                   // TestSign.JNISignInit();
+                    //SignData =  TestSign.JNISignAllRead();
+                    //SignData[5] = 'X';
+                    //TestSign.JNISignAllWrite(SignData);
+                    //Log.d("sign",SignData.toString());
                     break;
                 case R.id.blue_led:
                     flag = 1;
