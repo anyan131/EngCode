@@ -100,5 +100,19 @@
 
     <string name="fail">失败</string>
     <string name="wifi_info">WIFI信息</string>
-
+    <!--add by lzg -->
+    <string name="commit_tv_report">提交报告</string>
+    <string name="gps_open">gps已经打开</string>
+    <string name="gps_opening">gps正在打开...</string>
+    <string name="gps_num">已经搜到卫星个数:</string>
+    <string name="gps_no">GPS没有打开</string>
+    <string name="gps_title">GPS</string>
+    <string name="no_commit_report">未提交报告</string>
+    <string name="commit_success">提交报告成功</string>
+    <string name="commit_fail">提交报告失败</string>
+    <string name="commit_report_tip">提交中，请稍等……</string>
+    <string name="opening_mobile_network">正打开移动网络,请稍后再点击提交</string>
+    <string name="open_mobile_network_success">网络已打开</string>
+    <string name="open_mobile_network_fail">网络已关闭</string>
+    <!--eng lzg-->
 </resources>

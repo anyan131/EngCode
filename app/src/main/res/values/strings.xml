@@ -222,33 +222,33 @@
     <string name="hall_open">未感应到磁铁</string>
     <string name="hall_close">磁铁已靠近</string>
     <string name="hall_description">使用磁铁靠近霍尔开关</string>
-	<!--modified by alextao.-->
+    <!--modified by alextao.-->
     <string name="g_sensor">重力传感器</string>
     <string name="p_sensor">光感/距离传感器</string>
     <string name="wifi_info">WIFI信息</string>
-	
-	<string name="gpio_test">GPIO</string>
-	<string name="gpio_hint">input gpio index</string>
+
+    <string name="gpio_test">GPIO</string>
+    <string name="gpio_hint">input gpio index</string>
     <string name="gpio_btn_setInput">Set Input</string>
     <string name="gpio_btn_setOutput">Set Output</string>
     <string name="gpio_btn_setHigh">Set High</string>
     <string name="gpio_btn_setLow">Set Low</string>
-	
-	<string name="serial_port">串口测试</string>
-	<string name="serial_port_test1">串口1测试</string>
-	<string name="serial_port_test2">串口2测试</string>
-	<string name="serial_port_test3">串口3测试</string>
-	<!--Alextao block here. just for the future needs.-->
-	<!--<string name="serial_port_test4">串口4测试</string>-->
-	<string name="stop1">停止测试1</string>
-	<string name="stop2">停止测试2</string>
-	<string name="stop3">停止测试3</string>
-	<string name="receive_bytes">收到：</string>
-	<string name="serial_port1">串口1</string>
-	<string name="serial_port2">串口2</string>
-	<string name="serial_port3">串口3</string>
-	<string name="lost_bytes">丢失：</string>
-	<string name="zero">0</string>
+
+    <string name="serial_port">串口测试</string>
+    <string name="serial_port_test1">串口1测试</string>
+    <string name="serial_port_test2">串口2测试</string>
+    <string name="serial_port_test3">串口3测试</string>
+    <!--Alextao block here. just for the future needs.-->
+    <!--<string name="serial_port_test4">串口4测试</string>-->
+    <string name="stop1">停止测试1</string>
+    <string name="stop2">停止测试2</string>
+    <string name="stop3">停止测试3</string>
+    <string name="receive_bytes">收到：</string>
+    <string name="serial_port1">串口1</string>
+    <string name="serial_port2">串口2</string>
+    <string name="serial_port3">串口3</string>
+    <string name="lost_bytes">丢失：</string>
+    <string name="zero">0</string>
     <string name="NM_gps_test">GPS测试</string>
     <string name="NM_fm_test">FM测试</string>
     <string name="fm_90_1mhz">FM 90.1Mhz</string>
@@ -341,6 +341,21 @@
     <string name="red_led">红色LED</string>
     <string name="blue_led">蓝色LED</string>
     <string name="green_led">绿色LED</string>
-
+    <!--add by lzg -->
+    <string name="check_report">check report</string>
+    <string name="commit_tv_report">commit report</string>
+    <string name="gps_open">GPS have been opened</string>
+    <string name="gps_opening">GPS is opening...</string>
+    <string name="gps_num">GPS Number:</string>
+    <string name="gps_no">GPS not open</string>
+    <string name="gps_title">GPS</string>
+    <string name="no_commit_report">not commit report</string>
+    <string name="commit_success">Commit Success</string>
+    <string name="commit_fail">Commit Fail</string>
+    <string name="commit_report_tip">committing，please wait……</string>
+    <string name="opening_mobile_network">Opening mobile network, please click Submit later</string>
+    <string name="open_mobile_network_success">The network is open</string>
+    <string name="open_mobile_network_fail">The network is closed</string>
+    <!--eng lzg-->
 
 </resources>

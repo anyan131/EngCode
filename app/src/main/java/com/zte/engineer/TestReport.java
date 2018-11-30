@@ -108,7 +108,7 @@ public class TestReport extends Activity {
             } else if (result.equals("FAIL")) {
                 holder.ItemResult.setTextColor(Color.RED);
             } else if (result.equals("NOT_TEST")) {
-                holder.ItemResult.setTextColor(Color.WHITE);
+                holder.ItemResult.setTextColor(Color.BLUE);
             }
 
 

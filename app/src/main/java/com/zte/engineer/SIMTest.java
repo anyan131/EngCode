@@ -14,13 +14,11 @@ public class SIMTest extends ZteActivity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.singlebuttonview);
-
 		TextView mTextView = (TextView) findViewById(R.id.singlebutton_textview);
 		mTextView.setText(R.string.SIM);
 		// Get Telephony Manager
 
 		if ("true".equals(SystemProperties.get("ro.mediatek.gemini_support"))) {
-
 			//boolean Sim1State = mGeminiPhone.isSimInsert(PhoneConstants.GEMINI_SIM_1)& mGeminiPhone.isRadioOnGemini(PhoneConstants.GEMINI_SIM_1);
 			//boolean Sim2State = mGeminiPhone.isSimInsert(PhoneConstants.GEMINI_SIM_2)& mGeminiPhone.isRadioOnGemini(PhoneConstants.GEMINI_SIM_2);
 			//boolean Sim1State = mGeminiPhone.getPhonebyId(PhoneConstants.GEMINI_SIM_1).getIccCard().hasIccCard();
@@ -45,18 +43,19 @@ public class SIMTest extends ZteActivity {
                 mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_NOT_INSERT)));
 		} else {
 			boolean isSimInsert = TelephonyManager.getDefault().hasIccCard();
-
 			// TextView mTextView =
 			// (TextView)findViewById(R.id.singlebutton_textview);
 			TextView mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_2);
 
 			// mTextView.setText(R.string.IMEI_test);
 			// Get and format IMEI string
-			if (isSimInsert == true)
+			if (isSimInsert == true){
+				((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(true);
                 mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM), getResources().getString(R.string.SIM_INSERT)));
-			else
+			}else{
                 mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM), getResources().getString(R.string.SIM_NOT_INSERT)));
-
+                ((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(false);
+			}
 		}
         ((Button) findViewById(R.id.singlebutton_pass_button)).setOnClickListener(this);
 

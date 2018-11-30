@@ -4,17 +4,16 @@
     android:sharedUserId="android.uid.phone"
     android:versionCode="5"
     android:versionName="5.0"> <!-- 这里是用来测试强行提高api的。 -->
-
     <uses-sdk android:minSdkVersion="21" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -25,22 +24,15 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
     <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- zhangle add for movego -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-    <!--
-	            <intent-filter>
-                <action android:name="com.zte.engineer.action.TEST_LIST" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter> 
-    -->
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name">
@@ -50,6 +42,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
@@ -60,14 +53,12 @@
         </activity>
         <activity
             android:name=".TestPhoneActivity"
-            android:screenOrientation="portrait"></activity>
-        <!-- zhangle add for movego -->
-
+            android:screenOrientation="portrait" /> 
+	<!-- zhangle add for movego -->
         <activity
             android:name=".UsbMainActivity"
-            android:screenOrientation="portrait"></activity>
-        <!-- zhangle add for movego -->
-
+            android:screenOrientation="portrait" /> 
+	<!-- zhangle add for movego -->
         <receiver
             android:name=".BootReceiver"
             android:enabled="true"
@@ -133,12 +124,11 @@
         </activity>
         <activity
             android:name=".LcdTestActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TestResultsShow"
-            android:screenOrientation="portrait" />
-
-        <!-- modified by alextao1207. for check the test report -->
+            android:screenOrientation="portrait" /> 
+	<!-- modified by alextao1207. for check the test report -->
         <activity
             android:name=".TestReportActivity"
             android:launchMode="singleTask"
@@ -242,7 +232,7 @@
         <activity
             android:name=".SIMTest"
             android:process="com.android.phone"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity android:name=".EngineerCodeListView">
             <intent-filter>
                 <action android:name="com.zte.engineer.action.EngineerCodeListView" />
@@ -327,42 +317,54 @@
         <activity android:name=".SerialPort">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".AlexFMTest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+	<!-- <activity android:name=".AlexGPSTest"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN"/> -->
+        <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity android:name=".AlexNewGPSTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!--<activity android:name=".AlexGPSTest">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.intent.action.MAIN"/>-->
-        <!--<category android:name="android.intent.category.DEFAULT"/>-->
-        <!--</intent-filter>-->
-        <!--</activity>-->
-
-        <activity android:name=".AlexNewGPSTest">
+        <activity android:name="com.mediatek.fmradio.FmAlexTaoActivity" />
+        <activity android:name=".LedTest" />
+        <!-- add by lzg -->
+        <activity android:name=".GPSTestActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".CommitReportActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.mediatek.fmradio.FmAlexTaoActivity">
-
+        <activity android:name=".StressTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity android:name=".LedTest">
-
-        </activity>
-
-        <service android:name="com.mediatek.fmradio.FmRadioService">
-
-        </service>
-
-        <service android:name=".Services.AlextaoFMService">
-
-        </service>
+        <!-- end lzg -->
+        <service android:name="com.mediatek.fmradio.FmRadioService" />
+        <service android:name=".Services.AlextaoFMService" />
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_1"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_2"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_3"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_4"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_5"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_6"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/singlebutton_textview_7"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff"
+        android:textColor="#000000"
         android:textSize="10pt" >
     </TextView>
 

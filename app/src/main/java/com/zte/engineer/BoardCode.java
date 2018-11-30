@@ -26,7 +26,7 @@ public class BoardCode extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alextao_boardcode);
-
+        setTitle(getString(R.string.board_code));
         /*
          * IBinder binder= ServiceManager.getService("NvRAMAgent"); NvRAMAgent
 		 * agent = NvRAMAgent.Stub.asInterface(binder); int file_lid=25;//The
@@ -85,7 +85,7 @@ public class BoardCode extends Activity {
 
         //add by jiangxiaowei for read product info-reserved data start
         
-        IBinder binder = ServiceManager.getService("NvRAMAgent");
+      /*  IBinder binder = ServiceManager.getService("NvRAMAgent");
         NvRAMAgent agent = NvRAMAgent.Stub.asInterface(binder);
 		starttime =System.currentTimeMillis();
         int file_lid = 36;//AP_CFG_REEB_PRODUCT_INFO_LID is 36
@@ -98,7 +98,7 @@ public class BoardCode extends Activity {
             ex.printStackTrace();
         }
 
-		endtime=System.currentTimeMillis();
+		endtime=System.currentTimeMillis();*/
     /*
 		android.util.Log.i("dengyanjun", " AAAAA boardCode runtime="+(endtime-starttime));
         int rf_locate = 206;

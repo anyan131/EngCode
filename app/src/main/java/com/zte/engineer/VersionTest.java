@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.os.SystemProperties;
+
 //import com.mediatek.common.featureoption.FeatureOption;
+
 
 import java.util.Scanner;
 import java.io.File;
@@ -20,7 +22,6 @@ public class VersionTest extends ZteActivity {
     	super.onCreate(savedInstanceState);
 
     	setContentView(R.layout.singlebuttonview);
-    	
 
 		TextView mTextView = (TextView)findViewById(R.id.singlebutton_textview);
 		mTextView.setText(R.string.version_number);
@@ -34,7 +35,7 @@ public class VersionTest extends ZteActivity {
 		//mTpVersion.setText(R.string.tp_version);
 		//TextView mTextTpVersion = (TextView)findViewById(R.id.singlebutton_textview_4);
 		//mTextTpVersion.setText(scanTpVersion());
-		
+
     	((Button)findViewById(R.id.singlebutton_pass_button)).setOnClickListener(this);
     	((Button)findViewById(R.id.singlebutton_false_button)).setOnClickListener(this);
 	}

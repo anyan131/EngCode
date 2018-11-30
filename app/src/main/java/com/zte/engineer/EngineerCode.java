@@ -26,6 +26,8 @@ import android.widget.Toast;
 
 import com.mediatek.fmradio.FmAlexTaoActivity;
 import com.squareup.leakcanary.LeakCanary;
+import com.zte.engineer.CommitReportUtils.Constants;
+import com.zte.engineer.CommitReportUtils.StringUtils;
 
 import java.util.ArrayList;
 
@@ -46,6 +48,7 @@ public class EngineerCode extends Activity {
     private static String TEST_RESULT = "result";
     private Button fcButton;
     private Button btn_checkReport;
+    private Button mCommitReportBt;
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     public static final int REQUEST_SHOW_RESULT = 1000;
@@ -273,10 +276,10 @@ public class EngineerCode extends Activity {
     		}
     		break;*/
 
-            case R.string.audio_receiver: {
+           /* case R.string.audio_receiver: {
                 intent.setClass(this, ReciverTest.class);
             }
-            break;
+            break;*/
 
             case R.string.audio_loop: {
                 intent.setClass(this, AudioLoopTest.class);
@@ -294,8 +297,7 @@ public class EngineerCode extends Activity {
         R.string.touchscreen,
     		 */
             case R.string.fm_test: {
-                intent.setClassName(Launcher.FM_TEST_PACKAGES,
-                        Launcher.FM_TEST_TARGET_CLASS);
+                intent.setClass(this, FMTest.class);
             }
             break;
 
@@ -398,11 +400,17 @@ public class EngineerCode extends Activity {
                 break;
             }
             case R.string.NM_fm_test: {
-                intent.setClass(this, FmAlexTaoActivity.class);
+                //modify by lzg
+                //intent.setClass(this, FmAlexTaoActivity.class);
+                intent.setClass(this, FMTest.class);
+                //end lzg
             }
             break;
             case R.string.NM_gps_test: {
-                intent.setClass(this, AlexNewGPSTest.class);
+                //modify by lzg
+                //intent.setClass(this, AlexNewGPSTest.class);
+                intent.setClass(this, GPSTestActivity.class);
+                //end lzg
             }
             break;
             case R.string.NM_i2c_test: {
@@ -432,6 +440,18 @@ public class EngineerCode extends Activity {
             startAuto = true;
             autoTest(-1);
         }
+        //add by lzg
+        if (prefs.getString(Constants.COMMIT_FAG, "2").equals("1")) {
+            mCommitReportBt.setText(R.string.commit_success);
+            mCommitReportBt.setTextColor(Color.BLACK);
+        } else if(prefs.getString(Constants.COMMIT_FAG, "2").equals("0")){
+            mCommitReportBt.setText(R.string.commit_fail);
+            mCommitReportBt.setTextColor(Color.RED);
+        }else{
+            mCommitReportBt.setText(R.string.no_commit_report);
+            mCommitReportBt.setTextColor(Color.RED);
+        }
+        //end lzg
     }
 
     @Override
@@ -492,6 +512,9 @@ public class EngineerCode extends Activity {
             items[requestCode].setChecked(true);
             items[requestCode].setPassed(true);
             editor.putString(res.getString(stringIDs[requestCode]), "PASS");
+            //add by lzg
+            editor.putString(StringUtils.getTestItemName(requestCode),"1");
+            //end lzg
             editor.commit();
             adapter.replaceItems(items);
             list.setAdapter(adapter);
@@ -502,6 +525,9 @@ public class EngineerCode extends Activity {
             items[requestCode].setChecked(true);
             items[requestCode].setPassed(false);
             editor.putString(res.getString(stringIDs[requestCode]), "FAIL");
+            //add by lzg
+            editor.putString(StringUtils.getTestItemName(requestCode),"0");
+            //end lzg
             editor.commit();
             adapter.replaceItems(items);
             list.setAdapter(adapter);
@@ -544,6 +570,9 @@ public class EngineerCode extends Activity {
                     items[requestCode].setChecked(true);
                     items[requestCode].setPassed(true);
                     editor.putString(res.getString(stringIDs[requestCode]), "PASS");
+                    //add by lzg
+                    editor.putString(StringUtils.getTestItemName(requestCode),"0");
+                    //end lzg
                     editor.commit();
                     adapter.replaceItems(items);
                     list.setAdapter(adapter);
@@ -642,6 +671,17 @@ public class EngineerCode extends Activity {
                 startActivity(intentToTestReportActivity);
             }
         });
+        //add by lzg
+        mCommitReportBt = (Button)findViewById(R.id.commit_report);
+
+        mCommitReportBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent commitIntent = new Intent(EngineerCode.this, CommitReportActivity.class);
+                startActivity(commitIntent);
+            }
+        });
+        //end lzg
     }
 
     private class ItemContent {
@@ -733,7 +773,7 @@ public class EngineerCode extends Activity {
             holder.mTv.setText(items[position].getTitle());
             holder.mCheckBox.setClickable(false);
             holder.mCheckBox.setChecked(items[position].isChecked());
-            convertView.setBackgroundColor(items[position].isChecked() ? items[position].isPassed() ? Color.rgb(0x00, 0x8b, 0x00) : Color.RED : Color.BLACK);
+            convertView.setBackgroundColor(items[position].isChecked() ? items[position].isPassed() ? Color.rgb(0x00, 0x8b, 0x00) : Color.RED : Color.GRAY);
             return convertView;
         }
 
@@ -756,6 +796,9 @@ public class EngineerCode extends Activity {
             Toast.makeText(EngineerCode.this, "First", Toast.LENGTH_SHORT).show();
             for (int i = 0; i < testCount; i++) {
                 editor.putString(re.getString(stringIDs[i]), "NOT_TEST");
+                //add by lzg
+                editor.putString(StringUtils.getTestItemName(i),"*");
+                //end lzg
                 editor.commit();
             }
             edt.putBoolean("isFirst", false);

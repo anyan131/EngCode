@@ -1,9 +1,11 @@
 package com.zte.engineer;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,13 +15,19 @@ import com.android.internal.telephony.PhoneConstants;
 import com.mediatek.telephony.TelephonyManagerEx;
 import android.os.SystemProperties;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class ImeiTest extends ZteActivity {
     private final String TAG = ImeiTest.this.getClass().getName();
 
     private Button passBtn;
     private Button failBtn;
-
-
+    private int numSlots = 0;
+    private String mIMEI;
+    private String mIMEI1;
+    private String mIMEI2;
+    TelephonyManager telephonyManager;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +40,22 @@ public class ImeiTest extends ZteActivity {
         TextView mTextView = (TextView) findViewById(R.id.singlebutton_textview);
         mTextView.setText(R.string.imei);
         // Get Telephony Manager
-        TelephonyManager telephonyManager = (TelephonyManager) this
+        telephonyManager = (TelephonyManager) this
                 .getSystemService(Context.TELEPHONY_SERVICE);
-
-		if ("true".equals(SystemProperties.get("ro.mediatek.gemini_support"))) {
-			//String mIMEI1 = telephonyManager.getDeviceIdGemini(0);
+        //add by lzg
+        if(Build.VERSION.SDK_INT >= 23) {
+            numSlots = telephonyManager.getPhoneCount();
+            System.out.println("---lzg numSlots="+numSlots);
+        }//end lzg
+		if (numSlots == 2 || "true".equals(SystemProperties.get("ro.mediatek.gemini_support"))) {
+			//modify by lzg
+		    //String mIMEI1 = telephonyManager.getDeviceIdGemini(0);
 			//String mIMEI2 = telephonyManager.getDeviceIdGemini(1);
-			String mIMEI1 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_1);
-			String mIMEI2 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_2);
+            getTwoImei();
+            System.out.println("---lzg mIMEI1="+mIMEI1+"---mIMEI2"+mIMEI2);
+			//String mIMEI1 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_1);
+			//String mIMEI2 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_2);
+            //end lzg
 			TextView mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_2);
 			mTextViewIMEI.setText(String.format(
 					getResources().getString(R.string.display_IMEI_1), mIMEI1));
@@ -49,20 +65,20 @@ public class ImeiTest extends ZteActivity {
             if (mIMEI1 == null || mIMEI2 == null) {
                 passBtn.setEnabled(false);
             } else {
-                if (mIMEI1.length() != 15 || mIMEI1.length() != 14
-                        || mIMEI2.length() != 15 || mIMEI2.length() != 14) {
+                if ((mIMEI1.length() != 15 && mIMEI1.length() != 14)
+                        || (mIMEI2.length() != 15 && mIMEI2.length() != 14)) {
                     passBtn.setEnabled(false);
                 }
             }
 
 
         } else {
-            String mIMEI = telephonyManager.getDeviceId();
+                mIMEI = telephonyManager.getDeviceId();
 
             if (mIMEI == null) {
                 passBtn.setEnabled(false);
             } else {
-                if (mIMEI.length() != 15 || mIMEI.length() != 14) {
+                if (mIMEI.length() != 15 && mIMEI.length() != 14) {
                     passBtn.setEnabled(false);
                 }
             }
@@ -79,7 +95,50 @@ public class ImeiTest extends ZteActivity {
         failBtn.setOnClickListener(this);
     }
 
-	@Override
+    //add by lzg
+    public void getTwoImei() {
+        Class<?> clazz = null;
+        Method method = null;//(int slotId)
+        try {
+            clazz = Class.forName("android.os.SystemProperties");
+            method = clazz.getMethod("get", String.class, String.class);
+            String gsm = (String) method.invoke(null, "ril.gsm.imei", "");
+            if (!TextUtils.isEmpty(gsm)) {
+                //the value of gsm like:xxxxxx,xxxxxx
+                String imeiArray[] = gsm.split(",");
+                if (imeiArray != null && imeiArray.length > 0) {
+                    mIMEI1 = imeiArray[0];
+                    if (imeiArray.length > 1) {
+                        mIMEI2 =  imeiArray[1];
+                        System.out.println("---lzg 1111111");
+                    } else {
+                        mIMEI2 = telephonyManager.getDeviceId(1);
+                        System.out.println("---lzg 222222222");
+                    }
+                } else {
+                    mIMEI1 = telephonyManager.getDeviceId(0);
+                    mIMEI2 = telephonyManager.getDeviceId(1);
+                    System.out.println("---lzg 333333333");
+                }
+            } else {
+                System.out.println("---lzg 44444444444");
+                mIMEI1 = telephonyManager.getDeviceId(0);
+                mIMEI2 = telephonyManager.getDeviceId(1);
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+    //end lzg
+
+    @Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
 		case R.id.singlebutton_pass_button:

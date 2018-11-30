@@ -1,8 +1,10 @@
 package com.zte.engineer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class FMTest extends ZteActivity {
     /** Called when the activity is first created. */
@@ -13,6 +15,13 @@ public class FMTest extends ZteActivity {
     	setContentView(R.layout.fm_test);
     	((Button)findViewById(R.id.fm_pass)).setOnClickListener(this);
     	((Button)findViewById(R.id.fm_false)).setOnClickListener(this);
+		try {
+			Intent intent = new Intent();
+			intent.setClassName("com.android.fmradio", "com.android.fmradio.FmMainActivity");
+			startActivity(intent);
+		} catch (Exception e) {
+			Toast.makeText(this, "NO FM Radio", Toast.LENGTH_SHORT).show();
+		}
     }  
 
 	@Override

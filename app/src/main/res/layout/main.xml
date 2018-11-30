@@ -22,15 +22,20 @@
     	android:id="@+id/full_check"
     	android:layout_weight="1"
     	android:layout_width="0dp" 
-    	android:layout_height="wrap_content"
+    	android:layout_height="55dp"
     	android:text="@string/full_check"/>
     <Button
     	android:id="@+id/check_report"
     	android:layout_weight="1"
     	android:layout_width="0dp"
-    	android:layout_height="wrap_content"
+    	android:layout_height="55dp"
     	android:text="@string/check_report"/>
-
+    <Button
+	    android:id="@+id/commit_report"
+	    android:layout_weight="1"
+	    android:layout_width="0dp"
+	    android:layout_height="55dp"
+	    android:text="@string/commit_tv_report"/>
     </LinearLayout>
     <ListView
         android:id="@+id/MainList"

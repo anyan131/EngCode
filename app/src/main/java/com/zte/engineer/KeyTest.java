@@ -21,216 +21,199 @@ import android.provider.Settings;
 
 public class KeyTest extends ZteActivity {
 
-	private final static String TAG = "KeyTest";
-	Button BT_PASS;
-
-	private boolean querty = false; // default is false
-
-	ArrayList<keyAndTextId> keyAndTextIdArray = new ArrayList<keyAndTextId>();
-	keyTestManager manager;
-
-	/*
-	 * private final String Screenoff = "android.intent.action."; private
-	 * BroadcastReceiver screenoff = new BroadcastReceiver() {
-	 * 
-	 * @Override public void onReceive(Context context, Intent intent) { // TODO
-	 * Auto-generated method stub Log.e("test","test code"); int textId =
-	 * getTextId(KeyEvent.KEYCODE_POWER);
-	 * 
-	 * if (0 != textId) { TextView t = (TextView)findViewById(textId);
-	 * t.setVisibility(View.INVISIBLE); }
-	 * 
-	 * manager.remove(KeyEvent.KEYCODE_POWER); if (0 ==
-	 * manager.getRemainnings()) { //mContext.setResult(RESULT_OK); finish(); }
-	 * return; } };
-	 */
+	private static final String TAG="KeyTestActivity";
+	private static String str="";//"|";
+	private static final int maxKeyNum = 3; //This is define for this project,pls changed it according to your's.
+	private static int sCount = 0;
+	private TextView show_key;
+	private Button success;
+	private Button failed;
+	private static final ArrayList<Integer> mTestedKey = new ArrayList<Integer>();
+	private boolean mRecentKeyFlag = false;
+	private boolean mIsHadTestHomeKey = false;
+	private boolean mIsHadTestRecentKey = false;
+	
+	private void buttonEnableCheck(int keyCode, int resId){
+		if(!isTestedKey(keyCode)){
+			System.out.println("---lzg sCount="+sCount);
+			str += getString(resId)+"\n";
+			show_key.setText(str);
+			setKeyTested(keyCode);
+			sCount += 1;
+			if(sCount == maxKeyNum){
+				success.setEnabled(true);
+			}
+		}
+	}
+	
+	private void setKeyTested(int keyCode) {
+		mTestedKey.add(new Integer(keyCode));
+	}
+	
+	private boolean isTestedKey(int keyCode) {
+		if(mTestedKey.contains(new Integer(keyCode))){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	private void initKeyTest(){	
+		sCount = 0;
+		if(mTestedKey.size() > 0){
+			mTestedKey.clear();
+		}
+		show_key = (TextView) findViewById(R.id.show_key);
+		success = (Button) findViewById(R.id.s_key_test_pass);
+		failed = (Button) findViewById(R.id.s_key_test_false);
+		
+		success.setEnabled(false);
+		failed.setEnabled(true);
+		
+		success.setOnClickListener(this);
+		failed.setOnClickListener(this);
+		
+		IntentFilter intent = new IntentFilter();
+		intent.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+		registerReceiver(getKeyReceiver, intent);
+		setTitle(R.string.key_test);
+	}
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		return true;
+	}
+	
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		 
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_MENU:
+			buttonEnableCheck(keyCode, R.string.key_menu);
+			return false;
+		case KeyEvent.KEYCODE_BACK:
+			buttonEnableCheck(keyCode, R.string.key_back);
+			return false;
+		case KeyEvent.KEYCODE_HOME:
+			buttonEnableCheck(keyCode, R.string.key_home);
+			return true;
+		case KeyEvent.KEYCODE_VOLUME_UP:
+			buttonEnableCheck(keyCode, R.string.key_volume_up);
+			return true ;
+		case KeyEvent.KEYCODE_VOLUME_DOWN:
+			buttonEnableCheck(keyCode, R.string.key_volume_down);
+			return true ;
+		case KeyEvent.KEYCODE_POWER:
+			buttonEnableCheck(keyCode, R.string.key_power);
+			return true ;
+	   default:
+	   		return false;
+		}
+		
+	}
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD);
-		//getWindow()
-		//		.addFlags(WindowManager.LayoutParams.FLAG_HOMEKEY_DISPATCHED);
-		//Settings.System.putInt(getContentResolver(), "HOME_KEY_TEST", 0);
-		// setContentView(R.layout.key_test);
-		init(querty);
-
-		// PhoneWindowManager.setKeyTestState(true);
+		//this.getWindow().setFlags(FLAG_HOMEKEY_DISPATCHED, FLAG_HOMEKEY_DISPATCHED);
+	  //  this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_SCRIM);
+		setContentView(R.layout.key_test);
+		initKeyTest(); 
 	}
-
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		// registerReceiver(screenoff, new IntentFilter(Screenoff));
-		Settings.System.putInt(getContentResolver(), "HOME_KEY_TEST", 1);
-		Settings.System.putInt(getContentResolver(), "MENU_KEY_TEST", 1);
-		super.onResume();
-
-		// PhoneWindowManager.setKeyTestState(true);
-	}
-
+	
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
-		// unregisterReceiver(screenoff);
-		Settings.System.putInt(getContentResolver(), "HOME_KEY_TEST", 0);
-		Settings.System.putInt(getContentResolver(), "MENU_KEY_TEST", 0);
-		super.onPause();
-
-		// PhoneWindowManager.setKeyTestState(false);
+		//e.ro add begin
+		/*
+		 *do not go home
+//		 */
+//		Intent tmpIntent = new Intent();
+//		tmpIntent.setAction("donotgohome");
+//		tmpIntent.putExtra("home", false);
+//	    sendBroadcast(tmpIntent);
+		//e.ro add end		
+	    super.onPause();
 	}
+	
+	@Override
+	protected void onResume() {
+		//e.ro add begin
+		/*
+		 *do not go home
+		 */
+//		Intent tmpIntent = new Intent();
+//		tmpIntent.setAction("donotgohome");
+//		tmpIntent.putExtra("home", true);
+//	    sendBroadcast(tmpIntent);
+		//e.ro add end
+		super.onResume();
+	}
+	
+	//////////////////////
+	static final String SYSTEM_DIALOG_REASON_KEY ="reason"; 
+	static final String SYSTEM_DIALOG_REASON_GLOBAL_ACTIONS ="globalactions";
+	
+	static final String SYSTEM_DIALOG_REASON_RECENT_APPS ="recentapps"; 
+	
+	static final String SYSTEM_DIALOG_REASON_HOME_KEY ="homekey"; 
+	////////////////
+	
+	@Override
 
+    public void onAttachedToWindow() {
+      //this.getWindow().addFlags(WindowManager.LayoutParams.TYPE_KEYGUARD);
+  	  // this.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ERROR);
+  	  super.onAttachedToWindow();//e.ro modify 
+    }
+	
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		Settings.System.putInt(getContentResolver(),"HOME_KEY_TEST", 0);
-		Settings.System.putInt(getContentResolver(), "MENU_KEY_TEST", 0);		
-		super.onDestroy();		
-}
-	public boolean dispatchKeyEvent(KeyEvent event) {
-		Util.log(TAG, "keycode:" + event.getKeyCode());
-		//Settings.System.putInt(getContentResolver(), "HOME_KEY_TEST", 0);
-		performanceKeyEvent(event);
-		return true;
-		// return super.dispatchKeyEvent(event);
+		super.onDestroy();
+		str="|";
+		unregisterReceiver(getKeyReceiver);
+		finish();
 	}
 
-	@Override
-	public void onAttachedToWindow() {
-		super.onAttachedToWindow();
-	}
-
-	private void init(boolean querty) {
-		if (querty) {
-			// TODO: if it's querty phone, complete here
-			setContentView(R.layout.key_test);
-			((Button) findViewById(R.id.s_key_test_pass))
-					.setOnClickListener(this);
-			((Button) findViewById(R.id.s_key_test_false))
-					.setOnClickListener(this);
-		} else {
-			setContentView(R.layout.key_test);
-			BT_PASS = ((Button) findViewById(R.id.s_key_test_pass));
-			BT_PASS.setOnClickListener(this);
-			BT_PASS.setEnabled(false);
-			((Button) findViewById(R.id.s_key_test_false))
-					.setOnClickListener(this);
+	BroadcastReceiver getKeyReceiver = new BroadcastReceiver() {
+		
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String action = intent.getAction();
+			System.out.println("---lzg action="+action);
+			if(action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)) {  
+                String reason = intent.getStringExtra(SYSTEM_DIALOG_REASON_KEY);
+                System.out.println("---lzg reason="+reason);
+                if(reason != null) {
+                    if(reason.equals(SYSTEM_DIALOG_REASON_HOME_KEY)) { 
+                    	if(mRecentKeyFlag){
+                    		mRecentKeyFlag = false;
+                    	}else{
+                    		if(!mIsHadTestHomeKey){
+                    			str+="Home|" + "\n";
+                    			mIsHadTestHomeKey = true;
+                    			sCount += 1;
+                    			if(sCount == maxKeyNum){
+                    				success.setEnabled(true);
+                    			}
+                    		}
+                    	}
+                    }else if(reason.equals(SYSTEM_DIALOG_REASON_RECENT_APPS)){
+                    	if(!mIsHadTestRecentKey){
+                    		str+="Recent|" + "\n";
+                        	mRecentKeyFlag = true;
+                        	mIsHadTestRecentKey = true;
+                        	sCount += 1;
+                			if(sCount == maxKeyNum){
+                				success.setEnabled(true);
+                			}
+                    	}
+                    }
+                }
+	        }
+			show_key.setText(str);
 		}
-
-		// getWindow().addFlags(0x01000000);
-
-		initKeyAndText(querty);
-		manager = new keyTestManager(keyAndTextIdArray);
-
-		// PhoneWindowManager wm = get
-	}
-
-	private void initKeyAndText(boolean querty) {
-		if (querty) {
-			initKeyAndTextIdArrayQwerty();
-		} else {
-			initKeyAndTextIdArray();
-		}
-	}
-
-	private void initKeyAndTextIdArray() {
-		keyAndTextIdArray.clear();
-		// addItem(KeyEvent.KEYCODE_POWER, R.id.s_key_power);
-		addItem(KeyEvent.KEYCODE_VOLUME_UP, R.id.s_key_volume_up);
-		addItem(KeyEvent.KEYCODE_VOLUME_DOWN, R.id.s_key_volume_down);
-		addItem(KeyEvent.KEYCODE_1, R.id.s_key_1);
-		addItem(KeyEvent.KEYCODE_2, R.id.s_key_2);
-		addItem(KeyEvent.KEYCODE_3, R.id.s_key_3);
-		addItem(KeyEvent.KEYCODE_4, R.id.s_key_4);
-		addItem(KeyEvent.KEYCODE_5, R.id.s_key_5);
-		addItem(KeyEvent.KEYCODE_6, R.id.s_key_6);
-		addItem(KeyEvent.KEYCODE_7, R.id.s_key_7);
-		addItem(KeyEvent.KEYCODE_8, R.id.s_key_8);
-	}
-
-	private void initKeyAndTextIdArrayQwerty() // querty
-	{
-		// TODO:
-	}
-
-	private void addItem(int keyCode, int textId) {
-		keyAndTextId k = new keyAndTextId(keyCode, textId);
-		keyAndTextIdArray.add(k);
-	}
-
-	private int getTextId(int keyCode) {
-		int size = keyAndTextIdArray.size();
-
-		if (size == 0) {
-			return 0;
-		}
-
-		for (int i = 0; i < size; i++) {
-			if (keyAndTextIdArray.get(i).keyCode == keyCode) {
-				Util.log(TAG, "find keyCode in Array");
-				return keyAndTextIdArray.get(i).textId;
-			}
-		}
-
-		return 0;
-	}
-
-	private void performanceKeyEvent(KeyEvent event) {
-		int textId = getTextId(event.getKeyCode());
-
-		if (0 != textId) {
-			TextView t = (TextView) findViewById(textId);
-			t.setVisibility(View.INVISIBLE);
-		}
-
-		manager.remove(event.getKeyCode());
-		if (0 == manager.getRemainnings()) {
-			BT_PASS.setEnabled(true);
-			finishSelf(RESULT_PASS);
-		}
-	}
-
-	private class keyAndTextId {
-		public int keyCode;
-		public int textId;
-
-		public keyAndTextId(int keyCode, int textId) {
-			this.keyCode = keyCode;
-			this.textId = textId;
-		}
-	}
-
-	private class keyTestManager {
-		private ArrayList<keyAndTextId> managerArray;
-
-		public keyTestManager(ArrayList<keyAndTextId> a) {
-			managerArray = a;
-		}
-
-		public int getRemainnings() {
-			return managerArray.size();
-		}
-
-		public void remove(int keyCode) {
-			int size = getRemainnings();
-
-			if (size <= 0) {
-				Util.log(TAG, "keyTestManager remove->size error");
-				return;
-			}
-
-			for (int i = 0; i < size; i++) {
-				if (managerArray.get(i).keyCode == keyCode) {
-					managerArray.remove(i);
-					Util.log(TAG, "deleted suceed.remain:" + getRemainnings());
-					return;
-				}
-			}
-
-			Util.log(TAG, "remain:" + getRemainnings());
-		}
-
-	}
-
+	};
+	
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {

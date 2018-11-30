@@ -29,21 +29,21 @@ public class VibratorTest extends ZteActivity {
 	private static final int TIMER_EVENT_TICK = 1;
 	// Notificatin ID
 	private static final int NOTIFY_LED = 0x1010;
-
+	
 	/*
 	 * The method id for restart vibrate & LED
 	 */
 	private void changeVibratorLedStatus() {
 		// Stop the predecessor LED test
-		mLed.cancel(NOTIFY_LED);
-		// change LED color
-		if (Color.RED == mNotification.ledARGB) {
-			mNotification.ledARGB = Color.GREEN;
-		} else if (Color.GREEN == mNotification.ledARGB) {
-			mNotification.ledARGB = Color.RED;
-		}
+//		mLed.cancel(NOTIFY_LED);
+//		// change LED color
+//		if (Color.RED == mNotification.ledARGB) {
+//			mNotification.ledARGB = Color.GREEN;
+//		} else if (Color.GREEN == mNotification.ledARGB) {
+//			mNotification.ledARGB = Color.RED;
+//		}
 		// Set new LED config
-		mLed.notify(NOTIFY_LED, mNotification);
+		//mLed.notify(NOTIFY_LED, mNotification);
 
 		// start new vibrator
 		mVibrator.vibrate(this.mVibFreq, -1);
@@ -80,12 +80,12 @@ public class VibratorTest extends ZteActivity {
 
 		mVibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
-		mLed = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-		mNotification = new Notification();
+		//mLed = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+		//mNotification = new Notification();
 
-		mNotification.flags |= Notification.FLAG_SHOW_LIGHTS;
+		//mNotification.flags |= Notification.FLAG_SHOW_LIGHTS;
 
-		mNotification.ledARGB = Color.RED;
+		//mNotification.ledARGB = Color.RED;
 	}
 
 	@Override
@@ -94,14 +94,14 @@ public class VibratorTest extends ZteActivity {
 		super.onPause();
 		mHandler.removeMessages(TIMER_EVENT_TICK);
 		mVibrator.cancel();
-		mLed.cancel(NOTIFY_LED);
+		//mLed.cancel(NOTIFY_LED);
 	}
 
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		mLed.notify(NOTIFY_LED, mNotification);
+		//mLed.notify(NOTIFY_LED, mNotification);
 		mVibrator.vibrate(mVibFreq, -1);
 
 		mHandler.sendEmptyMessageDelayed(TIMER_EVENT_TICK, 1000);
@@ -111,7 +111,7 @@ public class VibratorTest extends ZteActivity {
 	public void finishSelf(int result) {
 		mHandler.removeMessages(TIMER_EVENT_TICK);
 		mVibrator.cancel();
-		mLed.cancel(NOTIFY_LED);
+		//mLed.cancel(NOTIFY_LED);
 		super.finishSelf(result);
 	}
 
