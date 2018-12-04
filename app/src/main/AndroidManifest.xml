@@ -361,6 +361,10 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+            <action android:name="com.zte.engineer.action.STRESS_TEST" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <!-- end lzg -->
         <service android:name="com.mediatek.fmradio.FmRadioService" />

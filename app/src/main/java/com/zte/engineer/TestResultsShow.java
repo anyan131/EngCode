@@ -3,6 +3,7 @@ package com.zte.engineer;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.TextView;
 import android.os.Bundle;
 import android.content.res.Resources;
@@ -16,7 +17,7 @@ public class TestResultsShow extends Activity implements View.OnClickListener{
 
     TextView mLastTestResult;
 	Button clearButton;
-	
+	Button mStressBt;
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
 	{
@@ -26,6 +27,8 @@ public class TestResultsShow extends Activity implements View.OnClickListener{
 		mLastTestResult = (TextView)findViewById(R.id.all_results_show);
 		clearButton = (Button)findViewById(R.id.clear_result);
 		clearButton.setOnClickListener(this);
+		mStressBt = (Button)findViewById(R.id.stress_id);
+		mStressBt.setOnClickListener(this);
 	}
 	
 	 @Override
@@ -36,10 +39,17 @@ public class TestResultsShow extends Activity implements View.OnClickListener{
 	
 	@Override
 	public void onClick(View v){
-	    mLastTestResult.setText(getTextById(R.string.no_action));
-	    Util.saveTestResult(this, "result", "2");
-		setResult(EngineerCode.RESULT_CLEAR_ALL);
-		finish();
+		if(R.id.clear_result == v.getId()){
+			mLastTestResult.setText(getTextById(R.string.no_action));
+			Util.saveTestResult(this, "result", "2");
+			setResult(EngineerCode.RESULT_CLEAR_ALL);
+			finish();
+		}else if(R.id.stress_id == v.getId()){
+			Intent it = new Intent();
+			it.setClass(TestResultsShow.this, StressTestActivity.class);
+			startActivity(it);
+		}
+
 	};
 	
 	private String getText(){

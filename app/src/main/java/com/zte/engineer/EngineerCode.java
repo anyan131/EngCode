@@ -24,8 +24,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mediatek.fmradio.FmAlexTaoActivity;
+
+import com.newmobi.iic.TestSign;
 import com.squareup.leakcanary.LeakCanary;
+import com.zte.engineer.CommitReportUtils.CommitUtils;
 import com.zte.engineer.CommitReportUtils.Constants;
 import com.zte.engineer.CommitReportUtils.StringUtils;
 
@@ -56,8 +58,7 @@ public class EngineerCode extends Activity {
 
     private static final String TAG = "EngineerCode";
     final Intent intentToTestReportActivity = new Intent();
-
-
+    private Context mComtext;
     public static final int[] stringIDs =
             {
                     R.string.software_version,
@@ -87,7 +88,6 @@ public class EngineerCode extends Activity {
                     R.string.board_code,
                     //alextao add for led test.
                     R.string.led_test,
-
 
                     //R.string.audio_receiver,
                     //R.string.audio_receiver_new,
@@ -126,7 +126,7 @@ public class EngineerCode extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mComtext = this;
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.
@@ -794,13 +794,22 @@ public class EngineerCode extends Activity {
         if (isFirst) {
             Resources re = getResources();
             Toast.makeText(EngineerCode.this, "First", Toast.LENGTH_SHORT).show();
-            for (int i = 0; i < testCount; i++) {
-                editor.putString(re.getString(stringIDs[i]), "NOT_TEST");
-                //add by lzg
-                editor.putString(StringUtils.getTestItemName(i),"*");
-                //end lzg
-                editor.commit();
+            //modify by lzg
+            CommitUtils cu = new CommitUtils(mComtext);
+            boolean isReadSuccess = cu.readStorageToReport();
+            if(!isReadSuccess){
+                for (int i = 0; i < testCount; i++) {
+                    System.out.println("----lzg isFirst");
+                    editor.putString(re.getString(stringIDs[i]), "NOT_TEST");
+                    //add by lzg
+                    editor.putString(StringUtils.getTestItemName(i),"*");
+                    TestSign.JNISignflagAllClear();
+                    TestSign.JNISignInit();
+                    //end lzg
+                    editor.commit();
+                }
             }
+            //end lzg
             edt.putBoolean("isFirst", false);
             edt.commit();//TODO: maybe we should use apply()?? for the thread safe?
         }

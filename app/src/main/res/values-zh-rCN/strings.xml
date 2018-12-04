@@ -114,5 +114,6 @@
     <string name="opening_mobile_network">正打开移动网络,请稍后再点击提交</string>
     <string name="open_mobile_network_success">网络已打开</string>
     <string name="open_mobile_network_fail">网络已关闭</string>
+    <string name="stress_test">压力测试</string>
     <!--eng lzg-->
 </resources>

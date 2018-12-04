@@ -7,21 +7,21 @@
     <string name="app_name">EngineerCode</string>
     <string name="completed">Completed:</string>
     <string name="test_item">Test Item</string>
-    <string name="key_test">Key Test</string>
-    <string name="audio_loop">AudioLoop</string>
-    <string name="battery_info">Battery Info</string>
-    <string name="lcd">LCD Test</string>
-    <string name="backlight">Backlight Test</string>
-    <string name="vibrator">Vibrator Test</string>
-    <string name="ringer">Ringer Test</string>
+    <string name="key_test">键盘检测</string>
+    <string name="audio_loop">音频回路</string>
+    <string name="battery_info">电池信息</string>
+    <string name="lcd">显示屏测试</string>
+    <string name="backlight">背光测试</string>
+    <string name="vibrator">震动测试</string>
+    <string name="ringer">铃音测试</string>
     <string name="lcd_off">LCD Off</string>
-    <string name="sd_info">SD Info</string>
+    <string name="sd_info">SD卡信息</string>
     <string name="sd2_info">SD2 Info</string>
     <string name="otg_info">OTG Info</string>
     <string name="memory">Memory</string>
-    <string name="bt_address">BT Address</string>
+    <string name="bt_address">蓝牙地址</string>
     <string name="bt_detect">BT Detect</string>
-    <string name="wifi_address">Wifi Mac Address</string>
+    <string name="wifi_address">Wifi地址</string>
     <string name="wifi_detect">Wifi Detect</string>
     <string name="radio_info">Radio Info</string>
     <string name="touchscreen">TouchScreen Test</string>
@@ -29,14 +29,14 @@
     <string name="fm_test">FM Test</string>
     <string name="camera">Camera Test</string>
     <!-- FN0001234:Added by shihaijun start-->
-    <string name="camera_back">Back Camera Test</string>
-    <string name="camera_front">Front Camera Test</string>
+    <string name="camera_back">后置摄像头</string>
+    <string name="camera_front">前置摄像头</string>
     <!-- FN0001234:Added by shihaijun end-->
     <string name="imei">IMEI</string>
     <string name="imsi">IMSI</string>
     <string name="sensor">Sensor</string>
     <string name="gps">GPS</string>
-    <string name="touchpanel">Touch Panel</string>
+    <string name="touchpanel">触摸屏</string>
     <string name="unknown">Unknown</string>
     <string name="on">on</string>
     <string name="off">off</string>
@@ -131,7 +131,7 @@
     <string name="phone_test">Phone Test</string>
     <string name="recover_settings">Recover Settings</string>
     <string name="battery_information">Battery Information</string>
-    <string name="software_version">Software Version</string>
+    <string name="software_version">软件版本</string>
     <string name="hardware_version">Hardware_Version</string>
     <string name="PSN_code">IMEI</string>
     <string name="Board_serial">Board_serial</string>
@@ -156,7 +156,7 @@
     <string name="falsed">false</string>
     <string name="pass">pass</string>
     <string name="insert_earphone_warning">Please insert earphone</string>
-    <string name="earphone_audio_loop">EarPhone Audio Loop</string>
+    <string name="earphone_audio_loop">耳机音频回路测试</string>
 
     <drawable name="bkcolor">#ffffff</drawable>
     <string name="non_front_camera">No Front Camera</string>
@@ -194,7 +194,7 @@
     <string name="totel">总计：</string>
     <string name="totel_pass">成功：</string>
     <string name="totel_fail">失败:</string>
-    <string name="audio_receiver_new">Receiver</string>
+    <string name="audio_receiver_new">听筒测试</string>
     <string name="version_number">Version Number</string>
     <string name="calibration_string">Calibration</string>
     <string name="flash">Flash light Test</string>
@@ -356,6 +356,7 @@
     <string name="opening_mobile_network">Opening mobile network, please click Submit later</string>
     <string name="open_mobile_network_success">The network is open</string>
     <string name="open_mobile_network_fail">The network is closed</string>
+    <string name="stress_test">Stress test</string>
     <!--eng lzg-->
 
 </resources>

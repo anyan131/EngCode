@@ -98,7 +98,7 @@ public class HttpClients {
     	  URL url = new URL(path);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setConnectTimeout(6*1000);
-//        connection.setReadTimeout(6*1000);
+        connection.setReadTimeout(6*1000);
 //        connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
         //        client.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, conTimeout);  
         connection.setRequestMethod("POST");

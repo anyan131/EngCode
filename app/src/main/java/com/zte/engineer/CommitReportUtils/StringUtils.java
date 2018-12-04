@@ -37,6 +37,7 @@ public abstract class StringUtils {
 		return !isNotBlank(text);
 	}
 
+	/*stringIDs测试项的添加删除须与StringUtils.getTestItemName同步修改*/
 	public static String getTestItemName(int requestCode){
 		String testItemName = "";
 		if(requestCode==0){
