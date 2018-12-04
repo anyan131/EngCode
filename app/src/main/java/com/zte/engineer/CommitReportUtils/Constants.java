@@ -30,6 +30,11 @@ public class Constants {
     public static final String I2C = "i2c";
     public static final String LED = "led";
     public static final String BOARD_CODE = "rf";
+    public static final String G_SENSOR = "gs";
+    public static final String GYROSCOPE_SENSOR = "gys";
+    public static final String M_SENSOR = "ms";
+    public static final String L_SENSOR = "ls";
+    public static final String P_SENSOR = "ps";
     public static final String COMMIT_FAG = "commitfag";
     public static final String COMMIT_OK = "OK";
 }

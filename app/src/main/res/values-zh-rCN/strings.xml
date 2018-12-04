@@ -115,5 +115,10 @@
     <string name="open_mobile_network_success">网络已打开</string>
     <string name="open_mobile_network_fail">网络已关闭</string>
     <string name="stress_test">压力测试</string>
+    <string name="g_sensor">重力感应</string>
+    <string name="gyroscope_sensor">陀螺仪</string>
+    <string name="m_sensor">磁力感应</string>
+    <string name="l_sensor">光感应</string>
+    <string name="p_sensor">距离感应</string>
     <!--eng lzg-->
 </resources>

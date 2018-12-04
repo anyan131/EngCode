@@ -90,6 +90,16 @@ public abstract class StringUtils {
 			testItemName = Constants.BOARD_CODE;
 		}else if(requestCode==24){
 			testItemName = Constants.LED;
+		}else if(requestCode==25){
+			testItemName = Constants.G_SENSOR;
+		}else if(requestCode==26){
+			testItemName = Constants.GYROSCOPE_SENSOR;
+		}else if(requestCode==27){
+			testItemName = Constants.M_SENSOR;
+		}else if(requestCode==28){
+			testItemName = Constants.L_SENSOR;
+		}else if(requestCode==29){
+			testItemName = Constants.P_SENSOR;
 		}
 		return testItemName;
 	}
