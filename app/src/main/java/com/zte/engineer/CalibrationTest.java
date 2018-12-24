@@ -1,11 +1,8 @@
 package com.zte.engineer;
 
-import android.content.Context;
+
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
-import com.android.internal.telephony.PhoneProxy;
-import com.android.internal.telephony.Phone;
-//import com.android.internal.telephony.gemini.MTKPhoneFactory;
+
 
 import android.view.View;
 import android.widget.Button;

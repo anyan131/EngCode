@@ -18,8 +18,8 @@ LOCAL_SHARED_LIBRARIES := \
 	  libmedia \
 	  liblog \
 	  libhwm \
-	  libnvram \
-	  libfile_op	  
+	  libnvram 
+	  
 LOCAL_LDFLAGS :=  -llog -lEGL	
 LOCAL_MODULE := libcom_zte_engineer_jni
 LOCAL_PRELINK_MODULE := false

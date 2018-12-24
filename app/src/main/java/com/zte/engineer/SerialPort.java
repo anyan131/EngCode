@@ -126,12 +126,12 @@ public class SerialPort extends Activity implements View.OnClickListener {
             case R.id.start_btn:
                 //serial port1
                 if (UartTest(1, 921600, 8, 0, 1) == 1) {
-                    testResult1.setText(getResources().getString(R.string.pass));
+                    testResult1.setText(R.string.pass);
                     flag1 = 1;
                     testResult1.setTextColor(Color.GREEN);
                 } else {
                     flag1 = 0;
-                    testResult1.setText(getResources().getString(R.string.fail));
+                    testResult1.setText(R.string.fail);
                     testResult1.setTextColor(Color.RED);
                 }
                 myHandler.sendEmptyMessage(0x0A);
@@ -139,12 +139,12 @@ public class SerialPort extends Activity implements View.OnClickListener {
             case R.id.start2_btn:
                 //serial port2
                 if (UartTest(2, 921600, 8, 0, 1) == 1) {
-                    testResult2.setText(getResources().getString(R.string.pass));
+                    testResult2.setText(R.string.pass);
                     flag2 = 1;
                     testResult2.setTextColor(Color.GREEN);
                 } else {
                     flag2 = 0;
-                    testResult2.setText(getResources().getString(R.string.fail));
+                    testResult2.setText(R.string.fail);
                     testResult2.setTextColor(Color.RED);
                 }
                 myHandler.sendEmptyMessage(0x0A);
@@ -154,12 +154,12 @@ public class SerialPort extends Activity implements View.OnClickListener {
 
                 //serial port3
                 if (UartTest(3, 921600, 8, 0, 1) == 1) {
-                    testResult3.setText(getResources().getString(R.string.pass));
+                    testResult3.setText(R.string.pass);
                     flag3 = 1;
                     testResult3.setTextColor(Color.GREEN);
                 } else {
                     flag3 = 0;
-                    testResult3.setText(getResources().getString(R.string.fail));
+                    testResult3.setText(R.string.fail);
                     testResult3.setTextColor(Color.RED);
                 }
                 myHandler.sendEmptyMessage(0x0A);

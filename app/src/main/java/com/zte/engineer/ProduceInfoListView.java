@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.newmobi.iic.TestSign;
+
 public class ProduceInfoListView extends Activity {
 
     private static final String TAG = "ProduceInfoListView";
@@ -51,6 +53,7 @@ public class ProduceInfoListView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.produce_info_view);
         initStringList();
+
 //        mBluetooth = BluetoothAdapter.getDefaultAdapter();
 //        if (!mBluetooth.isEnabled()) {
 //            mBluetooth.enable();

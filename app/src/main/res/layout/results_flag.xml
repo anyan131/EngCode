@@ -16,7 +16,7 @@
 				
 				<Button
 				android:id="@+id/clear_result"
-				android:layout_width="200dp"
+				android:layout_width="200dp" 
 				android:layout_height="wrap_content"
 				android:text="@string/clear_result"
 				android:layout_centerInParent="true"/>

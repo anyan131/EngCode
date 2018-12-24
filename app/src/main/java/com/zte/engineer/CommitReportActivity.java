@@ -71,10 +71,13 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
         mCommitBt = (Button) findViewById(R.id.commit_bt);
         if (mSp.getString(Constants.COMMIT_FAG, "2").equals("1")) {
             mCommitBt.setText(R.string.commit_success);
+            mCommitBt.setBackgroundColor(Color.GREEN);
         } else if(mSp.getString(Constants.COMMIT_FAG, "2").equals("0")){
             mCommitBt.setText(R.string.commit_fail);
+            mCommitBt.setBackgroundColor(Color.RED);
         }else{
             mCommitBt.setText(R.string.no_commit_report);
+            mCommitBt.setBackgroundColor(Color.RED);
         }
         mCommitBt.setOnClickListener(this);
         initProgressDialog();
@@ -96,7 +99,7 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
                 commitReportAction();
             }else{
                 Toast.makeText(mContext, R.string.opening_mobile_network, Toast.LENGTH_LONG).show();
-                StringUtils.openMobileNetwork(mContext);
+                //StringUtils.openMobileNetwork(mContext);
             }
 
         }
@@ -138,10 +141,12 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
                     if (commitReportEntity.isSuccess()) {
                         mEditer.putString(Constants.COMMIT_FAG, "1").commit();
                         mCommitBt.setText(R.string.commit_success);
+                        mCommitBt.setBackgroundColor(Color.GREEN);
                         System.out.println("---lzg commit success");
                     } else {
                         mEditer.putString(Constants.COMMIT_FAG, "0").commit();
                         mCommitBt.setText(R.string.commit_fail);
+                        mCommitBt.setBackgroundColor(Color.RED);
                         System.out.println("---lzg commit fail");
                     }
                     mCommitUtils.writeReportToDeviceStorege();
@@ -170,7 +175,8 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
                     break;
                 }
                 case COMMIT_EXCEPTION:{
-                    mCommitBt.setText(R.string.commit_success);
+                    mCommitBt.setText(R.string.commit_fail);
+                    mCommitBt.setBackgroundColor(Color.RED);
                     if(mProgressDialog.isShowing()){
                         mProgressDialog.dismiss();
                     }

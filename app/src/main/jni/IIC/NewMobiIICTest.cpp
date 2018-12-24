@@ -27,10 +27,10 @@ const char *className = "com/newmobi/iic/IICHelper";
 
 jint openIIC(JNIEnv *env,jobject obj)
 {
-    i2c2_fd =  open(i2c2_dev_name, O_RDWR | O_NOCTTY | O_NONBLOCK);
-    ioctl(i2c2_fd,Parameter_AddrSet,0x18 );
-    if(i2c2_fd < 0)
-        return i2c2_fd;
+  //  i2c2_fd =  open(i2c2_dev_name, O_RDWR | O_NOCTTY | O_NONBLOCK);
+ ///   ioctl(i2c2_fd,Parameter_AddrSet,0x18 );
+  //  if(i2c2_fd < 0)
+  //      return i2c2_fd;
 
     i2c3_fd =  open(i2c3_dev_name, O_RDWR | O_NOCTTY | O_NONBLOCK);
     ioctl(i2c3_fd,Parameter_AddrSet,0x18 );
@@ -49,9 +49,9 @@ jint closeIIC(JNIEnv *env,jobject obj)
 {
     int ret ;
 
-    ret = close(i2c2_fd);
-    if(ret < 0)
-        return ret;
+   // ret = close(i2c2_fd);
+   // if(ret < 0)
+   //     return ret;
     ret = close(i2c3_fd);
     if(ret < 0)
         return ret;
@@ -63,9 +63,9 @@ jint closeIIC(JNIEnv *env,jobject obj)
 jint writeIIC(JNIEnv *env,jobject obj,jint IICNumber , jint reg_buf ,jint len)
 {
     int ret = -1;
-    if(IICNumber == 2)
-        ret = write(i2c2_fd,&reg_buf,len);
-    else if(IICNumber == 3)
+   // if(IICNumber == 2)
+   //     ret = write(i2c2_fd,&reg_buf,len);
+    if(IICNumber == 3)
         ret = write(i2c3_fd,&reg_buf,len);
     else
     {
@@ -79,9 +79,9 @@ jint  readIIC(JNIEnv *env,jobject obj,jint IICNumber ,jint len)
 {
     int ret = -1;
     unsigned char read_data ;
-    if(IICNumber == 2)
-        ret = read(i2c2_fd,&read_data,1);
-    else if (IICNumber == 3)
+   // if(IICNumber == 2)
+    //    ret = read(i2c2_fd,&read_data,1);
+   if (IICNumber == 3)
         ret = read(i2c3_fd,&read_data,1);
     else
         LOGD("readIIC IICNumber is error \n");

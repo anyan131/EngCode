@@ -4,26 +4,13 @@
 #
 
 LOCAL_PATH := $(call my-dir)
-
 include $(CLEAR_VARS)
-
+LOCAL_SRC_FILES := NewMobiIICTest.cpp
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_C_INCLUDES := $(JNI_H_INCLUDES)
 LOCAL_MODULE_TAGS := optional
-
-LOCAL_SRC_FILES := AlexTaoSerialPort.cpp
-LOCAL_SHARED_LIBRARIES := \
-    libandroid_runtime \
-    libnativehelper \
-    libcutils \
-    libutils \
-    liblog \
-    libhardware
-
-
-LOCAL_MODULE    := libSerialPort
-
-
+LOCAL_MODULE := libiichelper
 include $(BUILD_SHARED_LIBRARY)
-
 
 
 

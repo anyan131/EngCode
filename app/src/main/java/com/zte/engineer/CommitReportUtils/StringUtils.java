@@ -8,6 +8,8 @@ import android.telephony.TelephonyManager;
 
 import com.android.internal.telephony.PhoneConstants;
 import com.mediatek.telephony.TelephonyManagerEx;
+import com.zte.engineer.EngineerCode;
+import com.zte.engineer.R;
 
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
@@ -40,7 +42,7 @@ public abstract class StringUtils {
 	/*stringIDs测试项的添加删除须与StringUtils.getTestItemName同步修改*/
 	public static String getTestItemName(int requestCode){
 		String testItemName = "";
-		if(requestCode==0){
+		/*if(requestCode==0){
 			testItemName = Constants.VERSION;
 		}else if(requestCode==1){
 			testItemName = Constants.BATTERY;
@@ -100,7 +102,68 @@ public abstract class StringUtils {
 			testItemName = Constants.L_SENSOR;
 		}else if(requestCode==29){
 			testItemName = Constants.P_SENSOR;
-		}
+		}*/
+		if(EngineerCode.stringIDs[requestCode] == R.string.software_version){
+            testItemName = Constants.VERSION;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.battery_info){
+            testItemName = Constants.BATTERY;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.gpio_test){
+            testItemName = Constants.GPIO;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.lcd){
+            testItemName = Constants.LCM;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.backlight){
+            testItemName = Constants.BACK_LIGHT;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.touchpanel){
+            testItemName = Constants.TOUCH_PANEL;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.camera_front){
+            testItemName = Constants.FRONT_CAMERA;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.camera_back){
+            testItemName = Constants.BACK_CAMERA;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.key_test){
+            testItemName = Constants.KEYS;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.vibrator){
+            testItemName = Constants.VIBRATOR;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.ringer){
+            testItemName = Constants.RING;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.audio_loop){
+            testItemName = Constants.AUDIO_LOOP;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.earphone_audio_loop){
+            testItemName = Constants.EARPHONE_AUDIO_LOOP;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.audio_receiver_new){
+            testItemName = Constants.AUDIO_RECEIVER;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.SIM){
+            testItemName = Constants.SIM;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.imei){
+            testItemName = Constants.IMEI;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.sd_info){
+            testItemName = Constants.SDCARD;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.bt_address){
+            testItemName = Constants.BLUTOOTH;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.wifi_address){
+            testItemName = Constants.WIFI;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.NM_fm_test){
+            testItemName = Constants.FM;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.serial_port){
+            testItemName = Constants.UART;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.NM_gps_test){
+            testItemName = Constants.GPS;
+        }else if(EngineerCode.stringIDs[requestCode] ==  R.string.NM_i2c_test){
+            testItemName = Constants.I2C;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.board_code){
+            testItemName = Constants.BOARD_CODE;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.led_test){
+            testItemName = Constants.LED;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.g_sensor){
+            testItemName = Constants.G_SENSOR;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.gyroscope_sensor){
+            testItemName = Constants.GYROSCOPE_SENSOR;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.m_sensor){
+            testItemName = Constants.M_SENSOR;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.l_sensor){
+            testItemName = Constants.L_SENSOR;
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.p_sensor){
+            testItemName = Constants.P_SENSOR;
+        }
 		return testItemName;
 	}
 

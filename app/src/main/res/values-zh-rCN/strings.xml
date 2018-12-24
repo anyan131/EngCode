@@ -78,7 +78,8 @@
     <string name="flag">标志位</string>
     <string name="test_flag_title">标志位</string>
     <string name="falsed">失败</string>
-    <string name="pass">通过</string>
+    <string name="pass">成功</string>
+    <string name="fail">失败</string>
     <string name="insert_earphone_warning">请插入耳机</string>
     <string name="earphone_audio_loop">耳机音频回路测试</string>
     <string name="camera_back">后置摄像头</string>
@@ -92,13 +93,12 @@
     <string name="board_code">射频校准标志</string>
 
     <string name="led_test">LED三色灯</string>
-
+	<string name="FM1043">FM104.3</string>
     <!--Add by alextao1207 for check the test reports-->
     <string name="check_report">查看报告</string>
     <string name="test_report">测试报告</string>
     <string name="no_back_camera">无后摄像头</string>
 
-    <string name="fail">失败</string>
     <string name="wifi_info">WIFI信息</string>
     <!--add by lzg -->
     <string name="commit_tv_report">提交报告</string>
@@ -111,7 +111,7 @@
     <string name="commit_success">提交报告成功</string>
     <string name="commit_fail">提交报告失败</string>
     <string name="commit_report_tip">提交中，请稍等……</string>
-    <string name="opening_mobile_network">正打开移动网络,请稍后再点击提交</string>
+    <string name="opening_mobile_network">请打开网络,以便提交</string>
     <string name="open_mobile_network_success">网络已打开</string>
     <string name="open_mobile_network_fail">网络已关闭</string>
     <string name="stress_test">压力测试</string>

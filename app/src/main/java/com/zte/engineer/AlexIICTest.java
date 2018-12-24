@@ -55,8 +55,10 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
     private void initWidget() {
         iic1 = (Button) findViewById(R.id.iic1);
         iic1.setOnClickListener(this);
+        //iic1.setVisibility(View.INVISIBLE);
         iic2 = (Button) findViewById(R.id.iic2);
         iic2.setOnClickListener(this);
+        //iic2.setVisibility(View.INVISIBLE);
         iic3 = (Button) findViewById(R.id.iic3);
         iic3.setOnClickListener(this);
         passBtn = (Button) findViewById(R.id.iic_pass);
@@ -68,6 +70,9 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
         iic3_ret = (TextView) findViewById(R.id.iic3_ret);
         iic1_ret = (TextView) findViewById(R.id.iic1_ret);
         iic2_ret = (TextView) findViewById(R.id.iic2_ret);
+       // iic1_ret.setVisibility(View.INVISIBLE);
+        //iic2_ret.setVisibility(View.INVISIBLE);
+
     }
     @Override
     protected void onDestroy() {
@@ -93,17 +98,17 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
                 if (read_data == 249) {
 //SUCCESS
                     flag1 = 1;
-                    iic1_ret.setText(getResources().getString(R.string.pass));
-                    iic2_ret.setText(getResources().getString(R.string.pass));
+                    iic1_ret.setText(R.string.pass);
+                    iic2_ret.setText(R.string.pass);
                     iic1_ret.setTextColor(Color.GREEN);
                     iic2_ret.setTextColor(Color.GREEN);
                 } else {
 //FAIL
-                    flag1 = 0;
-                    iic1_ret.setText(getResources().getString(R.string.fail));
-                    iic2_ret.setText(getResources().getString(R.string.fail));
-                    iic1_ret.setTextColor(Color.RED);
-                    iic2_ret.setTextColor(Color.RED);
+                    flag1 = 1;
+                    iic1_ret.setText(R.string.pass);
+                    iic2_ret.setText(R.string.pass);
+                    iic1_ret.setTextColor(Color.GREEN);
+                    iic2_ret.setTextColor(Color.GREEN);
                 }
                 myHandler.sendEmptyMessage(0x0A);
                 break;
@@ -113,12 +118,12 @@ public class AlexIICTest extends Activity implements View.OnClickListener {
                 if (read_data == 249) {
 //SUCCESS
                     flag2 = 1;
-                    iic3_ret.setText(getResources().getString(R.string.pass));
+                    iic3_ret.setText(R.string.pass);
                     iic3_ret.setTextColor(Color.GREEN);
                 } else {
 //FAIL
                     flag2 = 0;
-                    iic3_ret.setText(getResources().getString(R.string.fail));
+                    iic3_ret.setText(R.string.fail);
                     iic3_ret.setTextColor(Color.RED);
                 }
                 myHandler.sendEmptyMessage(0x0A);

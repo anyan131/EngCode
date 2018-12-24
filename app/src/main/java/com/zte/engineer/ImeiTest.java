@@ -62,15 +62,24 @@ public class ImeiTest extends ZteActivity {
 			mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_3);
 			mTextViewIMEI.setText(String.format(
                     getResources().getString(R.string.display_IMEI_2), mIMEI2));
-            if (mIMEI1 == null || mIMEI2 == null) {
+//            String defaule_imei1 = new String("00000000");
+//            if (mIMEI1 == null || mIMEI1.equals(defaule_imei1)) {
+//                passBtn.setEnabled(false);
+//            } else {
+//                if ((mIMEI1.length() != 15 && mIMEI1.length() != 14)
+//                        && (mIMEI2.length() != 15 && mIMEI2.length() != 14)) {
+//                    passBtn.setEnabled(false);
+//                }
+//            }
+            if (mIMEI1 == null && mIMEI2 == null) {
                 passBtn.setEnabled(false);
-            } else {
-                if ((mIMEI1.length() != 15 && mIMEI1.length() != 14)
-                        || (mIMEI2.length() != 15 && mIMEI2.length() != 14)) {
-                    passBtn.setEnabled(false);
-                }
+            }else if ((mIMEI1 != null && mIMEI1.length() != 15 && mIMEI1.length() != 14) && (mIMEI2 != null && mIMEI2.length() != 15 && mIMEI2.length() != 14)) {
+                passBtn.setEnabled(false);
+            }else if(mIMEI1 == null && (mIMEI2 != null && mIMEI2.length() != 15 && mIMEI2.length() != 14)){
+                passBtn.setEnabled(false);
+            }else if((mIMEI1 != null && mIMEI1.length() != 15 && mIMEI1.length() != 14) && mIMEI2 == null){
+                passBtn.setEnabled(false);
             }
-
 
         } else {
                 mIMEI = telephonyManager.getDeviceId();

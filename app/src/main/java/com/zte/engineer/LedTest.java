@@ -32,6 +32,7 @@ public class LedTest extends Activity {
         blue.setOnClickListener(clickListener);
         green = (Button) findViewById(R.id.green_led);
         green.setOnClickListener(clickListener);
+		green.setVisibility(View.GONE);
         pass = (Button) findViewById(R.id.led_pass);
         pass.setOnClickListener(clickListener);
         fail = (Button) findViewById(R.id.led_fail);

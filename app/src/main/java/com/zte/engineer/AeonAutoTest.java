@@ -93,7 +93,7 @@ public class AeonAutoTest extends Activity {
             AlexWiFiTest.class,
             FmAlexTaoActivity.class,
             SerialPort.class,
-            AlexNewGPSTest.class,
+            GPSTestActivity.class,
             AlexIICTest.class,
             BoardCode.class,
             LedTest.class,
@@ -226,7 +226,7 @@ public class AeonAutoTest extends Activity {
         list.add(newIntent(this, SerialPort.class));
         result.add(res.getString(R.string.serial_port));
 
-        list.add(newIntent(this, AlexNewGPSTest.class));
+        list.add(newIntent(this, GPSTestActivity.class));
         result.add(res.getString(R.string.gps));
 
         list.add(newIntent(this, AlexIICTest.class));

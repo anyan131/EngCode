@@ -31,17 +31,37 @@ static const char *className = "com/zte/engineer/SerialPort";
 char ttyPath[100] = {0};
 int SerialFd = -1;
 
+//we just rewrite the function.
 jint openSerialPort(JNIEnv *env, jobject jobject1, jint uartno) {
     snprintf(ttyPath, 100, "/dev/ttyMT%d", uartno);
 
     SerialFd = open(ttyPath, O_RDWR | O_NOCTTY | O_NONBLOCK);
-    LOGD("the serialfd for ttyMT%d is %d",uartno,SerialFd);
+
     if (SerialFd < 0) {
-        return -1;
-    } else {
-        close(SerialFd);
-        return 0;
+        return JNI_ERR;
     }
+    //config the device
+    {
+        struct termios cfg;
+        LOGD("Configuring serial port", __FUNCTION__);
+        if (tcgetattr(SerialFd, &cfg)) {
+            LOGD("failed !", __FUNCTION__);
+            close(SerialFd);
+            return JNI_ERR;
+        }
+        cfmakeraw(&cfg);
+        //here we directly set to B115200
+        cfsetispeed(&cfg, B115200);
+        cfsetospeed(&cfg, B115200);
+        if (tcsetattr(SerialFd, TCSANOW, &cfg)) {
+            LOGD("failed !", __FUNCTION__);
+            close(SerialFd);
+            return JNI_ERR;
+        }
+
+    }
+    return JNI_OK;
+
 }
 
 

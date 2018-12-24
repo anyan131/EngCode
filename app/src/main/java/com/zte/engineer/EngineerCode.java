@@ -26,7 +26,7 @@ import android.widget.Toast;
 
 
 import com.newmobi.iic.TestSign;
-import com.squareup.leakcanary.LeakCanary;
+//import com.squareup.leakcanary.LeakCanary;
 import com.zte.engineer.CommitReportUtils.CommitUtils;
 import com.zte.engineer.CommitReportUtils.Constants;
 import com.zte.engineer.CommitReportUtils.StringUtils;
@@ -59,18 +59,19 @@ public class EngineerCode extends Activity {
     private static final String TAG = "EngineerCode";
     final Intent intentToTestReportActivity = new Intent();
     private Context mComtext;
+
     public static final int[] stringIDs =
             {
                     R.string.software_version,
-                    R.string.battery_info,
-                    R.string.gpio_test,
-                    R.string.lcd,
+                    //R.string.battery_info,
+                    //R.string.gpio_test,
+                    //R.string.lcd,
                     R.string.backlight,
-                    R.string.touchpanel,
+                    //R.string.touchpanel,
                     R.string.camera_front,
                     R.string.camera_back,
-                    R.string.key_test,
-                    R.string.vibrator,
+                    //R.string.key_test,
+                    //R.string.vibrator,
                     R.string.ringer,
                     R.string.audio_loop,
                     R.string.earphone_audio_loop,
@@ -80,14 +81,17 @@ public class EngineerCode extends Activity {
                     R.string.sd_info,
                     R.string.bt_address,
                     R.string.wifi_address,
-                    R.string.NM_fm_test,
+					R.string.g_sensor,
+                    //R.string.NM_fm_test,
 
                     R.string.serial_port,
                     R.string.NM_gps_test,
                     R.string.NM_i2c_test,
+                    R.string.led_test,                    
                     R.string.board_code,
                     //alextao add for led test.
-                    R.string.led_test,
+
+
 
                     //R.string.audio_receiver,
                     //R.string.audio_receiver_new,
@@ -127,12 +131,12 @@ public class EngineerCode extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mComtext = this;
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(getApplication());
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(getApplication());
 
         Log.d("test", "onCreate");
         if (null != getIntent().getStringExtra(AUTOTEST)) {
@@ -804,7 +808,6 @@ public class EngineerCode extends Activity {
                     //add by lzg
                     editor.putString(StringUtils.getTestItemName(i),"*");
                     TestSign.JNISignflagAllClear();
-                    TestSign.JNISignInit();
                     //end lzg
                     editor.commit();
                 }

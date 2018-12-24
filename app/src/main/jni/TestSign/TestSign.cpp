@@ -15,7 +15,8 @@ jboolean SignInit(JNIEnv *env ,jobject obj)
     if (fd < 0) {
         LOGE("open %s failed", TestSign_PATH);
         return 0;
-    }
+    } else
+        LOGE("open %s success !", TestSign_PATH);
 
     memset(buf,0x00,SignDataNum);
     strcpy(buf,test_item);

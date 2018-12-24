@@ -10,6 +10,8 @@ import com.zte.engineer.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+
 public class CommitUtils {
     /** 上传测试报告 */
     public static final String  SERVER_COMMIT_REPORT_URL = "http://new-mobi.com:1070/";
@@ -112,351 +114,353 @@ public class CommitUtils {
         TestSign.JNISignAllWrite(signData);
     }
 
-    public boolean readStorageToReport() {
+    public boolean readStorageToReport(){
         byte[] signData = null;
         String signString = null;
         signData = TestSign.JNISignAllRead();
-        if (signData == null) {
+        if(signData == null){
             return false;
         }
         signString = new String(signData);
-        if (signString == null) {
-            return false;
+        if(signString != null){
+            if(!signString.contains(";")){
+                return false;
+            }
         }
         String itemArray[] = signString.split(";");
-        if (itemArray == null || itemArray.length < 1) {
+        if (itemArray == null || itemArray.length < 1 ) {
             return false;
         }
-        System.out.println("---lzg itemArray=" + itemArray.length);
+        System.out.println("---lzg itemArray="+itemArray.length);
         Resources re = mContext.getResources();
-        for (int i = 0; i < itemArray.length; i++) {
+        for(int i = 0; i < itemArray.length; i++){
             String itemString = itemArray[i];
-            String subItem = itemString.substring(0, itemString.length() - 1);
-            System.out.println("---lzg subItem=" + subItem);
-            String itemResult = itemString.substring(itemString.length() - 1);
-            System.out.println("---lzg itemResult=" + itemResult);
-            if (subItem != null && !subItem.equals("")) {
-                if (subItem.equals(Constants.VERSION)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+            String subItem = itemString.substring(0,itemString.length()-1);
+            System.out.println("---lzg subItem="+subItem);
+            String itemResult = itemString.substring(itemString.length()-1);
+            System.out.println("---lzg itemResult="+itemResult);
+            if(subItem != null && !subItem.equals("")){
+                if(subItem.equals(Constants.VERSION)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.software_version), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.software_version), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.software_version), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.software_version), itemResult);
                         }
-                        mEditor.putString(Constants.VERSION, itemResult);
+                        mEditor.putString(Constants.VERSION,itemResult);
                     }
-                } else if (subItem.equals(Constants.BATTERY)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.BATTERY)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.battery_info), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.battery_info), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.battery_info), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.battery_info), itemResult);
                         }
-                        mEditor.putString(Constants.BATTERY, itemResult);
+                        mEditor.putString(Constants.BATTERY,itemResult);
                     }
-                } else if (subItem.equals(Constants.GPIO)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.GPIO)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.gpio_test), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.gpio_test), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.gpio_test), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.gpio_test), itemResult);
                         }
-                        mEditor.putString(Constants.GPIO, itemResult);
+                        mEditor.putString(Constants.GPIO,itemResult);
                     }
-                } else if (subItem.equals(Constants.LCM)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.LCM)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.lcd), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.lcd), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.lcd), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.lcd), itemResult);
                         }
-                        mEditor.putString(Constants.LCM, itemResult);
+                        mEditor.putString(Constants.LCM,itemResult);
                     }
-                } else if (subItem.equals(Constants.BACK_LIGHT)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.BACK_LIGHT)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.backlight), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.backlight), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.backlight), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.backlight), itemResult);
                         }
-                        mEditor.putString(Constants.BACK_LIGHT, itemResult);
+                        mEditor.putString(Constants.BACK_LIGHT,itemResult);
                     }
-                } else if (subItem.equals(Constants.TOUCH_PANEL)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.TOUCH_PANEL)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.touchpanel), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.touchpanel), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.touchpanel), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.touchpanel), itemResult);
                         }
-                        mEditor.putString(Constants.TOUCH_PANEL, itemResult);
+                        mEditor.putString(Constants.TOUCH_PANEL,itemResult);
                     }
-                } else if (subItem.equals(Constants.FRONT_CAMERA)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.FRONT_CAMERA)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.camera_front), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.camera_front), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.camera_front), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.camera_front), itemResult);
                         }
-                        mEditor.putString(Constants.FRONT_CAMERA, itemResult);
+                        mEditor.putString(Constants.FRONT_CAMERA,itemResult);
                     }
-                } else if (subItem.equals(Constants.BACK_CAMERA)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.BACK_CAMERA)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.camera_back), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.camera_back), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.camera_back), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.camera_back), itemResult);
                         }
-                        mEditor.putString(Constants.BACK_CAMERA, itemResult);
+                        mEditor.putString(Constants.BACK_CAMERA,itemResult);
                     }
-                } else if (subItem.equals(Constants.KEYS)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.KEYS)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.key_test), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.key_test), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.key_test), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.key_test), itemResult);
                         }
-                        mEditor.putString(Constants.KEYS, itemResult);
+                        mEditor.putString(Constants.KEYS,itemResult);
                     }
-                } else if (subItem.equals(Constants.VIBRATOR)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.VIBRATOR)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.vibrator), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.vibrator), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.vibrator), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.vibrator), itemResult);
                         }
-                        mEditor.putString(Constants.VIBRATOR, itemResult);
+                        mEditor.putString(Constants.VIBRATOR,itemResult);
                     }
-                } else if (subItem.equals(Constants.RING)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.RING)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.ringer), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.ringer), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.ringer), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.ringer), itemResult);
                         }
-                        mEditor.putString(Constants.RING, itemResult);
+                        mEditor.putString(Constants.RING,itemResult);
                     }
-                } else if (subItem.equals(Constants.AUDIO_LOOP)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.AUDIO_LOOP)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.audio_loop), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.audio_loop), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.audio_loop), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.audio_loop), itemResult);
                         }
-                        mEditor.putString(Constants.AUDIO_LOOP, itemResult);
+                        mEditor.putString(Constants.AUDIO_LOOP,itemResult);
                     }
-                } else if (subItem.equals(Constants.EARPHONE_AUDIO_LOOP)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.EARPHONE_AUDIO_LOOP)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.earphone_audio_loop), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.earphone_audio_loop), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.earphone_audio_loop), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.earphone_audio_loop), itemResult);
                         }
-                        mEditor.putString(Constants.EARPHONE_AUDIO_LOOP, itemResult);
+                        mEditor.putString(Constants.EARPHONE_AUDIO_LOOP,itemResult);
                     }
-                } else if (subItem.equals(Constants.AUDIO_RECEIVER)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.AUDIO_RECEIVER)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.audio_receiver_new), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.audio_receiver_new), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.audio_receiver_new), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.audio_receiver_new), itemResult);
                         }
-                        mEditor.putString(Constants.AUDIO_RECEIVER, itemResult);
+                        mEditor.putString(Constants.AUDIO_RECEIVER,itemResult);
                     }
-                } else if (subItem.equals(Constants.SIM)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.SIM)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.SIM), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.SIM), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.SIM), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.SIM), itemResult);
                         }
-                        mEditor.putString(Constants.SIM, itemResult);
+                        mEditor.putString(Constants.SIM,itemResult);
                     }
-                } else if (subItem.equals(Constants.IMEI)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.IMEI)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.imei), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.imei), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.imei), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.imei), itemResult);
                         }
-                        mEditor.putString(Constants.IMEI, itemResult);
+                        mEditor.putString(Constants.IMEI,itemResult);
                     }
-                } else if (subItem.equals(Constants.SDCARD)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.SDCARD)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.sd_info), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.sd_info), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.sd_info), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.sd_info), itemResult);
                         }
-                        mEditor.putString(Constants.SDCARD, itemResult);
+                        mEditor.putString(Constants.SDCARD,itemResult);
                     }
-                } else if (subItem.equals(Constants.BLUTOOTH)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.BLUTOOTH)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.bt_address), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.bt_address), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.bt_address), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.bt_address), itemResult);
                         }
-                        mEditor.putString(Constants.BLUTOOTH, itemResult);
+                        mEditor.putString(Constants.BLUTOOTH,itemResult);
                     }
-                } else if (subItem.equals(Constants.WIFI)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.WIFI)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.wifi_address), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.wifi_address), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.wifi_address), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.wifi_address), itemResult);
                         }
-                        mEditor.putString(Constants.WIFI, itemResult);
+                        mEditor.putString(Constants.WIFI,itemResult);
                     }
-                } else if (subItem.equals(Constants.FM)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.FM)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.NM_fm_test), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.NM_fm_test), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.NM_fm_test), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.NM_fm_test), itemResult);
                         }
-                        mEditor.putString(Constants.FM, itemResult);
+                        mEditor.putString(Constants.FM,itemResult);
                     }
-                } else if (subItem.equals(Constants.UART)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.UART)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.serial_port), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.serial_port), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.serial_port), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.serial_port), itemResult);
                         }
-                        mEditor.putString(Constants.UART, itemResult);
+                        mEditor.putString(Constants.UART,itemResult);
                     }
-                } else if (subItem.equals(Constants.GPS)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.GPS)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.NM_gps_test), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.NM_gps_test), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.NM_gps_test), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.NM_gps_test), itemResult);
                         }
-                        mEditor.putString(Constants.GPS, itemResult);
+                        mEditor.putString(Constants.GPS,itemResult);
                     }
-                } else if (subItem.equals(Constants.I2C)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.I2C)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.NM_i2c_test), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.NM_i2c_test), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.NM_i2c_test), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.NM_i2c_test), itemResult);
                         }
-                        mEditor.putString(Constants.I2C, itemResult);
+                        mEditor.putString(Constants.I2C,itemResult);
                     }
-                } else if (subItem.equals(Constants.LED)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.LED)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.led_test), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.led_test), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.led_test), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.led_test), itemResult);
                         }
-                        mEditor.putString(Constants.LED, itemResult);
+                        mEditor.putString(Constants.LED,itemResult);
                     }
-                } else if (subItem.equals(Constants.BOARD_CODE)) {
-                    if (itemResult != null) {
-                        if (itemResult.equals("1")) {
+                }else if(subItem.equals(Constants.BOARD_CODE)){
+                    if(itemResult != null){
+                        if(itemResult.equals("1")) {
                             mEditor.putString(re.getString(R.string.board_code), "PASS");
-                        } else if (itemResult.equals("0")) {
+                        }else if(itemResult.equals("0")){
                             mEditor.putString(re.getString(R.string.board_code), "FAIL");
-                        } else if (itemResult.equals("*")) {
+                        }else if(itemResult.equals("*")){
                             mEditor.putString(re.getString(R.string.board_code), "NOT_TEST");
-                        } else {
+                        }else{
                             mEditor.putString(re.getString(R.string.board_code), itemResult);
                         }
                         mEditor.putString(Constants.BOARD_CODE, itemResult);
@@ -531,6 +535,6 @@ public class CommitUtils {
                 mEditor.commit();
             }
         }
-        return true;
+        return  true;
     }
 }

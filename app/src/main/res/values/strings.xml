@@ -155,6 +155,7 @@
     <string name="TD_Coupling">TD Coupling:</string>
     <string name="falsed">false</string>
     <string name="pass">pass</string>
+    <string name="fail">fail</string>
     <string name="insert_earphone_warning">Please insert earphone</string>
     <string name="earphone_audio_loop">耳机音频回路测试</string>
 
@@ -226,29 +227,29 @@
    <!-- <string name="g_sensor">重力传感器</string>
     <string name="p_sensor">光感/距离传感器</string>-->
     <string name="wifi_info">WIFI信息</string>
-
-    <string name="gpio_test">GPIO</string>
-    <string name="gpio_hint">input gpio index</string>
+	
+	<string name="gpio_test">GPIO</string>
+	<string name="gpio_hint">input gpio index</string>
     <string name="gpio_btn_setInput">Set Input</string>
     <string name="gpio_btn_setOutput">Set Output</string>
     <string name="gpio_btn_setHigh">Set High</string>
     <string name="gpio_btn_setLow">Set Low</string>
-
-    <string name="serial_port">串口测试</string>
-    <string name="serial_port_test1">串口1测试</string>
-    <string name="serial_port_test2">串口2测试</string>
-    <string name="serial_port_test3">串口3测试</string>
-    <!--Alextao block here. just for the future needs.-->
-    <!--<string name="serial_port_test4">串口4测试</string>-->
-    <string name="stop1">停止测试1</string>
-    <string name="stop2">停止测试2</string>
-    <string name="stop3">停止测试3</string>
-    <string name="receive_bytes">收到：</string>
-    <string name="serial_port1">串口1</string>
-    <string name="serial_port2">串口2</string>
-    <string name="serial_port3">串口3</string>
-    <string name="lost_bytes">丢失：</string>
-    <string name="zero">0</string>
+	
+	<string name="serial_port">串口测试</string>
+	<string name="serial_port_test1">串口1测试</string>
+	<string name="serial_port_test2">串口2测试</string>
+	<string name="serial_port_test3">串口3测试</string>
+	<!--Alextao block here. just for the future needs.-->
+	<!--<string name="serial_port_test4">串口4测试</string>-->
+	<string name="stop1">停止测试1</string>
+	<string name="stop2">停止测试2</string>
+	<string name="stop3">停止测试3</string>
+	<string name="receive_bytes">收到：</string>
+	<string name="serial_port1">串口1</string>
+	<string name="serial_port2">串口2</string>
+	<string name="serial_port3">串口3</string>
+	<string name="lost_bytes">丢失：</string>
+	<string name="zero">0</string>
     <string name="NM_gps_test">GPS测试</string>
     <string name="NM_fm_test">FM测试</string>
     <string name="fm_90_1mhz">FM 90.1Mhz</string>
@@ -257,9 +258,10 @@
     <string name="iic1test">iic1测试</string>
     <string name="iic2">iic2测试</string>
     <string name="iic3">iic3测试</string>
+    <string name="led_test">LED三色灯</string>
+    <string name="board_code">射频校准标志</string>
     <string name="default_station_name">New Channel</string>
-
-
+    <string name="FM1043">FM104.3</string>
     <!--
       Copyright Statement:
 
@@ -353,7 +355,7 @@
     <string name="commit_success">Commit Success</string>
     <string name="commit_fail">Commit Fail</string>
     <string name="commit_report_tip">committing，please wait……</string>
-    <string name="opening_mobile_network">Opening mobile network, please click Submit later</string>
+    <string name="opening_mobile_network">Please open network</string>
     <string name="open_mobile_network_success">The network is open</string>
     <string name="open_mobile_network_fail">The network is closed</string>
     <string name="stress_test">Stress test</string>

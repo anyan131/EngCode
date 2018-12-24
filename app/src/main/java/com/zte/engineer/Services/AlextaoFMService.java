@@ -20,7 +20,7 @@ import android.os.PowerManager;
 import android.util.Log;
 
 import com.mediatek.fmradio.FmRadioNative;
-import com.zte.engineer.BuildConfig;
+//import com.zte.engineer.BuildConfig;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -613,8 +613,7 @@ public class AlextaoFMService extends Service {
 
     //if debug,we need this log.d feature.
     public void logd(String log) {
-        if (BuildConfig.DEBUG)
-            Log.d(TAG, log);
+        Log.d(TAG, log);
     }
 
     // the encapsulation of Log.w() method
