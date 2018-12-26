@@ -23,17 +23,10 @@ public class GPIO extends Activity implements View.OnClickListener {
 	private static final String TAG = "NewMobi";
 	
 	
-	 private static final int GPIO_INDEX[] = new int[]{95,21,65,127,122,120,121,98,96,97,99,55,80,78,61,
-	 79,20,19,3,4,1,0,7,5,6,2,63,62,64,68,67,66
-	 };
-	
-	private static final int GPIO_OUT[] = new int[]{95,21,65,127,122,120,121,98,96,97,99,55,80,78,61,
-			79
+//	 private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,0,5,44,
+//	 79,59,1,6,43,78,60,2,7,42};
+	private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,5,44,79,59,1,6,43,78,60,2,7,42};
 
-	};
-	private static final int GPIO_IN[] = new int[]{20,19,3,4,1,0,7,5,6,2,63,62,64,68,67,66
-
-	};
 
 
 	@Override
