@@ -28,110 +28,46 @@ import android.os.Message;
 import android.os.Handler;
 public class PSensorTest extends ZteActivity {
 	
-	private float x, y, z;  
+	private float x;
 	private SensorManager sensorMgr;
 	private SensorEventListener lsn;
-
-	TextView LightView;
-	TextView ProximityView;
-	private Handler mHandler;
-	private Timer mTimer;
-	private TimerTask mTimerTask;	
-	private static final int REFRESH_PSENSOR = 0x101;
+	private TextView ProximityView;
 	private int proximity = 0;
-	//private AlspsCali mAlspsCali;
-	class MyTimerTask extends TimerTask{
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			Message msg = mHandler.obtainMessage(REFRESH_PSENSOR);
-			msg.sendToTarget();
-		}
-	}	
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
         setContentView(R.layout.psensortest);
-        
         sensorMgr = (SensorManager) getSystemService(SENSOR_SERVICE);
-        
         initUi();
-        
         initSensorListener();
-		//mAlspsCali = new AlspsCali();
-		/*mTimer = new Timer(true);
-		mHandler = new Handler(){
-			public void handleMessage(Message message){
-				
-				if (message.what == REFRESH_PSENSOR) {
-					//refreshPSensor();
-					//queueNextRefresh();
-				} 
-
-			}
-		};	*/
-		//queueNextRefresh();
     }
-    
-	/*private void refreshPSensor() {
-	
-		proximity = mAlspsCali.AlspsGetVal();
-		ProximityView.setText(String.valueOf(proximity));
-	}*/
-	
-	private void queueNextRefresh() {  
-		
-			Message msg = mHandler.obtainMessage(REFRESH_PSENSOR); // 得到REFRESH消息  
-			mHandler.removeMessages(REFRESH_PSENSOR); // 从队列中移除未处理的消息  
-			mHandler.sendMessageDelayed(msg, 100); //重新发送REFRESH消息，在接受到REFRESH消息后，又会调用到此处，这样就可以循环更新    
-	}
-    
+
     @Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		
 		//initSensorListener();
 	}
-
-
 
 	private void initUi()
     {  	
     	((Button)findViewById(R.id.sensor_pass)).setOnClickListener(this);
     	((Button)findViewById(R.id.sensor_false)).setOnClickListener(this);
-    	
-    	
-
-    	LightView = (TextView)findViewById(R.id.light_lux);
-    	
     	ProximityView = (TextView)findViewById(R.id.proximity);
     }
     
     private void initSensorListener()
     {    	
     	List<Sensor> sensors = sensorMgr.getSensorList(Sensor.TYPE_ALL);
-    	
         lsn = new SensorEventListener() {
             public void onSensorChanged(SensorEvent e) 
             {
-            	x = e.values[SensorManager.DATA_X]; 
-            	y = e.values[SensorManager.DATA_Y];       
-            	z = e.values[SensorManager.DATA_Z];
-            	       
             	switch(e.sensor.getType())
             	{
-   
-    	       		
-    	       		case Sensor.TYPE_LIGHT:
-    	       		{
-    	       			LightView.setText(String.format(getString(R.string.light_is), String.valueOf(x)));
-    	       		}
-    	       		break;
-    	       		
     	       		case Sensor.TYPE_PROXIMITY:
     	       		{
+						x = e.values[SensorManager.DATA_X];
     	       			ProximityView.setText(String.valueOf(x));
     	       		}
     	       		break;    	       		
@@ -140,7 +76,6 @@ public class PSensorTest extends ZteActivity {
             		{
             		}
             		break;
-            	       			
             	}
             	       
             } 
@@ -148,7 +83,6 @@ public class PSensorTest extends ZteActivity {
             public void onAccuracyChanged(Sensor s, int accuracy) 
             { 
             }  
-            
         };
 
         for(Sensor s:sensors)
@@ -159,13 +93,9 @@ public class PSensorTest extends ZteActivity {
 
 	@Override
 	public void finishSelf(int result) {
-		
 		sensorMgr.unregisterListener(lsn);
-		
 		super.finishSelf(result);
 	}
-
-
 
 	@Override
 	public void onClick(View arg0) {

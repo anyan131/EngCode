@@ -364,6 +364,13 @@
     <string name="m_sensor">磁力感应</string>
     <string name="l_sensor">光感应</string>
     <string name="p_sensor">距离感应</string>
+    <string name="usb_camera">USB摄像头</string>
+    <string name="ethernet">以太网</string>
+    <string name="ethernet_test">Click Ethernet Test</string>
+    <string name="ethernet_status">Ethernet Status:</string>
+    <string name="ethernet_addr">Ethernet Addr:</string>
+    <string name="ethernet_null_addr">null</string>
+    <string name="engineercode_other_name">EngineerCode2</string>
     <!--eng lzg-->
 
 </resources>

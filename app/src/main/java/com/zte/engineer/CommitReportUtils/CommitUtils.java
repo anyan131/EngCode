@@ -60,6 +60,8 @@ public class CommitUtils {
         commitReportJson.put(Constants.M_SENSOR, mSp.getString(Constants.M_SENSOR,"#"));
         commitReportJson.put(Constants.L_SENSOR, mSp.getString(Constants.L_SENSOR,"#"));
         commitReportJson.put(Constants.P_SENSOR, mSp.getString(Constants.P_SENSOR,"#"));
+        commitReportJson.put(Constants.USB_CAMERA, mSp.getString(Constants.USB_CAMERA,"#"));
+        commitReportJson.put(Constants.ETHERNET, mSp.getString(Constants.ETHERNET,"#"));
         HttpClients client = new HttpClients();
         HttpResponseResult result = client.sendRequestGetResponse(SERVER_COMMIT_REPORT_URL, commitReportJson.toString());
         String json = result.getResponseResult();
@@ -106,7 +108,9 @@ public class CommitUtils {
                 Constants.GYROSCOPE_SENSOR + mSp.getString(Constants.GYROSCOPE_SENSOR,"#") + ";" +
                 Constants.M_SENSOR + mSp.getString(Constants.M_SENSOR,"#") + ";" +
                 Constants.L_SENSOR + mSp.getString(Constants.L_SENSOR,"#") + ";" +
-                Constants.P_SENSOR + mSp.getString(Constants.P_SENSOR,"#") + ";" ;
+                Constants.P_SENSOR + mSp.getString(Constants.P_SENSOR,"#") + ";" +
+                Constants.USB_CAMERA + mSp.getString(Constants.USB_CAMERA,"#") + ";" +
+                Constants.ETHERNET + mSp.getString(Constants.ETHERNET,"#") + ";";
 
         signData = signString.getBytes();
         //TestSign.JNISignInit();
@@ -530,6 +534,32 @@ public class CommitUtils {
                             mEditor.putString(re.getString(R.string.p_sensor), itemResult);
                         }
                         mEditor.putString(Constants.P_SENSOR, itemResult);
+                    }
+                }else if (subItem.equals(Constants.USB_CAMERA)) {
+                    if (itemResult != null) {
+                        if (itemResult.equals("1")) {
+                            mEditor.putString(re.getString(R.string.usb_camera), "PASS");
+                        } else if (itemResult.equals("0")) {
+                            mEditor.putString(re.getString(R.string.usb_camera), "FAIL");
+                        } else if (itemResult.equals("*")) {
+                            mEditor.putString(re.getString(R.string.usb_camera), "NOT_TEST");
+                        } else {
+                            mEditor.putString(re.getString(R.string.usb_camera), itemResult);
+                        }
+                        mEditor.putString(Constants.USB_CAMERA, itemResult);
+                    }
+                }else if (subItem.equals(Constants.ETHERNET)) {
+                    if (itemResult != null) {
+                        if (itemResult.equals("1")) {
+                            mEditor.putString(re.getString(R.string.ethernet), "PASS");
+                        } else if (itemResult.equals("0")) {
+                            mEditor.putString(re.getString(R.string.ethernet), "FAIL");
+                        } else if (itemResult.equals("*")) {
+                            mEditor.putString(re.getString(R.string.ethernet), "NOT_TEST");
+                        } else {
+                            mEditor.putString(re.getString(R.string.ethernet), itemResult);
+                        }
+                        mEditor.putString(Constants.ETHERNET, itemResult);
                     }
                 }
                 mEditor.commit();

@@ -10,17 +10,8 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
-			
-			
-			
-			<TextView android:text="@string/light"	style="@style/doov_info_sensor"/>
-				
-			<LinearLayout style="@style/info_sensor_label">
-	        	<TextView android:id="@+id/light_lux" style="@style/doov_info_sensor" />
-			</LinearLayout>	
-			
-			<TextView android:text="@string/proximity"	style="@style/doov_info_sensor"/>
-				
+
+            <TextView android:text="@string/proximity"	style="@style/doov_info_sensor"/>
 			<LinearLayout style="@style/info_sensor_label">
 	        	<TextView android:id="@+id/proximity" style="@style/doov_info_sensor" />
 			</LinearLayout>																					

@@ -34,7 +34,7 @@ import com.zte.engineer.CommitReportUtils.StringUtils;
 import java.util.ArrayList;
 
 
-public class EngineerCode extends Activity {
+public class EngineerCodeOther extends Activity {
 
     public static final int RESULT_PASS = 10;
     public static final int RESULT_FALSE = 20;
@@ -160,7 +160,7 @@ public class EngineerCode extends Activity {
         testCompleted = 0;
         items = new ItemContent[testCount];
 
-        ArrayList<SaveItems> itemState = null;
+        ArrayList<MySaveItems> itemState = null;
         if (null != savedInstanceState) {
             Log.i("alextao", "resume data");
             itemState = savedInstanceState.getParcelableArrayList(STATE);
@@ -174,9 +174,9 @@ public class EngineerCode extends Activity {
                 pass = false;
                 title = r.getString(stringIDs[i]);
                 for (Object o : itemState.toArray()) {
-                    if (((SaveItems) o).title.equals(title)) {
-                        checked = ((SaveItems) o).checked;
-                        pass = ((SaveItems) o).pass;
+                    if (((MySaveItems) o).title.equals(title)) {
+                        checked = ((MySaveItems) o).checked;
+                        pass = ((MySaveItems) o).pass;
                     }
                 }
                 items[i] = new ItemContent(title, checked, pass);
@@ -337,7 +337,7 @@ public class EngineerCode extends Activity {
             break;
 
             case R.string.camera_front: {
-//    			if(android.hardware.Camera.getNumberOfCameras()<=0 || SaveItems.hasFrontFacingCamera()){
+//    			if(android.hardware.Camera.getNumberOfCameras()<=0 || MySaveItems.hasFrontFacingCamera()){
 //    				Toast.makeText(this, R.string.non_front_camera, Toast.LENGTH_SHORT).show();
 //    				return;
 
@@ -532,7 +532,7 @@ public class EngineerCode extends Activity {
      */
     @Override
     protected void onActivityResult(final int requestCode, int resultCode, Intent data) {
-        android.util.Log.d("sukey", "requestCode = " + requestCode + ", resultCode = " + resultCode);
+        Log.d("sukey", "requestCode = " + requestCode + ", resultCode = " + resultCode);
         Resources res = getResources();
         intentToTestReportActivity.putExtra("requestCode", requestCode);
         intentToTestReportActivity.putExtra("resultCode", resultCode);
@@ -637,9 +637,9 @@ public class EngineerCode extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         // TODO Auto-generated method stub
-        ArrayList<SaveItems> stateArray = new ArrayList<SaveItems>();
+        ArrayList<MySaveItems> stateArray = new ArrayList<MySaveItems>();
         for (ItemContent item : items) {
-            stateArray.add(new SaveItems(item.isChecked(), item.isPassed(), item.getTitle()));
+            stateArray.add(new MySaveItems(item.isChecked(), item.isPassed(), item.getTitle()));
         }
         outState.putParcelableArrayList(STATE, stateArray);
         Log.i("alextao", "EngineerCode saving data");
@@ -668,7 +668,7 @@ public class EngineerCode extends Activity {
     //end
 
     private void doSave() {
-        android.util.Log.d("sukey", "isAllPassed = " + isAllPassed);
+        Log.d("sukey", "isAllPassed = " + isAllPassed);
         Util.saveTestResult(this, TEST_RESULT, (isAllPassed ? 1 : 0) + "");
     }
 
@@ -691,7 +691,7 @@ public class EngineerCode extends Activity {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent();
-                intent.setClass(EngineerCode.this, TestResultsShow.class);
+                intent.setClass(EngineerCodeOther.this, TestResultsShow.class);
                 startActivityForResult(intent, REQUEST_SHOW_RESULT);
 
             }
@@ -700,8 +700,8 @@ public class EngineerCode extends Activity {
         btn_checkReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EngineerCode.this, "check report", Toast.LENGTH_SHORT).show();
-                intentToTestReportActivity.setClass(EngineerCode.this, TestReport.class);
+                Toast.makeText(EngineerCodeOther.this, "check report", Toast.LENGTH_SHORT).show();
+                intentToTestReportActivity.setClass(EngineerCodeOther.this, TestReport.class);
                 startActivity(intentToTestReportActivity);
             }
         });
@@ -711,7 +711,7 @@ public class EngineerCode extends Activity {
         mCommitReportBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent commitIntent = new Intent(EngineerCode.this, CommitReportActivity.class);
+                Intent commitIntent = new Intent(EngineerCodeOther.this, CommitReportActivity.class);
                 startActivity(commitIntent);
             }
         });
@@ -827,7 +827,7 @@ public class EngineerCode extends Activity {
         boolean isFirst = share.getBoolean("isFirst", true);
         if (isFirst) {
             Resources re = getResources();
-            Toast.makeText(EngineerCode.this, "First", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EngineerCodeOther.this, "First", Toast.LENGTH_SHORT).show();
             //modify by lzg
             CommitUtils cu = new CommitUtils(mComtext);
             boolean isReadSuccess = cu.readStorageToReport();
@@ -849,12 +849,12 @@ public class EngineerCode extends Activity {
     }
 }
 
-class SaveItems implements Parcelable {
+class MySaveItems implements Parcelable {
     String title;
     boolean checked;
     boolean pass;
 
-    public SaveItems(boolean checked, boolean pass, String title) {
+    public MySaveItems(boolean checked, boolean pass, String title) {
         this.checked = checked;
         this.pass = pass;
         this.title = title;
@@ -869,18 +869,18 @@ class SaveItems implements Parcelable {
         out.writeString(title);
     }
 
-    public static final Parcelable.Creator<SaveItems> CREATOR
-            = new Parcelable.Creator<SaveItems>() {
-        public SaveItems createFromParcel(Parcel in) {
-            return new SaveItems(in);
+    public static final Creator<MySaveItems> CREATOR
+            = new Creator<MySaveItems>() {
+        public MySaveItems createFromParcel(Parcel in) {
+            return new MySaveItems(in);
         }
 
-        public SaveItems[] newArray(int size) {
-            return new SaveItems[size];
+        public MySaveItems[] newArray(int size) {
+            return new MySaveItems[size];
         }
     };
 
-    private SaveItems(Parcel in) {
+    private MySaveItems(Parcel in) {
         in.readBooleanArray(new boolean[]{checked, pass});
         title = in.readString();
     }
@@ -911,6 +911,6 @@ class SaveItems implements Parcelable {
     }
 
     public static int getSdkVersion() {
-        return android.os.Build.VERSION.SDK_INT;
+        return Build.VERSION.SDK_INT;
     }
 }

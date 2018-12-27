@@ -120,5 +120,12 @@
     <string name="m_sensor">磁力感应</string>
     <string name="l_sensor">光感应</string>
     <string name="p_sensor">距离感应</string>
+    <string name="usb_camera">USB摄像头</string>
+    <string name="ethernet">以太网</string>
+    <string name="ethernet_test">点击测试以太网</string>
+    <string name="ethernet_status">以太网状态:</string>
+    <string name="ethernet_addr">以太网地址:</string>
+    <string name="ethernet_null_addr">无</string>
+    <string name="engineercode_other_name">工程测试二</string>
     <!--eng lzg-->
 </resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout 
+	       xmlns:android="http://schemas.android.com/apk/res/android" 
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+	<TextView
+		android:id="@+id/ethernet_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/ethernet"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:textSize="20sp" />
+	<Button
+		android:id="@+id/ethernet_bt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/ethernet_title"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="40dp"
+		android:text="@string/ethernet_test"
+		android:textSize="15sp"/>
+	<LinearLayout
+		android:id="@+id/ethernet_status_ll"
+		android:layout_below="@id/ethernet_bt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="10dp"
+		android:orientation="horizontal">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/ethernet_status"
+			android:textSize="15sp" />
+		<TextView
+			android:id="@+id/ethernet_status_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="15sp" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_below="@id/ethernet_status_ll"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="10dp"
+		android:orientation="horizontal">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/ethernet_addr"
+			android:textSize="15sp" />
+		<TextView
+			android:id="@+id/ethernet_addr_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="15sp" />
+	</LinearLayout>
+
+ 	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:layout_alignParentBottom="true"
+	    android:orientation="horizontal" >
+		<Button
+			android:id="@+id/ethernet_pass"
+			android:layout_width="150dp"
+			android:layout_height="wrap_content"
+			android:text="@string/pass"
+			android:layout_marginTop="10dip"
+			>
+		</Button>
+		<Button
+			android:id="@+id/ethernet_false"
+			android:layout_width="150dp"
+			android:layout_height="wrap_content"
+			android:text="@string/falsed"
+			android:layout_marginTop="10dip"
+			>
+		</Button>
+	</LinearLayout>
+</RelativeLayout>	

@@ -257,11 +257,31 @@ public class ProduceInfoListView extends Activity {
         }
     }
 
-    View.OnClickListener mClickListener = new View.OnClickListener() {
+    /*View.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             setResult(10);
             finish();
+        }
+    };*/
+
+    View.OnClickListener mClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.pass_info:
+                    setResult(10);
+                    finish();
+                    break;
+                case R.id.fail_info:
+                    setResult(20);
+                    finish();
+                    break;
+                default:
+                    setResult(10);
+                    finish();
+                    break;
+            }
         }
     };
 }

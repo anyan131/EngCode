@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/gyroscope_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/info_sensor"
+                    android:text="@string/gyroscope" 
+                    android:textSize="25sp"/>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/x_is" 
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/gyroscope_x"
+                        style="@style/info_value"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/y_is"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/gyroscope_y"
+                        style="@style/info_value" 
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+                <LinearLayout style="@style/info_sensor_label" >
+
+                    <TextView
+                        style="@style/info_sensor"
+                        android:text="@string/z_is" 
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/gyroscope_z"
+                        style="@style/info_value" 
+                        android:textSize="20sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+           
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/gyroscope_sensor_pass"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="@string/pass" >
+            </Button>
+
+            <Button
+                android:id="@+id/gyroscope_sensor_false"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="@string/falsed" >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>

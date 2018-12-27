@@ -163,7 +163,11 @@ public abstract class StringUtils {
             testItemName = Constants.L_SENSOR;
         }else if(EngineerCode.stringIDs[requestCode] == R.string.p_sensor){
             testItemName = Constants.P_SENSOR;
-        }
+        }else if(EngineerCode.stringIDs[requestCode] == R.string.usb_camera){
+			testItemName = Constants.USB_CAMERA;
+		}else if(EngineerCode.stringIDs[requestCode] == R.string.ethernet){
+			testItemName = Constants.ETHERNET;
+		}
 		return testItemName;
 	}
 
