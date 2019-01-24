@@ -40,7 +40,7 @@ public class GPSTestActivity extends ZteActivity {
 	private static final String[] S = { "out of service",
 			"temporarily unavailable", "available" };
 	
-
+	private int mSatellitesCount = 0;
 	private String best;
 	Button success;
 	Button failed;
@@ -264,6 +264,7 @@ public class GPSTestActivity extends ZteActivity {
 			sb2.append("Satellites:" + numSatelliteList.size());
 			//add by lzg
 			if(count>0){
+				mSatellitesCount = count;
 				success.setEnabled(true);
 			}
 			//end lzg
@@ -296,6 +297,16 @@ public class GPSTestActivity extends ZteActivity {
 			finishSelf(RESULT_PASS);
 			break;
 		}
+	}
+
+	@Override
+	public void onBackPressed() {
+		if(mSatellitesCount > 0){
+			setResult(RESULT_PASS);
+		}else{
+			setResult(RESULT_FALSE);
+		}
+		finish();
 	}
 
 	private static String GPS_ON = "com.ipro.gps.on";

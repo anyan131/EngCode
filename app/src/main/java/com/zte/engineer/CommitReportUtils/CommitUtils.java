@@ -62,6 +62,7 @@ public class CommitUtils {
         commitReportJson.put(Constants.P_SENSOR, mSp.getString(Constants.P_SENSOR,"#"));
         commitReportJson.put(Constants.USB_CAMERA, mSp.getString(Constants.USB_CAMERA,"#"));
         commitReportJson.put(Constants.ETHERNET, mSp.getString(Constants.ETHERNET,"#"));
+        commitReportJson.put(Constants.SN, mSp.getString(Constants.SN,"#"));
         HttpClients client = new HttpClients();
         HttpResponseResult result = client.sendRequestGetResponse(SERVER_COMMIT_REPORT_URL, commitReportJson.toString());
         String json = result.getResponseResult();
@@ -110,7 +111,8 @@ public class CommitUtils {
                 Constants.L_SENSOR + mSp.getString(Constants.L_SENSOR,"#") + ";" +
                 Constants.P_SENSOR + mSp.getString(Constants.P_SENSOR,"#") + ";" +
                 Constants.USB_CAMERA + mSp.getString(Constants.USB_CAMERA,"#") + ";" +
-                Constants.ETHERNET + mSp.getString(Constants.ETHERNET,"#") + ";";
+                Constants.ETHERNET + mSp.getString(Constants.ETHERNET,"#") + ";" +
+                Constants.SN + mSp.getString(Constants.SN,"#") + ";";
 
         signData = signString.getBytes();
         //TestSign.JNISignInit();
@@ -560,6 +562,19 @@ public class CommitUtils {
                             mEditor.putString(re.getString(R.string.ethernet), itemResult);
                         }
                         mEditor.putString(Constants.ETHERNET, itemResult);
+                    }
+                }else if (subItem.equals(Constants.SN)) {
+                    if (itemResult != null) {
+                        if (itemResult.equals("1")) {
+                            mEditor.putString(re.getString(R.string.serial_number), "PASS");
+                        } else if (itemResult.equals("0")) {
+                            mEditor.putString(re.getString(R.string.serial_number), "FAIL");
+                        } else if (itemResult.equals("*")) {
+                            mEditor.putString(re.getString(R.string.serial_number), "NOT_TEST");
+                        } else {
+                            mEditor.putString(re.getString(R.string.serial_number), itemResult);
+                        }
+                        mEditor.putString(Constants.SN, itemResult);
                     }
                 }
                 mEditor.commit();

@@ -24,7 +24,7 @@ public abstract class ZteActivity extends Activity implements
 
 	@Override
 	public void onBackPressed() {
-		finishSelf(RESULT_PASS);
+		finishSelf(RESULT_FALSE);
 	}
 
 	public void finishSelf(int result) {

@@ -167,6 +167,8 @@ public abstract class StringUtils {
 			testItemName = Constants.USB_CAMERA;
 		}else if(EngineerCode.stringIDs[requestCode] == R.string.ethernet){
 			testItemName = Constants.ETHERNET;
+		}else if(EngineerCode.stringIDs[requestCode] == R.string.serial_number){
+			testItemName = Constants.SN;
 		}
 		return testItemName;
 	}

@@ -371,6 +371,7 @@
     <string name="ethernet_addr">Ethernet Addr:</string>
     <string name="ethernet_null_addr">null</string>
     <string name="engineercode_other_name">EngineerCode2</string>
+    <string name="serial_number">序列号</string>
     <!--eng lzg-->
 
 </resources>

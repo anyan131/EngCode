@@ -37,6 +37,7 @@ public class Constants {
     public static final String P_SENSOR = "ps";
     public static final String USB_CAMERA = "ucam";
     public static final String ETHERNET = "enet";
+    public static final String SN = "sn";
     public static final String COMMIT_FAG = "commitfag";
     public static final String COMMIT_OK = "OK";
 }

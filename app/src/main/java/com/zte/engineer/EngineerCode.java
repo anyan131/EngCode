@@ -78,6 +78,7 @@ public class EngineerCode extends Activity {
                     R.string.audio_receiver_new,
                     R.string.SIM,
                     R.string.imei,
+                    R.string.serial_number,
                     R.string.sd_info,
                     R.string.bt_address,
                     R.string.wifi_address,
@@ -357,6 +358,11 @@ public class EngineerCode extends Activity {
             }
             break;
 
+            case R.string.serial_number: {
+                intent.setClass(this, SNTest.class);
+            }
+            break;
+
             case R.string.imsi: {
                 intent.setClass(this, ImsiTest.class);
             }
@@ -603,7 +609,7 @@ public class EngineerCode extends Activity {
 					}).show();*/
                     items[requestCode].setChecked(true);
                     items[requestCode].setPassed(true);
-                    editor.putString(res.getString(stringIDs[requestCode]), "PASS");
+                    editor.putString(res.getString(stringIDs[requestCode]), "FAIL");
                     //add by lzg
                     editor.putString(StringUtils.getTestItemName(requestCode),"0");
                     //end lzg

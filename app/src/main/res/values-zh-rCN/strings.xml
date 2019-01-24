@@ -127,5 +127,6 @@
     <string name="ethernet_addr">以太网地址:</string>
     <string name="ethernet_null_addr">无</string>
     <string name="engineercode_other_name">工程测试二</string>
+    <string name="serial_number">序列号</string>
     <!--eng lzg-->
 </resources>
