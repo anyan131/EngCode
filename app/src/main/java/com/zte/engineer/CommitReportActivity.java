@@ -1,9 +1,11 @@
 package com.zte.engineer;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -37,6 +39,7 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
     private static final int CLOSE_PROGRESS_DIALOG = 2002;
     private static final int COMMIT_EXCEPTION = 2003;
     private CommitUtils mCommitUtils;
+    private AlertDialog mImeiDialog = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +84,7 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
         }
         mCommitBt.setOnClickListener(this);
         initProgressDialog();
+        initImeiDialog();
     }
 
     private void initProgressDialog(){
@@ -90,18 +94,50 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
         mProgressDialog.setCancelable(false);
     }
 
+    private void initImeiDialog(){
+        mImeiDialog = new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setMessage(
+                        getText(R.string.no_imei_tip).toString())
+                .setPositiveButton(android.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int whichButton) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+    }
+
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.commit_bt) {
-            if(StringUtils.isNetworkConnected(mContext)){
-                myHandler.removeMessages(SHOW_PROGRESS_DIALOG);
-                myHandler.sendEmptyMessage(SHOW_PROGRESS_DIALOG);
-                commitReportAction();
+            String imeiString = StringUtils.getDeviceIMEI(mContext);
+            if(imeiString != null && !imeiString.equals("")) {
+                if (StringUtils.isNetworkConnected(mContext)) {
+                    myHandler.removeMessages(SHOW_PROGRESS_DIALOG);
+                    myHandler.sendEmptyMessage(SHOW_PROGRESS_DIALOG);
+                    commitReportAction();
+                } else {
+                    Toast.makeText(mContext, R.string.opening_mobile_network, Toast.LENGTH_LONG).show();
+                    //StringUtils.openMobileNetwork(mContext);
+                }
             }else{
-                Toast.makeText(mContext, R.string.opening_mobile_network, Toast.LENGTH_LONG).show();
-                //StringUtils.openMobileNetwork(mContext);
+                displayImeiDialog();
             }
+        }
+    }
 
+    private void displayImeiDialog()
+    {
+        if(mImeiDialog != null){
+            mImeiDialog.show();
+        }
+    }
+
+    private void cancleImeiDialog()
+    {
+        if(mImeiDialog != null && mImeiDialog.isShowing()){
+            mImeiDialog.dismiss();
         }
     }
 
@@ -111,6 +147,7 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
         if(mProgressDialog.isShowing()){
             mProgressDialog.dismiss();
         }
+        cancleImeiDialog();
         unregisterReceiver(mNetworkChangeReceiver);
     }
 

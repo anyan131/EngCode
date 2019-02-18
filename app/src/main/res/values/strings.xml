@@ -372,6 +372,7 @@
     <string name="ethernet_null_addr">null</string>
     <string name="engineercode_other_name">EngineerCode2</string>
     <string name="serial_number">序列号</string>
+	<string name="no_imei_tip">请写入IMEI号，再提交</string>
     <!--eng lzg-->
 
 </resources>

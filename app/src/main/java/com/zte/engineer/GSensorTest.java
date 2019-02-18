@@ -29,7 +29,7 @@ public class GSensorTest extends ZteActivity {
 	private SensorManager sensorMgr;
 	private SensorEventListener lsn;
 	TextView GsensorX, GsensorY, GsensorZ;
-
+    Button mPassBt;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +62,9 @@ public class GSensorTest extends ZteActivity {
 
 	private void initUi()
     {  	
-    	((Button)findViewById(R.id.sensor_pass)).setOnClickListener(this);
+		mPassBt = (Button)findViewById(R.id.sensor_pass);
+		mPassBt.setOnClickListener(this);
+		mPassBt.setEnabled(false);
     	((Button)findViewById(R.id.sensor_false)).setOnClickListener(this);
 		((Button)findViewById(R.id.sensor_calibration)).setOnClickListener(this);
     	
@@ -88,7 +90,12 @@ public class GSensorTest extends ZteActivity {
             		{
             			GsensorX.setText(String.valueOf(x));
             			GsensorY.setText(String.valueOf(y));
-            			GsensorZ.setText(String.valueOf(z));            	       			
+            			GsensorZ.setText(String.valueOf(z));
+            			if(String.valueOf(x) != null && !String.valueOf(x).equals("") && !String.valueOf(x).equals("0")
+						&& String.valueOf(y) != null && !String.valueOf(y).equals("") && !String.valueOf(y).equals("0")
+						&& String.valueOf(z) != null && !String.valueOf(z).equals("") && !String.valueOf(z).equals("0")){
+							mPassBt.setEnabled(true);
+						}
             		}
             		break; 		
             		
