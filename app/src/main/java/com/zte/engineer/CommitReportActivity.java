@@ -112,7 +112,7 @@ public class CommitReportActivity extends Activity implements View.OnClickListen
     public void onClick(View view) {
         if (view.getId() == R.id.commit_bt) {
             String imeiString = StringUtils.getDeviceIMEI(mContext);
-            if(imeiString != null && !imeiString.equals("")) {
+            if(imeiString != null && !imeiString.equals("") && !imeiString.contains("00000000")) {
                 if (StringUtils.isNetworkConnected(mContext)) {
                     myHandler.removeMessages(SHOW_PROGRESS_DIALOG);
                     myHandler.sendEmptyMessage(SHOW_PROGRESS_DIALOG);

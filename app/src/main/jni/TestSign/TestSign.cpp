@@ -3,7 +3,7 @@
 //
 
 #include "TestSign.h"
-#define SignDataNum 200
+#define SignDataNum 300
 
 
 char test_item[] ="ver*;bat*;gpio*;lcm*;bl*;tp*;fcam*;bcam*;key*;vib*;ring*;loop*;ear*;rev*;sim*;imei*;sd*;bt*;wifi*;fm*;uart*;gps*;i2c*;led*;rf*;";

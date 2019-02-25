@@ -188,14 +188,14 @@ public abstract class StringUtils {
 		TelephonyManager telephonyManager = (TelephonyManager) context
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		mIMEI = telephonyManager.getDeviceId();
-		if(mIMEI != null && !mIMEI.equals("")){
+		if(mIMEI != null && !mIMEI.equals("") && !mIMEI.contains("00000000")){
 			return  mIMEI;
 		}else{
 			mIMEI1 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_1);
 			mIMEI2 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_2);
-			if(mIMEI1 != null && !mIMEI1.equals("")){
+			if(mIMEI1 != null && !mIMEI1.equals("") && !mIMEI1.contains("00000000")){
 				return  mIMEI1;
-			}else if(mIMEI2 != null && !mIMEI2.equals("")){
+			}else if(mIMEI2 != null && !mIMEI2.equals("") && !mIMEI2.contains("00000000")){
 				return  mIMEI2;
 			}else{
 				return "";
