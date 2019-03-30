@@ -32,6 +32,7 @@ public class LSensorTest extends ZteActivity {
 	private SensorManager sensorMgr;
 	private SensorEventListener lsn;
 	TextView LightView;
+	Button mPassBt;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,7 +57,9 @@ public class LSensorTest extends ZteActivity {
 	}
 
 	private void initUi() {
-		((Button) findViewById(R.id.l_sensor_pass)).setOnClickListener(this);
+		mPassBt = (Button) findViewById(R.id.l_sensor_pass);
+		mPassBt.setOnClickListener(this);
+		mPassBt.setEnabled(false);
 		((Button) findViewById(R.id.l_sensor_false)).setOnClickListener(this);
 
         light_layout = (LinearLayout) findViewById(R.id.light_layout);
@@ -75,6 +78,9 @@ public class LSensorTest extends ZteActivity {
 						x = e.values[SensorManager.DATA_X];
 						LightView.setText(String.format(
 								getString(R.string.light_is), String.valueOf(x)));
+						if(String.valueOf(x) != null && !String.valueOf(x).equals("")){
+							mPassBt.setEnabled(true);
+						}
 						break;
 					}
 	
@@ -113,7 +119,7 @@ public class LSensorTest extends ZteActivity {
 			finishSelf(RESULT_FALSE);
 			break;
 		default:
-			finishSelf(RESULT_PASS);
+			finishSelf(RESULT_FALSE);
 			break;
 		}
 

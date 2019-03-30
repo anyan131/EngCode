@@ -33,7 +33,7 @@ public class PSensorTest extends ZteActivity {
 	private SensorEventListener lsn;
 	private TextView ProximityView;
 	private int proximity = 0;
-
+	Button mPassBt;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +51,10 @@ public class PSensorTest extends ZteActivity {
 	}
 
 	private void initUi()
-    {  	
-    	((Button)findViewById(R.id.sensor_pass)).setOnClickListener(this);
+    {
+		mPassBt = (Button)findViewById(R.id.sensor_pass);
+		mPassBt.setOnClickListener(this);
+		mPassBt.setEnabled(false);
     	((Button)findViewById(R.id.sensor_false)).setOnClickListener(this);
     	ProximityView = (TextView)findViewById(R.id.proximity);
     }
@@ -69,6 +71,9 @@ public class PSensorTest extends ZteActivity {
     	       		{
 						x = e.values[SensorManager.DATA_X];
     	       			ProximityView.setText(String.valueOf(x));
+						if(String.valueOf(x) != null && !String.valueOf(x).equals("")){
+							mPassBt.setEnabled(true);
+						}
     	       		}
     	       		break;    	       		
             		
@@ -107,7 +112,7 @@ public class PSensorTest extends ZteActivity {
 			finishSelf(RESULT_FALSE);
 			break;
 		default:
-			finishSelf(RESULT_PASS);
+			finishSelf(RESULT_FALSE);
 			break;
 		}
 		

@@ -33,6 +33,7 @@ public class MSensorTest extends ZteActivity {
 	private SensorEventListener lsn;
 	TextView MagneticX, MagneticY, MagneticZ;
 	private int mData = 0;
+	Button mPassBt;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,7 +56,9 @@ public class MSensorTest extends ZteActivity {
 	}
 
 	private void initUi() {
-		((Button) findViewById(R.id.m_sensor_pass)).setOnClickListener(this);
+		mPassBt = (Button) findViewById(R.id.m_sensor_pass);
+		mPassBt.setOnClickListener(this);
+		mPassBt.setEnabled(false);
 		((Button) findViewById(R.id.m_sensor_false)).setOnClickListener(this);
 
         magnetic_layout = (LinearLayout) findViewById(R.id.magnetic_layout);
@@ -81,6 +84,12 @@ public class MSensorTest extends ZteActivity {
 						MagneticX.setText(String.valueOf(x));
 						MagneticY.setText(String.valueOf(y));
 						MagneticZ.setText(String.valueOf(z));
+						if(String.valueOf(x) != null && !String.valueOf(x).equals("")
+								&& String.valueOf(y) != null && !String.valueOf(y).equals("")
+								&& String.valueOf(z) != null && !String.valueOf(z).equals("")&&
+						 !(String.valueOf(x).equals("0") && String.valueOf(y).equals("0") && String.valueOf(z).equals("0"))){
+							mPassBt.setEnabled(true);
+						}
 						break;
 					}
 					default: {
@@ -118,7 +127,7 @@ public class MSensorTest extends ZteActivity {
 			finishSelf(RESULT_FALSE);
 			break;
 		default:
-			finishSelf(RESULT_PASS);
+			finishSelf(RESULT_FALSE);
 			break;
 		}
 

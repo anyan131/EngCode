@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class EthernetTestActivity extends ZteActivity {
 		mEthernetTestBt.setOnClickListener(this);
     	mPassBt.setEnabled(false);
 		mCM = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
     }
 
 	@Override

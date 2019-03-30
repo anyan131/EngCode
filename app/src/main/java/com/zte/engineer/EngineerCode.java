@@ -59,22 +59,21 @@ public class EngineerCode extends Activity {
     private static final String TAG = "EngineerCode";
     final Intent intentToTestReportActivity = new Intent();
     private Context mComtext;
-
+    private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,5,44,79,59,1,6,43,78,60,2,7,42};
     public static final int[] stringIDs =
             {
                     R.string.software_version,
                     //R.string.battery_info,
-                    //R.string.gpio_test,
+                    R.string.gpio_test,
                     //R.string.lcd,
                     R.string.backlight,
                     //R.string.touchpanel,
                     R.string.camera_front,
                     R.string.camera_back,
-                    //R.string.key_test,
-                    //R.string.vibrator,
+                    R.string.key_test,
+                    R.string.vibrator,
                     R.string.ringer,
                     R.string.audio_loop,
-                    R.string.earphone_audio_loop,
                     R.string.audio_receiver_new,
                     R.string.SIM,
                     R.string.imei,
@@ -83,17 +82,18 @@ public class EngineerCode extends Activity {
                     R.string.bt_address,
                     R.string.wifi_address,
 					R.string.g_sensor,
-                    //R.string.gyroscope_sensor,
-                    //R.string.m_sensor,
+                    R.string.gyroscope_sensor,
+                    R.string.m_sensor,
                    // R.string.l_sensor,
-                    //R.string.p_sensor,
+                    R.string.p_sensor,
                     //R.string.usb_camera,
-                    //R.string.ethernet,
+                    R.string.ethernet,
                     //R.string.NM_fm_test,
 
                     R.string.serial_port,
                     R.string.NM_gps_test,
                     R.string.NM_i2c_test,
+                    R.string.earphone_audio_loop,
                     R.string.led_test,                    
                     R.string.board_code,
                     //alextao add for led test.
@@ -201,7 +201,15 @@ public class EngineerCode extends Activity {
             }
         };
         list.setOnItemClickListener(mOnItemClickListener);
+        EmGpio.gpioInit();
+        for(int i = 0; i< GPIO_INDEX.length;i++){
+            boolean res = EmGpio.setGpioOutput(GPIO_INDEX[i]);
 
+        }
+        for(int i = 0; i< GPIO_INDEX.length;i++){
+            boolean res = EmGpio.setGpioDataLow(GPIO_INDEX[i]);
+
+        }
     }
 
     private void implementItemClick(int position) {

@@ -23,7 +23,7 @@ public class KeyTest extends ZteActivity {
 
 	private static final String TAG="KeyTestActivity";
 	private static String str="";//"|";
-	private static final int maxKeyNum = 3; //This is define for this project,pls changed it according to your's.
+	private static final int maxKeyNum = 5; //This is define for this project,pls changed it according to your's.
 	private static int sCount = 0;
 	private TextView show_key;
 	private Button success;
@@ -90,12 +90,9 @@ public class KeyTest extends ZteActivity {
 		switch (keyCode) {
 		case KeyEvent.KEYCODE_MENU:
 			buttonEnableCheck(keyCode, R.string.key_menu);
-			return false;
+			return true;
 		case KeyEvent.KEYCODE_BACK:
 			buttonEnableCheck(keyCode, R.string.key_back);
-			return false;
-		case KeyEvent.KEYCODE_HOME:
-			buttonEnableCheck(keyCode, R.string.key_home);
 			return true;
 		case KeyEvent.KEYCODE_VOLUME_UP:
 			buttonEnableCheck(keyCode, R.string.key_volume_up);
@@ -103,8 +100,8 @@ public class KeyTest extends ZteActivity {
 		case KeyEvent.KEYCODE_VOLUME_DOWN:
 			buttonEnableCheck(keyCode, R.string.key_volume_down);
 			return true ;
-		case KeyEvent.KEYCODE_POWER:
-			buttonEnableCheck(keyCode, R.string.key_power);
+		case KeyEvent.KEYCODE_1:
+			buttonEnableCheck(keyCode, R.string.key_1);
 			return true ;
 	   default:
 	   		return false;
