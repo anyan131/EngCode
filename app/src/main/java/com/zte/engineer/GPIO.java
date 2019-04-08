@@ -25,7 +25,7 @@ public class GPIO extends Activity implements View.OnClickListener {
 	
 //	 private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,0,5,44,
 //	 79,59,1,6,43,78,60,2,7,42};
-	private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,5,44,79,59,1,6,43,78,60,2,7,42};
+	private static final int GPIO_INDEX[] = new int[]{1,2,3,28,76,27,25,26,17,19,18,21,20,22,23,24};
 
 
 
