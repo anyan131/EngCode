@@ -92,7 +92,7 @@ public class GPSTestActivity extends ZteActivity {
 			int timeout = 0;
 			for (;;) {
 				try {
-					Thread.currentThread().sleep(2000);
+					Thread.currentThread().sleep(200);//2000
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -273,15 +273,40 @@ public class GPSTestActivity extends ZteActivity {
 	}
 
 	@Override
+	protected void onPause() {
+		super.onPause();
+		flag = location.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		if(flag){
+			Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
+					android.provider.Settings.Secure.LOCATION_MODE_OFF);
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		flag = location.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		if(!flag){
+			Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+					LocationManager.GPS_PROVIDER, true);
+		}
+	}
+
+	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-				LocationManager.GPS_PROVIDER, false);
-		Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
-                		3);
-		Intent intent = new Intent();
-		intent.setAction(GPS_OFF);
-		this.sendBroadcast(intent);
+//		Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+//				LocationManager.GPS_PROVIDER, false);
+//		Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
+//                		3);
+//		Intent intent = new Intent();
+//		intent.setAction(GPS_OFF);
+//		this.sendBroadcast(intent);
+		flag = location.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		if(flag){
+			Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
+					android.provider.Settings.Secure.LOCATION_MODE_OFF);
+		}
 	}
 	
 	@Override

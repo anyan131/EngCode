@@ -7,13 +7,19 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.renderscript.Script;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.mediatek.fmradio.FmAlexTaoActivity;
 import com.newmobi.iic.LEDHelper;
+import com.newmobi.iic.TestSign;
+import com.zte.engineer.CommitReportUtils.CommitUtils;
+import com.zte.engineer.CommitReportUtils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,37 +41,43 @@ public class AeonAutoTest extends Activity {
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
-
+    //add by lzg
+    private WifiManager mManager;
+    private LocationManager mLocation;
+    private Context mContext;
+    final int testCount = stringIds.length;
+    //end lzg
     //add hexs end
 
     private Map<String, Class> testItemMap = new HashMap<>();
 
     private static final int[] stringIds = {
             R.string.software_version,
-            R.string.battery_info,
             R.string.gpio_test,
-            R.string.lcd,
             R.string.backlight,
-            R.string.touchpanel,
             R.string.camera_front,
             R.string.camera_back,
             R.string.key_test,
             R.string.vibrator,
             R.string.ringer,
             R.string.audio_loop,
-            R.string.earphone_audio_loop,
             R.string.audio_receiver_new,
             R.string.SIM,
             R.string.imei,
             R.string.sd_info,
             R.string.bt_address,
             R.string.wifi_address,
-            R.string.NM_fm_test,
-            R.string.serial_port,
+            //R.string.g_sensor,
+            R.string.gyroscope_sensor,
+            //R.string.m_sensor,
+            //R.string.p_sensor,
+            //R.string.ethernet,
+            //R.string.serial_port,
             R.string.NM_gps_test,
-            R.string.NM_i2c_test,
+            //R.string.NM_i2c_test,
+            R.string.earphone_audio_loop,
+            //R.string.led_test,
             R.string.board_code,
-            R.string.led_test,
     };
 
     /**
@@ -73,30 +85,31 @@ public class AeonAutoTest extends Activity {
      */
     public static final Class[] CLASSES = {
             ProduceInfoListView.class,
-            BatteryLog.class,
             GPIO.class,
-            LcdTestActivity.class,
             BacklightTest.class,
-            TouchScreenTest.class,
             AlexFrontCamera.class,
             AlexBackCameraTest.class,
             KeyTest.class,
             VibratorTest.class,
             RingerTest.class,
             AudioLoopTest.class,
-            EarPhoneAudioLoopTest.class,
             ReciverTest.class,
             SIMTest.class,
             ImeiTest.class,
             SDcardTest.class,
             BTAddressTest.class,
             AlexWiFiTest.class,
-            FmAlexTaoActivity.class,
-            SerialPort.class,
+            //GSensorTest.class,
+            GyroscopeSensorTest.class,
+            //MSensorTest.class,
+            //PSensorTest.class,
+            //EthernetTestActivity.class,
+            //SerialPort.class,
             GPSTestActivity.class,
             AlexIICTest.class,
-            BoardCode.class,
+            EarPhoneAudioLoopTest.class,
             LedTest.class,
+            BoardCode.class,
     };
 
 
@@ -106,7 +119,11 @@ public class AeonAutoTest extends Activity {
         //add hexs start
         res = getResources();
         //add hexs end
-
+        //add by lzg
+        mContext = this;
+        mManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        mLocation = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //end lzg
         //make sure our map is empty.
         testItemMap.clear();
         //fill up the HashMap with strings and classes.
@@ -119,10 +136,48 @@ public class AeonAutoTest extends Activity {
         editor = prefs.edit();
 
         initTestList();
-
+        //add by lzg
+        isFirst();
+        enableWifiAndGps();
+        //end lzg
         int index = 0;
         Intent intent = list.get(index);
         startActivityForResult(intent, index);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //add by lzg
+        disableWifiAndGps();
+        //end lzg
+    }
+
+    private void isFirst() {
+        SharedPreferences share = getSharedPreferences("first", MODE_PRIVATE);
+        SharedPreferences.Editor edt = share.edit();
+        boolean isFirst = share.getBoolean("isFirst", true);
+        if (isFirst) {
+            Resources re = getResources();
+            Toast.makeText(AeonAutoTest.this, "First", Toast.LENGTH_SHORT).show();
+            //modify by lzg
+            CommitUtils cu = new CommitUtils(mContext);
+            boolean isReadSuccess = cu.readStorageToReport();
+            if(!isReadSuccess){
+                for (int i = 0; i < testCount; i++) {
+                    System.out.println("----lzg isFirst");
+                    editor.putString(re.getString(stringIds[i]), "NOT_TEST");
+                    //add by lzg
+                    editor.putString(StringUtils.getTestItemName(i),"*");
+                    TestSign.JNISignflagAllClear();
+                    //end lzg
+                    editor.commit();
+                }
+            }
+            //end lzg
+            edt.putBoolean("isFirst", false);
+            edt.commit();//TODO: maybe we should use apply()?? for the thread safe?
+        }
     }
 
     private class MyLocationListener implements LocationListener {
@@ -161,24 +216,24 @@ public class AeonAutoTest extends Activity {
         * */
 
         list.add(newIntent(this, ProduceInfoListView.class));
-        result.add(res.getString(R.string.produce_information));
+        result.add(res.getString(R.string.software_version));
 
-        list.add(newIntent(this, BatteryLog.class));
-        result.add(res.getString(R.string.battery_info));
+        //list.add(newIntent(this, BatteryLog.class));
+        //result.add(res.getString(R.string.battery_info));
 
         list.add(newIntent(this, GPIO.class));
         result.add(res.getString(R.string.gpio_test));
 
-        list.add(newIntent(this, LcdTestActivity.class));
-        result.add(res.getString(R.string.lcd));
+        //list.add(newIntent(this, LcdTestActivity.class));
+        //result.add(res.getString(R.string.lcd));
 
 
         //list.add(newIntent(this, HallTest.class));
         list.add(newIntent(this, BacklightTest.class));
         result.add(res.getString(R.string.backlight));
 
-        list.add(newIntent(this, TouchScreenTest.class));
-        result.add(res.getString(R.string.touch_test));
+        //list.add(newIntent(this, TouchScreenTest.class));
+        //result.add(res.getString(R.string.touch_test));
 
         list.add(newIntent(this, AlexFrontCamera.class));
         result.add(res.getString(R.string.camera_front));
@@ -198,11 +253,8 @@ public class AeonAutoTest extends Activity {
         list.add(newIntent(this, AudioLoopTest.class));
         result.add(res.getString(R.string.audio_loop));
 
-        list.add(newIntent(this, EarPhoneAudioLoopTest.class));
-        result.add(res.getString(R.string.earphone_audio_loop));
-
         list.add(newIntent(this, ReciverTest.class));
-        result.add(res.getString(R.string.audio_receiver));
+        result.add(res.getString(R.string.audio_receiver_new));
 
         list.add(newIntent(this, SIMTest.class));
         result.add(res.getString(R.string.SIM));
@@ -212,7 +264,7 @@ public class AeonAutoTest extends Activity {
         result.add(res.getString(R.string.imei));
 
         list.add(newIntent(this, SDcardTest.class));
-        result.add(res.getString(R.string.sd_test));
+        result.add(res.getString(R.string.sd_info));
 
         list.add(newIntent(this, BTAddressTest.class));
         result.add(res.getString(R.string.bt_address));
@@ -220,23 +272,41 @@ public class AeonAutoTest extends Activity {
         list.add(newIntent(this, AlexWiFiTest.class));
         result.add(res.getString(R.string.wifi_address));
 
-        list.add(newIntent(this, FmAlexTaoActivity.class));
-        result.add(res.getString(R.string.fm_test));
+        //list.add(newIntent(this, FmAlexTaoActivity.class));
+        //result.add(res.getString(R.string.fm_test));
 
-        list.add(newIntent(this, SerialPort.class));
-        result.add(res.getString(R.string.serial_port));
+        //list.add(newIntent(this, GSensorTest.class));
+        //result.add(res.getString(R.string.g_sensor));
+
+        list.add(newIntent(this, GyroscopeSensorTest.class));
+        result.add(res.getString(R.string.gyroscope_sensor));
+
+        //list.add(newIntent(this, MSensorTest.class));
+        //result.add(res.getString(R.string.m_sensor));
+
+        //list.add(newIntent(this, PSensorTest.class));
+        //result.add(res.getString(R.string.p_sensor));
+
+        //list.add(newIntent(this, EthernetTestActivity.class));
+        //result.add(res.getString(R.string.ethernet));
+
+        //list.add(newIntent(this, SerialPort.class));
+        //result.add(res.getString(R.string.serial_port));
 
         list.add(newIntent(this, GPSTestActivity.class));
-        result.add(res.getString(R.string.gps));
+        result.add(res.getString(R.string.NM_gps_test));
 
-        list.add(newIntent(this, AlexIICTest.class));
-        result.add(res.getString(R.string.NM_i2c_test));
+        //list.add(newIntent(this, AlexIICTest.class));
+        //result.add(res.getString(R.string.NM_i2c_test));
+
+        list.add(newIntent(this, EarPhoneAudioLoopTest.class));
+        result.add(res.getString(R.string.earphone_audio_loop));
+
+        //list.add(newIntent(this,LedTest.class));
+        //result.add(res.getString(R.string.led_test));
 
         list.add(newIntent(this, BoardCode.class));
         result.add(res.getString(R.string.board_code));
-        list.add(newIntent(this,LedTest.class));
-        result.add(res.getString(R.string.led_test));
-
 
         //  list.add(newIntent(this, ResultList.class));
 
@@ -268,12 +338,22 @@ public class AeonAutoTest extends Activity {
         //if resultCode pass
         if (resultCode == 10){
             editor.putString(res.getString(stringIds[requestCode]),"PASS");
+            //add by lzg
+            editor.putString(StringUtils.getTestItemName(requestCode),"1");
+            //end lzg
             editor.commit();
         }else if (resultCode == 20){
             editor.putString(res.getString(stringIds[requestCode]),"FAIL");
+            //add by lzg
+            editor.putString(StringUtils.getTestItemName(requestCode),"0");
+            //end lzg
             editor.commit();
         }else{
-            editor.putString(res.getString(stringIds[requestCode]),"PASS");
+            editor.putString(res.getString(stringIds[requestCode]),"FAIL");
+            //add by lzg
+            editor.putString(StringUtils.getTestItemName(requestCode),"0");
+            editor.commit();
+            //end lzg
         }
 
 
@@ -294,7 +374,7 @@ public class AeonAutoTest extends Activity {
         if (index >= list.size()) {
 //            finish();
 
-            Intent i  = new Intent(this,TestReport.class);
+            Intent i  = new Intent(this,EngineerCode.class);
             startActivity(i);
             finish();
             return;
@@ -336,5 +416,27 @@ public class AeonAutoTest extends Activity {
         i.setClassName(packageName, className);
         return i;
     }
+    //add by lzg
+    private void enableWifiAndGps(){
+        if (mManager != null && !mManager.isWifiEnabled()) {
+            mManager.setWifiEnabled(true);
+        }
+        boolean flag = mLocation.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(!flag){
+            Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+                    LocationManager.GPS_PROVIDER, true);
+        }
+    }
 
+    private void disableWifiAndGps(){
+        if (mManager != null && mManager.isWifiEnabled()) {
+            mManager.setWifiEnabled(false);
+        }
+        boolean flag = mLocation.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(flag){
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
+                    android.provider.Settings.Secure.LOCATION_MODE_OFF);
+        }
+    }
+    //end lzg
 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.hardware.Camera;
@@ -151,6 +152,7 @@ public class EngineerCodeOther extends Activity {
             autoTestFactory = true;
         }
         setContentView(R.layout.main);
+        setTitle(this.getTitle() + "  Version:" + getVersionCode(mComtext));
         Resources r = getResources();
         prefs = getSharedPreferences("engineer", MODE_MULTI_PROCESS);
         editor = prefs.edit();
@@ -852,6 +854,15 @@ public class EngineerCodeOther extends Activity {
             edt.putBoolean("isFirst", false);
             edt.commit();//TODO: maybe we should use apply()?? for the thread safe?
         }
+    }
+    private int getVersionCode(Context context) {
+        int versionCode = 0;
+        try {
+            versionCode = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionCode;
     }
 }
 

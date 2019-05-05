@@ -4,13 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.hardware.Camera;
+import android.location.LocationManager;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +63,10 @@ public class EngineerCode extends Activity {
     private static final String TAG = "EngineerCode";
     final Intent intentToTestReportActivity = new Intent();
     private Context mComtext;
+    //add by lzg
+    private WifiManager mManager;
+    private LocationManager mLocation;
+    //end lzg
     private static final int GPIO_INDEX[] = new int[]{1,2,3,28,76,27,25,26,17,19,18,21,20,22,23,24};
     public static final int[] stringIDs =
             {
@@ -81,13 +89,13 @@ public class EngineerCode extends Activity {
                     R.string.sd_info,
                     R.string.bt_address,
                     R.string.wifi_address,
-					R.string.g_sensor,
+					//R.string.g_sensor,
                     R.string.gyroscope_sensor,
-                   // R.string.m_sensor,
+                    //R.string.m_sensor,
                    // R.string.l_sensor,
-                    R.string.p_sensor,
+                    //R.string.p_sensor,
                     //R.string.usb_camera,
-                    R.string.ethernet,
+                    //R.string.ethernet,
                     //R.string.NM_fm_test,
 
                     //R.string.serial_port,
@@ -138,6 +146,10 @@ public class EngineerCode extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mComtext = this;
+        //add by lzg
+        mManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        mLocation = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //end lzg
 //        if (LeakCanary.isInAnalyzerProcess(this)) {
 //            // This process is dedicated to LeakCanary for heap analysis.
 //            // You should not init your app in this process.
@@ -151,6 +163,7 @@ public class EngineerCode extends Activity {
             autoTestFactory = true;
         }
         setContentView(R.layout.main);
+        setTitle(this.getTitle() + "  Version:" + getVersionCode(mComtext));
         Resources r = getResources();
         prefs = getSharedPreferences("engineer", MODE_MULTI_PROCESS);
         editor = prefs.edit();
@@ -201,6 +214,9 @@ public class EngineerCode extends Activity {
             }
         };
         list.setOnItemClickListener(mOnItemClickListener);
+        //add by lzg
+        enableWifiAndGps();
+        //end lzg
         EmGpio.gpioInit();
         for(int i = 0; i< GPIO_INDEX.length;i++){
             boolean res = EmGpio.setGpioOutput(GPIO_INDEX[i]);
@@ -861,6 +877,40 @@ public class EngineerCode extends Activity {
             edt.commit();//TODO: maybe we should use apply()?? for the thread safe?
         }
     }
+
+    private int getVersionCode(Context context) {
+        int versionCode = 0;
+        try {
+            versionCode = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionCode;
+    }
+
+    //add by lzg
+    private void enableWifiAndGps(){
+        if (mManager != null && !mManager.isWifiEnabled()) {
+            mManager.setWifiEnabled(true);
+        }
+        boolean flag = mLocation.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(!flag){
+            Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+                    LocationManager.GPS_PROVIDER, true);
+        }
+    }
+
+    private void disableWifiAndGps(){
+        if (mManager != null && mManager.isWifiEnabled()) {
+            mManager.setWifiEnabled(false);
+        }
+        boolean flag = mLocation.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(flag){
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
+                    android.provider.Settings.Secure.LOCATION_MODE_OFF);
+        }
+    }
+    //end lzg
 }
 
 class SaveItems implements Parcelable {
