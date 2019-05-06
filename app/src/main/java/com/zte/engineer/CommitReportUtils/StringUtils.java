@@ -191,8 +191,8 @@ public abstract class StringUtils {
 		if(mIMEI != null && !mIMEI.equals("") && !mIMEI.contains("00000000")){
 			return  mIMEI;
 		}else{
-			mIMEI1 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_1);
-			mIMEI2 = TelephonyManagerEx.getDefault().getDeviceId(PhoneConstants.SIM_ID_2);
+			mIMEI1 = telephonyManager.getDeviceId(PhoneConstants.SIM_ID_1);
+			mIMEI2 = telephonyManager.getDeviceId(PhoneConstants.SIM_ID_2);
 			if(mIMEI1 != null && !mIMEI1.equals("") && !mIMEI1.contains("00000000")){
 				return  mIMEI1;
 			}else if(mIMEI2 != null && !mIMEI2.equals("") && !mIMEI2.contains("00000000")){
