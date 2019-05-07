@@ -25,6 +25,8 @@ struct meta_gpio_object {
 static struct meta_gpio_object gpio_object = {.init = false};
 
 static const char *dev = "/dev/mtgpio";
+#define GPIO_NAME_PATH "/sys/bus/platform/drivers/mediatek-pinctrl/10005000.pinctrl/mt_gpio"
+int gpio_fb_63 = -1;
 
 static const int op_map[] = {
         GPIO_IOCQMODE,
@@ -80,6 +82,8 @@ bool Meta_GPIO_Init() {
     }
     obj->fd = open(dev, O_RDONLY);
 
+    gpio_fb_63 = open(GPIO_NAME_PATH, O_RDWR | O_NOCTTY | O_NONBLOCK);
+
     if (obj->fd == -1) {
 
         return false;
@@ -116,7 +120,19 @@ GPIO_CNF Meta_GPIO_OP(GPIO_REQ req, unsigned char *peer_buf, unsigned short peer
         case SET_MODE_2:
         case SET_MODE_3:
         case SET_DIR_IN:
+            op = op_map[req.op];
+            ioctl(obj->fd, GPIO_IOCTMODE0, (req.pin | 0x80000000));
+            res = ioctl(obj->fd, op, req.pin);
+            obj->cnf.data = (res < 0) ? (0) : res;
+            obj->cnf.status = (res < 0) ? META_FAILED : META_SUCCESS;
+            break;
         case SET_DIR_OUT:
+            op = op_map[req.op];
+            ioctl(obj->fd, GPIO_IOCTMODE0, (req.pin | 0x80000000));
+            res = ioctl(obj->fd, op, req.pin);
+            obj->cnf.data = (res < 0) ? (0) : res;
+            obj->cnf.status = (res < 0) ? META_FAILED : META_SUCCESS;
+            break;
         case SET_PULLEN_DISABLE:
         case SET_PULLEN_ENABLE:
         case SET_PULL_DOWN:
@@ -147,12 +163,130 @@ int Meta_GPIO_Deinit(void) {
         return true;
     }
     res = close(obj->fd);
+    close(gpio_fb_63);
     obj->init = false;
     return true;
 }
 
 
+/*
+	setting GPIO mode
+	gpio : gpio num
+	modem: gpio mode
+*/
+
+void set_GPIO_mode(int fd,int gpio,int mode){
+    int ret;
+    char buf[16]={0};
+    sprintf(buf,"mode %d %d\n",gpio,mode);
+    ret = write(fd,buf,16);
+    if(ret < 0){
+        printf("set_GPIO_mode error\n");
+    }
+}
+
+/*
+	setting GPIO dir
+	gpio : gpio num
+	dir : gpio dir 0:in or 1:out
+*/
+
+void set_GPIO_dir(int fd,int gpio,int dir){
+    int ret;
+    char buf[16]={0};
+    sprintf(buf,"dir %d %d\n",gpio,dir);
+    ret = write(fd,buf,16);
+    if(ret < 0){
+        printf("set_GPIO_dir error\n");
+    }
+}
 
 
+/*
+	setting GPIO output
+	gpio : gpio num
+	status : 1:High or 0:Low
+*/
+
+void set_GPIO_out(int fd,int gpio,int status){
+    int ret;
+    char buf[16]={0};
+    sprintf(buf,"out %d %d\n",gpio,status);
+    ret = write(fd,buf,16);
+    if(ret < 0){
+        printf("set_GPIO_out error\n");
+    }
+}
+
+/*
+	setting Gpio pull en
+	gpio : gpio num
+	pull_en: pull  1:enable or 0:disenable
+*/
+
+void set_GPIO_pullen(int fd,int gpio,int pull_en){
+    int ret;
+    char buf[16]={0};
+    sprintf(buf,"pullen %d %d\n",gpio,pull_en);
+    ret = write(fd,buf,16);
+    if(ret < 0){
+        printf("set_GPIO_pullen error\n");
+    }
+}
+
+/*
+	setting Gpio pull sel
+	gpio : gpio num
+	pull_sel: pull 1:high or 0:low
+*/
+
+void set_GPIO_pullsel(int fd,int gpio,int pull_sel){
+    int ret;
+    char buf[16]={0};
+    sprintf(buf,"pullsel %d %d\n",gpio,pull_sel);
+    ret = write(fd,buf,16);
+    if(ret < 0){
+        printf("set_GPIO_pullsel error\n");
+    }
+}
 
 
+void spi_gpio_set_low(void)
+{
+
+    set_GPIO_mode(gpio_fb_63,85,0);
+    set_GPIO_mode(gpio_fb_63,86,0);
+    set_GPIO_mode(gpio_fb_63,87,0);
+    set_GPIO_mode(gpio_fb_63,88,0);
+
+    set_GPIO_dir(gpio_fb_63,85,1);
+    set_GPIO_dir(gpio_fb_63,86,1);
+    set_GPIO_dir(gpio_fb_63,87,1);
+    set_GPIO_dir(gpio_fb_63,88,1);
+
+    set_GPIO_out(gpio_fb_63,85,0);
+    set_GPIO_out(gpio_fb_63,86,0);
+    set_GPIO_out(gpio_fb_63,87,0);
+    set_GPIO_out(gpio_fb_63,88,0);
+
+}
+
+void spi_gpio_set_high(void)
+{
+
+    set_GPIO_mode(gpio_fb_63,85,0);
+    set_GPIO_mode(gpio_fb_63,86,0);
+    set_GPIO_mode(gpio_fb_63,87,0);
+    set_GPIO_mode(gpio_fb_63,88,0);
+
+    set_GPIO_dir(gpio_fb_63,85,1);
+    set_GPIO_dir(gpio_fb_63,86,1);
+    set_GPIO_dir(gpio_fb_63,87,1);
+    set_GPIO_dir(gpio_fb_63,88,1);
+
+    set_GPIO_out(gpio_fb_63,85,1);
+    set_GPIO_out(gpio_fb_63,86,1);
+    set_GPIO_out(gpio_fb_63,87,1);
+    set_GPIO_out(gpio_fb_63,88,1);
+
+}

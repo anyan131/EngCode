@@ -53,7 +53,6 @@ public class AeonAutoTest extends Activity {
 
     private static final int[] stringIds = {
             R.string.software_version,
-            R.string.gpio_test,
             R.string.backlight,
             R.string.camera_front,
             R.string.camera_back,
@@ -78,6 +77,7 @@ public class AeonAutoTest extends Activity {
             R.string.earphone_audio_loop,
             //R.string.led_test,
             R.string.board_code,
+            R.string.gpio_test,
     };
 
     /**
@@ -221,9 +221,6 @@ public class AeonAutoTest extends Activity {
         //list.add(newIntent(this, BatteryLog.class));
         //result.add(res.getString(R.string.battery_info));
 
-        list.add(newIntent(this, GPIO.class));
-        result.add(res.getString(R.string.gpio_test));
-
         //list.add(newIntent(this, LcdTestActivity.class));
         //result.add(res.getString(R.string.lcd));
 
@@ -307,6 +304,9 @@ public class AeonAutoTest extends Activity {
 
         list.add(newIntent(this, BoardCode.class));
         result.add(res.getString(R.string.board_code));
+
+        list.add(newIntent(this, GPIO.class));
+        result.add(res.getString(R.string.gpio_test));
 
         //  list.add(newIntent(this, ResultList.class));
 

@@ -21,7 +21,8 @@ public class EmGpio{
     public static native boolean setGpioDataHigh(int gpioIndex);
 
     public static native boolean setGpioDataLow(int gpioIndex);
-
+    public static native boolean spiGpioSetlow(int gpioIndex);
+    public static native boolean spiGpioSethigh(int gpioIndex);
     public static native boolean getGpioData(int gpioIndex);
 
     public static native int getCurrent(int hostNumber);

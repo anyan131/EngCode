@@ -87,6 +87,7 @@ JNIEXPORT jboolean JNICALL Java_alextao_newmobi_com_gpiodemo_GPIO_setGpioDataHig
 JNIEXPORT jboolean JNICALL Java_alextao_newmobi_com_gpiodemo_GPIO_setGpioDataLow
   (JNIEnv *, jobject, jint);
 
+
 #ifdef __cplusplus
 }
 #endif

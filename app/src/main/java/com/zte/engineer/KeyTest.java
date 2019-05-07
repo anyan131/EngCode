@@ -23,7 +23,7 @@ public class KeyTest extends ZteActivity {
 
 	private static final String TAG="KeyTestActivity";
 	private static String str="";//"|";
-	private static final int maxKeyNum = 5; //This is define for this project,pls changed it according to your's.
+	private static final int maxKeyNum = 4; //This is define for this project,pls changed it according to your's.
 	private static int sCount = 0;
 	private TextView show_key;
 	private Button success;

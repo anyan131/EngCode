@@ -67,12 +67,11 @@ public class EngineerCode extends Activity {
     private WifiManager mManager;
     private LocationManager mLocation;
     //end lzg
-    private static final int GPIO_INDEX[] = new int[]{1,2,3,28,76,27,25,26,17,19,18,21,20,22,23,24};
+   // private static final int GPIO_INDEX[] = new int[]{1,2,3,28,76,27,25,26,17,19,18,21,20,22,23,24,85,86,87,88};
     public static final int[] stringIDs =
             {
                     R.string.software_version,
                     //R.string.battery_info,
-                    R.string.gpio_test,
                     //R.string.lcd,
                     R.string.backlight,
                     //R.string.touchpanel,
@@ -92,7 +91,7 @@ public class EngineerCode extends Activity {
 					//R.string.g_sensor,
                     R.string.gyroscope_sensor,
                     //R.string.m_sensor,
-                   // R.string.l_sensor,
+                    //R.string.l_sensor,
                     //R.string.p_sensor,
                     //R.string.usb_camera,
                     //R.string.ethernet,
@@ -105,7 +104,7 @@ public class EngineerCode extends Activity {
                     //R.string.led_test,
                     R.string.board_code,
                     //alextao add for led test.
-
+                    R.string.gpio_test,
 
 
                     //R.string.audio_receiver,
@@ -217,15 +216,15 @@ public class EngineerCode extends Activity {
         //add by lzg
         enableWifiAndGps();
         //end lzg
-        EmGpio.gpioInit();
-        for(int i = 0; i< GPIO_INDEX.length;i++){
-            boolean res = EmGpio.setGpioOutput(GPIO_INDEX[i]);
-
-        }
-        for(int i = 0; i< GPIO_INDEX.length;i++){
-            boolean res = EmGpio.setGpioDataLow(GPIO_INDEX[i]);
-
-        }
+//        EmGpio.gpioInit();
+//        for(int i = 0; i< GPIO_INDEX.length;i++){
+//            boolean res = EmGpio.setGpioOutput(GPIO_INDEX[i]);
+//
+//        }
+//        for(int i = 0; i< GPIO_INDEX.length;i++){
+//            boolean res = EmGpio.setGpioDataLow(GPIO_INDEX[i]);
+//
+//        }
     }
 
     private void implementItemClick(int position) {
@@ -536,6 +535,9 @@ public class EngineerCode extends Activity {
             intent.setClassName(Launcher.FACTORY_RESET_PACKAGE, Launcher.FACTORY_RESET_CLASS);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            //add by lzg
+            disableWifiAndGps();
+            //end lzg
         }
 
         Util.saveTestResult(this, TEST_RESULT, (isAllPassed ? 1 : 0) + "");

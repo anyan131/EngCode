@@ -25,7 +25,7 @@ public class GPIO extends Activity implements View.OnClickListener {
 	
 //	 private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,0,5,44,
 //	 79,59,1,6,43,78,60,2,7,42};
-	private static final int GPIO_INDEX[] = new int[]{1,2,3,28,76,27,25,26,17,19,18,21,20,22,23,24};
+	private static final int GPIO_INDEX[] = new int[]{1,2,3,28,27,25,26,17,19,18,20,21,22,23,24/*,85,86,87,88*/};
 
 
 
@@ -61,6 +61,7 @@ public class GPIO extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.gpio_btn_setHigh:
+				EmGpio.spiGpioSethigh(1);
 			for(int i = 0; i< GPIO_INDEX.length;i++){
 					boolean res = EmGpio.setGpioDataHigh(GPIO_INDEX[i]);
 					if(res == false){
@@ -70,24 +71,30 @@ public class GPIO extends Activity implements View.OnClickListener {
 				}
 				
                 break;
-            case R.id.gpio_btn_setLow:
-			for(int i = 0; i< GPIO_INDEX.length;i++){
+            case R.id.gpio_btn_setLow: {
+				EmGpio.spiGpioSetlow(1);
+				for (int i = 0; i < GPIO_INDEX.length; i++) {
 					boolean res = EmGpio.setGpioDataLow(GPIO_INDEX[i]);
-					if(res == false){
-						Toast.makeText(GPIO.this,"set pin "+i+" data low error",Toast.LENGTH_SHORT).show();
+					if (res == false) {
+						Toast.makeText(GPIO.this, "set pin " + i + " data low error", Toast.LENGTH_SHORT).show();
 						break;
 					}
+
 				}
+			}
 
                 break;
             case R.id.gpio_btn_setOutput:
 			{
+
 				for(int i = 0; i< GPIO_INDEX.length;i++){
 					boolean res = EmGpio.setGpioOutput(GPIO_INDEX[i]);
+
 					if(res == false){
 						Toast.makeText(GPIO.this,"set pin "+i+" output error",Toast.LENGTH_SHORT).show();
 						break;
 					}
+
 				}
 			}
                 break;

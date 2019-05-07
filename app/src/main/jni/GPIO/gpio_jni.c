@@ -14,6 +14,7 @@
 #include "Meta_GPIO_Para.h"
 #include "meta_gpio.h"
 
+
 JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_gpioInit
         (JNIEnv *env, jobject jobj) {
     return Meta_GPIO_Init() ? JNI_TRUE : JNI_FALSE;
@@ -61,6 +62,7 @@ JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_setGpioOutput
     if(r.status != META_SUCCESS)
         return  JNI_FALSE;
 
+
     req.pin = (int) n;
     req.op = SET_DIR_OUT;
 
@@ -101,3 +103,17 @@ JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_getGpioData
     return r.data ;
 }
 
+
+JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_spiGpioSetlow
+        (JNIEnv *env, jobject jobj, jint n)
+{
+    spi_gpio_set_low();
+    return 1;
+}
+
+JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_spiGpioSethigh
+        (JNIEnv *env, jobject jobj, jint n)
+{
+    spi_gpio_set_high();
+    return 1;
+}

@@ -22,3 +22,6 @@ struct GPIO_CNF;
 int Meta_GPIO_Init(void);
 GPIO_CNF Meta_GPIO_OP(GPIO_REQ req, unsigned char* peer_buf, unsigned short peer_len); 
 int Meta_GPIO_Deinit(void);
+
+void spi_gpio_set_low(void);
+void spi_gpio_set_high(void);
