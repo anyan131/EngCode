@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'androiddebugkey'
             keyPassword  "android"
-            storeFile file('G:/6735About/platform.keystore')
+            storeFile file('F:/huangkerong/project/newEng/6735About/platform.keystore')
             storePassword "android"
         }
     }
@@ -47,6 +47,7 @@ dependencies {
     compileOnly files('libs/mediatek-framework.jar')
     compileOnly files('libs/telephony-common.jar')
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    implementation 'org.jetbrains:annotations-java5:15.0'
+//    implementation 'org.jetbrains:annotations-java5:15.0'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation("com.squareup.okhttp3:okhttp:4.0.1")
 }

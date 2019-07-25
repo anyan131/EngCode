@@ -3,6 +3,8 @@ package com.zte.engineer.CommitReportUtils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.telecom.Response;
+import android.util.Log;
 
 import com.newmobi.iic.TestSign;
 import com.zte.engineer.R;
@@ -10,7 +12,18 @@ import com.zte.engineer.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 
 public class CommitUtils {
     /** 上传测试报告 */
@@ -18,6 +31,7 @@ public class CommitUtils {
     private Context mContext;
     private SharedPreferences mSp;
     private SharedPreferences.Editor mEditor;
+    private String TAG = "CommitUtils";
     public CommitUtils(Context context) {
         this.mContext = context;
         mSp = mContext.getSharedPreferences("engineer", Context.MODE_MULTI_PROCESS);
@@ -25,7 +39,7 @@ public class CommitUtils {
     }
 
     public CommitReportEntity getCommitReport( ) throws JSONException {
-        CommitReportEntity commitReportEntity = new CommitReportEntity();
+        final CommitReportEntity commitReportEntity = new CommitReportEntity();
         JSONObject commitReportJson = new JSONObject();
         commitReportJson.put(Constants.IMEI_STRING, StringUtils.getDeviceIMEI(mContext));
         commitReportJson.put(Constants.PROJECT_NAME, StringUtils.getProjectname());
@@ -64,16 +78,54 @@ public class CommitUtils {
         commitReportJson.put(Constants.ETHERNET, mSp.getString(Constants.ETHERNET,"#"));
         commitReportJson.put(Constants.SN, mSp.getString(Constants.SN,"#"));
         HttpClients client = new HttpClients();
+        Log.i(TAG,"param: "+commitReportJson.toString());
         HttpResponseResult result = client.sendRequestGetResponse(SERVER_COMMIT_REPORT_URL, commitReportJson.toString());
         String json = result.getResponseResult();
         if (json != null && json.equals(Constants.COMMIT_OK)){
-            System.out.println("---lzg json="+json);
+            Log.i(TAG,"commit success: "+json);
             commitReportEntity.setSuccess(true);
             commitReportEntity.setData(json);
         }else{
+            Log.i(TAG,"commit fail");
             commitReportEntity.setSuccess(false);
             commitReportEntity.setData("");
         }
+
+//        OkHttpClient okHttpClient  = new OkHttpClient.Builder()
+//                .connectTimeout(10, TimeUnit.SECONDS)
+//                .writeTimeout(10,TimeUnit.SECONDS)
+//                .readTimeout(20, TimeUnit.SECONDS)
+//                .build();
+//
+//        final String json =commitReportJson.toString();
+//        //MediaType  设置Content-Type 标头中包含的媒体类型值
+//        RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8")
+//                , json);
+//        Log.i(TAG,"param: "+json);
+//        Request request = new Request.Builder()
+//                .url(SERVER_COMMIT_REPORT_URL)//请求的url
+//                .post(requestBody)
+//                .build();
+//
+//        //创建/Call
+//        Call call = okHttpClient.newCall(request);
+//        //加入队列 异步操作
+//        call.enqueue(new Callback() {
+//
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.i(TAG,"提交失败");
+//                commitReportEntity.setSuccess(false);
+//                commitReportEntity.setData("");
+//            }
+//            @Override
+//            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+//                int reponseCode=response.code();
+//                Log.i(TAG,"提交成功: "+reponseCode);
+//                commitReportEntity.setSuccess(true);
+//                commitReportEntity.setData("OK");
+//            }
+//        });
         return commitReportEntity;
     }
 

@@ -173,11 +173,11 @@ public abstract class StringUtils {
 		return testItemName;
 	}
 
+	//post提交的json数据不能带"."和空格
 	public static String getProjectname(){
 		String displayID = SystemProperties.get("ro.build.display.id");
-		int index = displayID.indexOf('.');
-		//index = displayID.indexOf('.',index+1);
-		String projectName = displayID.substring(0,index );
+		String projectName = displayID.substring(0,displayID.indexOf("."));
+		projectName=projectName.substring(0,projectName.indexOf(" "));
 		return projectName;
 	}
 

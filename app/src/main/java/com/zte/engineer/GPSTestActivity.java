@@ -236,6 +236,7 @@ public class GPSTestActivity extends ZteActivity {
 
 	private final GpsStatus.Listener statusListener = new GpsStatus.Listener() {
 		public void onGpsStatusChanged(int event) {
+			System.out.println("GPS status change");
 			LocationManager location = (LocationManager) GPSTestActivity.this
 					.getSystemService(Context.LOCATION_SERVICE);
 			GpsStatus status = location.getGpsStatus(null);

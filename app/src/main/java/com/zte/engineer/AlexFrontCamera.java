@@ -3,6 +3,7 @@ package com.zte.engineer;
 import android.app.Activity;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -81,7 +82,6 @@ public class AlexFrontCamera extends Activity {
 
 
     public void startCamera() {
-
         try {
             mCamera = android.hardware.Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
         } catch (Exception e) {

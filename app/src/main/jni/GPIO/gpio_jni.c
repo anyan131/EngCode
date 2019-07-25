@@ -13,6 +13,7 @@
 #include "gpio_exp.h"
 #include "Meta_GPIO_Para.h"
 #include "meta_gpio.h"
+#include <stdio.h>
 
 
 JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_gpioInit
@@ -76,7 +77,7 @@ JNIEXPORT jboolean JNICALL Java_com_zte_engineer_EmGpio_setGpioDataHigh
     memset(&req, 0, sizeof(GPIO_REQ));
     req.pin = (int) n;
     req.op = SET_DATA_HIGH;
-
+    printf("lrz Java_com_zte_engineer_EmGpio_setGpioDataHigh\n");
     GPIO_CNF r = Meta_GPIO_OP(req, 0, 0);
     return (r.status == META_SUCCESS) ? JNI_TRUE : JNI_FALSE;
 

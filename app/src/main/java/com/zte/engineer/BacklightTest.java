@@ -6,6 +6,7 @@ package com.zte.engineer;
 
 import android.app.Activity;
 import android.content.Context;
+import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IPowerManager;
@@ -18,11 +19,16 @@ import android.provider.Settings.SettingNotFoundException;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * The Class is for backlight test activity
@@ -37,8 +43,8 @@ public class BacklightTest extends ZteActivity {
 
 	// Backlight range is from 0 - 255. Need to make sure that user
 	// doesn't set the backlight to 0 and get stuck
-	private static final int MINIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_OFF + 10;
-	private static final int MAXIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_ON;
+	private static final int MINIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_OFF + 10;//10
+	private static final int MAXIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_ON;//255
     private static final int AUTOMATIC_ENABLED = 1;
     private static final int AUTOMATIC_DISABLED = 0;
 
@@ -80,9 +86,12 @@ public class BacklightTest extends ZteActivity {
 		if (Util.DEBUG) {
 			return;
 		}
-
-		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-		pm.setBacklightBrightness(brightness);
+//		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+//		pm.setBacklightBrightness(brightness);
+		WindowManager.LayoutParams lp = getWindow().getAttributes();
+		lp.screenBrightness = brightness / 255.0f;
+		Log.i(LOGTAG,"brightness: "+brightness / 255.0f);
+		getWindow().setAttributes(lp);
 	}
 
 	@Override

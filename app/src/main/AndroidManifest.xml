@@ -32,6 +32,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CONTROL_DISPLAY_BRIGHTNESS" />
 
     <application
         android:icon="@drawable/icon"
@@ -43,18 +44,18 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-        <!--  <category android:name="android.intent.category.LAUNCHER" />-->
-   </intent-filter>
-   <intent-filter>
-       <action android:name="com.zte.engineer.action.TEST_LIST" />
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.zte.engineer.action.TEST_LIST" />
 
-       <category android:name="android.intent.category.DEFAULT" />
-   </intent-filter>
-</activity>
-<activity
-   android:name=".TestPhoneActivity"
-   android:screenOrientation="portrait" />
-<!-- zhangle add for movego -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TestPhoneActivity"
+            android:screenOrientation="portrait" />
+    <!-- zhangle add for movego -->
         <activity
             android:name=".UsbMainActivity"
             android:screenOrientation="portrait" /> 

@@ -37,7 +37,7 @@ public class GSensorTest extends ZteActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.g_sensortest);
+		setContentView(R.layout.gsensortest);
 
 		sensorMgr = (SensorManager) getSystemService(SENSOR_SERVICE);
 
@@ -55,8 +55,8 @@ public class GSensorTest extends ZteActivity {
 	}
 
 	private void initUi() {
-		((Button) findViewById(R.id.g_sensor_pass)).setOnClickListener(this);
-		((Button) findViewById(R.id.g_sensor_false)).setOnClickListener(this);
+		((Button) findViewById(R.id.sensor_pass)).setOnClickListener(this);
+		((Button) findViewById(R.id.sensor_false)).setOnClickListener(this);
 
         g_sensor_layout = (LinearLayout) findViewById(R.id.g_sensor_layout);
         if(!g_sensor_visible)
@@ -113,10 +113,10 @@ public class GSensorTest extends ZteActivity {
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.g_sensor_pass:
+		case R.id.sensor_pass:
 			finishSelf(RESULT_PASS);
 			break;
-		case R.id.g_sensor_false:
+		case R.id.sensor_false:
 			finishSelf(RESULT_FALSE);
 			break;
 		default:

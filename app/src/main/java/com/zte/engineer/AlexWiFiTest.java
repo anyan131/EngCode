@@ -5,11 +5,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +21,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class AlexWiFiTest extends Activity {
-
 
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -50,26 +50,24 @@ public class AlexWiFiTest extends Activity {
     };
 
     private Button passBtn, failBtn;
-
-
     private WifiManager mManager;
     private ListView wifi_list;
-
     private final Timer mTimer = new Timer();
     private TimerTask mTask;
+    private LocationManager location;
 
     final Handler myHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 1) {
+                mManager.startScan();
                 wifi_list.setAdapter(new myAdapter(mManager, mManager.getScanResults()));
                 Log.i("Main", "handleMessage: ");
 
             }
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +84,11 @@ public class AlexWiFiTest extends Activity {
 
         wifi_list = (ListView) findViewById(R.id.list_wifi);
         mManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        location = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if(!location.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+                    LocationManager.GPS_PROVIDER, true);
+        }
         if (mManager != null && !mManager.isWifiEnabled()) {
             mManager.setWifiEnabled(true);
             passBtn.setEnabled(true);
@@ -94,10 +97,6 @@ public class AlexWiFiTest extends Activity {
         //set the intentFilter.
         IntentFilter filter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(mReceiver,filter);
-
-
-
-
         mTask = new TimerTask() {
             @Override
             public void run() {
@@ -109,7 +108,6 @@ public class AlexWiFiTest extends Activity {
         mTimer.schedule(mTask, 0, 1000);
 
     }
-
 
     //extends the baseadapter to gain best control of the items.
     class myAdapter extends BaseAdapter {
@@ -155,6 +153,13 @@ public class AlexWiFiTest extends Activity {
     protected void onDestroy() {
         unregisterReceiver(mReceiver);
         mTimer.cancel();
+        if (mManager != null && mManager.isWifiEnabled()) {
+            mManager.setWifiEnabled(false);
+        }
+        if(location.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+                    LocationManager.GPS_PROVIDER, false);
+        }
         super.onDestroy();
 
     }

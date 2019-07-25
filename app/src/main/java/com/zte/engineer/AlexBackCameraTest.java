@@ -66,7 +66,7 @@ public class AlexBackCameraTest extends Activity {
                 stopCamera();
             }
         };
-            int i = findBackCamera();
+        int i = findBackCamera();
         if (i == 0) {
 
             mSurfaceHolder.addCallback(mCallback);
