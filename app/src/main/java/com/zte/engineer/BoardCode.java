@@ -50,7 +50,7 @@ public class BoardCode extends Activity {
         //barcode = TelephonyManager.getDefault().getSN();
         //Phone mPhone = PhoneFactory.getDefaultPhone();
         //String barcode = mPhone.getSN();
-//        String barcode = SystemProperties.get("gsm.serial");//6763
+ //      String barcode = SystemProperties.get("gsm.serial");//6763
         String barcode = SystemProperties.get("vendor.gsm.serial");//6762
 		char a = barcode.length() < 63 ? '0' : barcode.charAt(62);
 		char b = barcode.length() < 62 ? '0' : barcode.charAt(61);

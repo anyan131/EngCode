@@ -13,142 +13,118 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class SDcardTest extends ZteActivity {
+	private boolean isPlusIn = false;
+	private long mSDTotalCount;
+	private long mSDAvailableCount;
+	private long mSDUsedCount;
+	private boolean isPlusIn2 = false;
+	private long mSDTotalCount2;
+	private long mSDAvailableCount2;
+	private long mSDUsedCount2;
+
+	private TextView mSDStatus;
+	private TextView mSDTotal;
+	private TextView mBSDUsed;
+	private TextView mBSDAvailable;
+
+	private TextView mSDStatus2;
+	private TextView mSDTotal2;
+	private TextView mBSDUsed2;
+	private TextView mBSDAvailable2;
+	private Button btn_pass;
+	private Button btn_fail;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// hide title bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.normal);
+		initView();
+		initData();
+	}
 
-		boolean isPlusIn = false;
-		long mSDTotalCount;
-		long mSDAvailableCount;
-		long mSDUsedCount;
-
-		TextView mTextView = (TextView) findViewById(R.id.normal_textview);
-		TextView mSDStatus = (TextView) findViewById(R.id.normal_textview2);
-		TextView mSDTotal = (TextView) findViewById(R.id.normal_textview3);
-		TextView mBSDUsed = (TextView) findViewById(R.id.normal_textview4);
-		TextView mBSDAvailable = (TextView) findViewById(R.id.normal_textview5);
-
-		boolean isPlusIn2 = false;
-		long mSDTotalCount2;
-		long mSDAvailableCount2;
-		long mSDUsedCount2;
-
-		TextView mTextView2 = (TextView) findViewById(R.id.normal_textview7);
-		TextView mSDStatus2 = (TextView) findViewById(R.id.normal_textview9);
-		TextView mSDTotal2 = (TextView) findViewById(R.id.normal_textview10);
-		TextView mBSDUsed2 = (TextView) findViewById(R.id.normal_textview11);
-		TextView mBSDAvailable2 = (TextView) findViewById(R.id.normal_textview12);
-
-		Button button = (Button) findViewById(R.id.normal_pass_button);
+	private void initData() {
 		StorageManager mStorageManager = (StorageManager) getSystemService(Context.STORAGE_SERVICE);
 		String[] storagePathList = mStorageManager.getVolumePaths();
 		if (storagePathList.length >= 1) {
 			String state = mStorageManager.getVolumeState(storagePathList[0]);
 			isPlusIn = Environment.MEDIA_MOUNTED.equals(state);
-			mTextView.setText(R.string.sd_info);
 			StatFs stat = new StatFs(storagePathList[0]);
-			if (true == isPlusIn) {
-				mSDTotalCount = (long) stat.getBlockCount()
-						* stat.getBlockSize() / 1024 / 1024;
-				mSDAvailableCount = (long) stat.getAvailableBlocks()
-						* stat.getBlockSize() / 1024 / 1024;
+			if (isPlusIn) {
+				mSDTotalCount = (long) stat.getBlockCount() * stat.getBlockSize() / 1024 / 1024;
+				mSDAvailableCount = (long) stat.getAvailableBlocks() * stat.getBlockSize() / 1024 / 1024;
 				mSDUsedCount = mSDTotalCount - mSDAvailableCount;
-				mSDStatus.setText(getString(R.string.state)
-						+ getString(R.string.sd_mounted));
-
+				mSDStatus.append(getString(R.string.sd_mounted));
 			} else {
 				mSDTotalCount = 0;
 				mSDAvailableCount = 0;
 				mSDUsedCount = 0;
-				mSDStatus.setText(getString(R.string.state)
-						+ getString(R.string.sd_removed));
-
+				mSDStatus.append(getString(R.string.sd_removed));
 			}
 
-			mSDTotal.setText(String.format(getString(R.string.sd_total),
-					Long.toString(mSDTotalCount)));
-			mBSDUsed.setText(String.format(getString(R.string.sd_used),
-					Long.toString(mSDUsedCount)));
-			mBSDAvailable.setText(String.format(
-					getString(R.string.sd_available),
-					Long.toString(mSDAvailableCount)));
+			mSDTotal.append(mSDTotalCount+"MB");
+			mBSDUsed.append(mSDUsedCount+"MB");
+			mBSDAvailable.append(mSDAvailableCount+"MB");
 		}
 		if (storagePathList.length >= 2) {
 			String state = mStorageManager.getVolumeState(storagePathList[1]);
 			isPlusIn2 = Environment.MEDIA_MOUNTED.equals(state);
-			mTextView2.setText(R.string.sd2_info);
 			StatFs stat = new StatFs(storagePathList[1]);
-			if (true == isPlusIn2) {
-				mSDTotalCount2 = (long) stat.getBlockCount()
-						* stat.getBlockSize() / 1024 / 1024;
-				mSDAvailableCount2 = (long) stat.getAvailableBlocks()
-						* stat.getBlockSize() / 1024 / 1024;
+			if (isPlusIn2) {
+				mSDTotalCount2 = (long) stat.getBlockCount() * stat.getBlockSize() / 1024 / 1024;
+				mSDAvailableCount2 = (long) stat.getAvailableBlocks() * stat.getBlockSize() / 1024 / 1024;
 				mSDUsedCount2 = mSDTotalCount2 - mSDAvailableCount2;
-				mSDStatus2.setText(getString(R.string.state)
-						+ getString(R.string.sd_mounted));
-				button.setEnabled(true);
+				mSDStatus2.append(getString(R.string.sd_mounted));
+				btn_pass.setEnabled(true);
 			} else {
 				mSDTotalCount2 = 0;
 				mSDAvailableCount2 = 0;
 				mSDUsedCount2 = 0;
-				mSDStatus2.setText(getString(R.string.state)
-						+ getString(R.string.sd_removed));
-				button.setEnabled(false);
+				mSDStatus2.append(getString(R.string.sd_removed));
 			}
 
-			mSDTotal2.setText(String.format(getString(R.string.sd_total),
-					Long.toString(mSDTotalCount2)));
-			mBSDUsed2.setText(String.format(getString(R.string.sd_used),
-					Long.toString(mSDUsedCount2)));
-			mBSDAvailable2.setText(String.format(
-					getString(R.string.sd_available),
-					Long.toString(mSDAvailableCount2)));
+			mSDTotal2.append(mSDTotalCount2+"MB");
+			mBSDUsed2.append(mSDUsedCount2+"MB");
+			mBSDAvailable2.append(mSDAvailableCount2+"MB");
+		}else {
+			mSDStatus2.append(getString(R.string.sd_removed));
+			mSDTotal2.append(mSDTotalCount2+"MB");
+			mBSDUsed2.append(mSDUsedCount2+"MB");
+			mBSDAvailable2.append(mSDAvailableCount2+"MB");
 		}
+	}
 
-		/*
-		 * 
-		 * if(false == isPlusIn) { String storageDirectory =
-		 * Environment.getExternalStorageDirectory().toString(); StatFs stat =
-		 * new StatFs(storageDirectory);
-		 * 
-		 * mSDTotalCount = (long) stat.getBlockCount() * stat.getBlockSize() /
-		 * 1024 / 1024; mSDAvailableCount = (long) stat.getAvailableBlocks() *
-		 * stat.getBlockSize() / 1024 / 1024; mSDUsedCount = mSDTotalCount -
-		 * mSDAvailableCount; mSDStatus.setText(getString(R.string.state) +
-		 * getString(R.string.sd_mounted)); } else { mSDTotalCount = 0;
-		 * mSDAvailableCount = 0; mSDUsedCount =0;
-		 * mSDStatus.setText(getString(R.string.state) +
-		 * getString(R.string.sd_removed)); }
-		 * 
-		 * mSDTotal.setText(String.format(getString(R.string.sd_total),
-		 * Long.toString(mSDTotalCount)));
-		 * mBSDUsed.setText(String.format(getString(R.string.sd_used),
-		 * Long.toString(mSDUsedCount)));
-		 * mBSDAvailable.setText(String.format(getString(R.string.sd_available),
-		 * Long.toString(mSDAvailableCount)));
-		 */
-		((Button) findViewById(R.id.normal_pass_button))
-				.setOnClickListener(this);
-		((Button) findViewById(R.id.normal_false_button))
-				.setOnClickListener(this);
+	private void initView() {
+		mSDStatus = (TextView) findViewById(R.id.normal_textview2);
+		mSDTotal = (TextView) findViewById(R.id.normal_textview3);
+		mBSDUsed = (TextView) findViewById(R.id.normal_textview4);
+		mBSDAvailable = (TextView) findViewById(R.id.normal_textview5);
+
+		mSDStatus2 = (TextView) findViewById(R.id.normal_textview9);
+		mSDTotal2 = (TextView) findViewById(R.id.normal_textview10);
+		mBSDUsed2 = (TextView) findViewById(R.id.normal_textview11);
+		mBSDAvailable2 = (TextView) findViewById(R.id.normal_textview12);
+
+		btn_pass = (Button) findViewById(R.id.normal_pass_button);
+		btn_fail = (Button) findViewById(R.id.normal_false_button);
+		btn_pass.setEnabled(false);
+		btn_pass.setOnClickListener(this);
+		btn_fail.setOnClickListener(this);
 
 	}
 
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.normal_pass_button:
-			finishSelf(RESULT_PASS);
-			break;
-		case R.id.normal_false_button:
-			finishSelf(RESULT_FALSE);
-			break;
-		default:
-			finishSelf(RESULT_PASS);
-			break;
+			case R.id.normal_pass_button:
+				finishSelf(RESULT_PASS);
+				break;
+			case R.id.normal_false_button:
+				finishSelf(RESULT_FALSE);
+				break;
+			default:
+				finishSelf(RESULT_FALSE);
+				break;
 		}
 	}
     @Override

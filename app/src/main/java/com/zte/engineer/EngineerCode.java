@@ -84,7 +84,7 @@ public class EngineerCode extends Activity {
                     R.string.audio_receiver_new,
                     R.string.SIM,
                     R.string.imei,
-                    //R.string.serial_number,
+                    R.string.serial_number,
                     R.string.sd_info,
                     R.string.bt_address,
                     R.string.wifi_address,

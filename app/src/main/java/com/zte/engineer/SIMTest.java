@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.android.internal.telephony.PhoneConstants;
+import android.os.SystemProperties;
 
 public class SIMTest extends ZteActivity {
 	@Override
@@ -36,24 +37,28 @@ public class SIMTest extends ZteActivity {
 			else
                 mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_NOT_INSERT)));
 
-			mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_3);
+			TextView mTextViewIMEI2 = (TextView) findViewById(R.id.singlebutton_textview_3);
 			if (Sim2State == true)
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_INSERT)));
+                mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_INSERT)));
 			else
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_NOT_INSERT)));
+                mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_NOT_INSERT)));
 		} else {
 			boolean isSimInsert = TelephonyManager.getDefault().hasIccCard();
 			// TextView mTextView =
 			// (TextView)findViewById(R.id.singlebutton_textview);
 			TextView mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_2);
+			TextView mTextViewIMEI2 = (TextView) findViewById(R.id.singlebutton_textview_3);
+
 
 			// mTextView.setText(R.string.IMEI_test);
 			// Get and format IMEI string
 			if (isSimInsert == true){
 				((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(true);
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM), getResources().getString(R.string.SIM_INSERT)));
+                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_INSERT)));
+				mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_INSERT)));
 			}else{
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM), getResources().getString(R.string.SIM_NOT_INSERT)));
+                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_NOT_INSERT)));
+				mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_NOT_INSERT)));
                 ((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(false);
 			}
 		}

@@ -20,7 +20,10 @@ public class SNTest extends ZteActivity {
 		mPassBt.setOnClickListener(this);
 		mFailBt.setOnClickListener(this);
 		mSNText = (TextView)findViewById(R.id.sn_tv);
-		String snString = Build.SERIAL;
+		String snString = null;
+		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+			snString = Build.getSerial();
+		}
 		if(snString != null && !snString.equals("")){
 			mSNText.setText("SN: " + snString);
 			mPassBt.setEnabled(true);
