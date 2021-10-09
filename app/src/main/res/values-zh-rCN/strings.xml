@@ -48,9 +48,9 @@
     <string name="state">"状态："</string>
     <string name="sd_mounted">"已挂载"</string>
     <string name="sd_removed">"已移除"</string>
-    <string name="sd_total">"总大小：%1sMB"</string>
-    <string name="sd_used">"已用空间：%1sMB"</string>
-    <string name="sd_available">"可用空间：%1sMB"</string>
+    <string name="sd_total">"总大小："</string>
+    <string name="sd_used">"已用空间："</string>
+    <string name="sd_available">"可用空间："</string>
     <string name="bt_status">"蓝牙状态: %1s"</string>
     <string name="bt_address_is">"蓝牙地址: %1s"</string>
     <string name="bt_read_address">"读取中，请稍后&#8230;"</string>

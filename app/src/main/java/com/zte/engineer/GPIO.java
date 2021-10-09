@@ -26,7 +26,8 @@ public class GPIO extends Activity implements View.OnClickListener {
 //	 private static final int GPIO_INDEX[] = new int[]{10,96,57,3,120,19,97,58,4,122,80,86,0,5,44,
 //	 79,59,1,6,43,78,60,2,7,42};
 //	private static final int GPIO_INDEX[] = new int[]{1,2,3,28,27,25,26,17,19,18,20,21,22,23,24/*,85,86,87,88*/};
-	private static final int GPIO_INDEX[] = new int[]{27,76,28,157,158,156,155,1,3,17,18,19,20,21,22,23,24,25,26};
+	private static final int GPIO_INDEX[] = new int[]{1,2,3,17,18,19,20,21,22,23,24,25,26,27,28,155,156,157,158};
+
 
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class GPIO extends Activity implements View.OnClickListener {
         fail = (Button) findViewById(R.id.gpio_fail);
         fail.setOnClickListener(this);
 		Log.i(TAG,GPIO_INDEX.length+"");
+        Toast.makeText(this, "测试前请先点击SET OUTPUT设置为输出模式,才能用SET HIGH拉高，SET LOW拉低", Toast.LENGTH_LONG).show();
     }
 
     @Override

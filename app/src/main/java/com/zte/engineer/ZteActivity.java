@@ -6,8 +6,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public abstract class ZteActivity extends Activity implements
-		View.OnClickListener {
+public abstract class ZteActivity extends Activity implements View.OnClickListener {
 
 	public static final int RESULT_PASS = 10;
 	public static final int RESULT_FALSE = 20;

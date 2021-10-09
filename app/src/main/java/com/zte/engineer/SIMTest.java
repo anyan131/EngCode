@@ -1,89 +1,96 @@
 package com.zte.engineer;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemProperties;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
+import android.telephony.PhoneStateListener;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import com.android.internal.telephony.PhoneConstants;
-import android.os.SystemProperties;
+
+import java.lang.reflect.Method;
 
 public class SIMTest extends ZteActivity {
+	private TextView tv_sim1;
+	private TextView tv_sim2;
+	private Button btn_pass;
+	private Button btn_fail;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.singlebuttonview);
-		TextView mTextView = (TextView) findViewById(R.id.singlebutton_textview);
-		mTextView.setText(R.string.SIM);
-		// Get Telephony Manager
-
-		if ("true".equals(SystemProperties.get("ro.mediatek.gemini_support"))) {
-			//boolean Sim1State = mGeminiPhone.isSimInsert(PhoneConstants.GEMINI_SIM_1)& mGeminiPhone.isRadioOnGemini(PhoneConstants.GEMINI_SIM_1);
-			//boolean Sim2State = mGeminiPhone.isSimInsert(PhoneConstants.GEMINI_SIM_2)& mGeminiPhone.isRadioOnGemini(PhoneConstants.GEMINI_SIM_2);
-			//boolean Sim1State = mGeminiPhone.getPhonebyId(PhoneConstants.GEMINI_SIM_1).getIccCard().hasIccCard();
-			//boolean Sim2State = mGeminiPhone.getPhonebyId(PhoneConstants.GEMINI_SIM_2).getIccCard().hasIccCard();
-            boolean Sim1State = TelephonyManager.getDefault().hasIccCard(PhoneConstants.SIM_ID_1);
-            boolean Sim2State = TelephonyManager.getDefault().hasIccCard(PhoneConstants.SIM_ID_2);
-            ((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(false);
-            if (Sim1State && Sim2State) {
-                ((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(true);
-            }
-
-			TextView mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_2);
-			if (Sim1State == true)
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_INSERT)));
-			else
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_NOT_INSERT)));
-
-			TextView mTextViewIMEI2 = (TextView) findViewById(R.id.singlebutton_textview_3);
-			if (Sim2State == true)
-                mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_INSERT)));
-			else
-                mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_NOT_INSERT)));
-		} else {
-			boolean isSimInsert = TelephonyManager.getDefault().hasIccCard();
-			// TextView mTextView =
-			// (TextView)findViewById(R.id.singlebutton_textview);
-			TextView mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_2);
-			TextView mTextViewIMEI2 = (TextView) findViewById(R.id.singlebutton_textview_3);
-
-
-			// mTextView.setText(R.string.IMEI_test);
-			// Get and format IMEI string
-			if (isSimInsert == true){
-				((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(true);
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_INSERT)));
-				mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_INSERT)));
-			}else{
-                mTextViewIMEI.setText(String.format(getResources().getString(R.string.display_SIM_1), getResources().getString(R.string.SIM_NOT_INSERT)));
-				mTextViewIMEI2.setText(String.format(getResources().getString(R.string.display_SIM_2), getResources().getString(R.string.SIM_NOT_INSERT)));
-                ((Button) findViewById(R.id.singlebutton_pass_button)).setEnabled(false);
-			}
-		}
-        ((Button) findViewById(R.id.singlebutton_pass_button)).setOnClickListener(this);
-
-        ((Button) findViewById(R.id.singlebutton_false_button)).setOnClickListener(this);
-
-
+		setContentView(R.layout.layout_simtest);
+		initView();
+		initData();
 	}
 
+	private void initData() {
+		boolean sim1=isSimInsert(0);
+		boolean sim2=isSimInsert(1);
+		if(sim1){
+			tv_sim1.append("已插入");
+		}else {
+			tv_sim1.append("未插入");
+		}
+		if(sim2){
+			tv_sim2.append("已插入");
+		}else {
+			tv_sim2.append("未插入");
+		}
+		if(sim1 && sim2){
+			btn_pass.setEnabled(true);
+		}
+	}
+
+	private void initView() {
+		tv_sim1 = (TextView)findViewById(R.id.tv_sim1);
+		tv_sim2 = (TextView)findViewById(R.id.tv_sim2);
+		btn_pass = (Button)findViewById(R.id.btn_pass);
+		btn_fail = (Button) findViewById(R.id.btn_fail);
+		btn_pass.setEnabled(false);
+		btn_pass.setOnClickListener(this);
+		btn_fail.setOnClickListener(this);
+	}
+
+	private boolean isSimInsert(int sim) {
+		TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		try {
+			Method method = TelephonyManager.class.getMethod("getSimState", int.class);
+			int simState = (Integer) method.invoke(mTelephonyManager, new Object[]{sim});
+			if (TelephonyManager.SIM_STATE_READY == simState) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.singlebutton_pass_button:
-			finishSelf(RESULT_PASS);
-			break;
-		case R.id.singlebutton_false_button:
-			finishSelf(RESULT_FALSE);
-			break;
-		default:
-			finishSelf(RESULT_PASS);
-			break;
+			case R.id.btn_pass:
+				finishSelf(RESULT_PASS);
+				break;
+			case R.id.btn_fail:
+				finishSelf(RESULT_FALSE);
+				break;
+			default:
+				finishSelf(RESULT_FALSE);
+				break;
 		}
 	}
+
     @Override
     public void onBackPressed() {
         finishSelf(RESULT_FALSE);

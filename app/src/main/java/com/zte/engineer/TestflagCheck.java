@@ -14,8 +14,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-//import com.android.internal.telephony.Phone;
-//import com.android.internal.telephony.PhoneFactory;
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.PhoneFactory;
 import android.os.SystemProperties;
 
 //import com.android.internal.telehpony.TelephonyProperties;

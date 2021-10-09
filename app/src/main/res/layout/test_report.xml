@@ -11,7 +11,7 @@
     <TextView
         android:textSize="20sp"
         android:gravity="center"
-        android:text="@string/test_report"
+        android:text="测试报告"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

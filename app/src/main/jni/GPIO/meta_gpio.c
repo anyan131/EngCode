@@ -24,8 +24,8 @@ struct meta_gpio_object {
 
 static struct meta_gpio_object gpio_object = {.init = false};
 
-static const char *dev = "/sys/bus/platform/drivers/mediatek-mt6765-pinctrl/1000b000.pinctrl/mt_gpio";
-#define GPIO_NAME_PATH "/sys/bus/platform/drivers/mediatek-mt6765-pinctrl/1000b000.pinctrl/mt_gpio"
+static const char *dev = "/sys/devices/platform/pinctrl@1000b000/mt_gpio";
+#define GPIO_NAME_PATH "/sys/devices/platform/pinctrl@1000b000/mt_gpio"
 int gpio_fb_63 = -1;
 
 static const int op_map[] = {

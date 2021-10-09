@@ -39,7 +39,7 @@ public class GPSTestActivity extends ZteActivity {
 	private static final String[] P = { "n/a", "low", "medium", "high" };
 	private static final String[] S = { "out of service",
 			"temporarily unavailable", "available" };
-
+	
 	private int mSatellitesCount = 0;
 	private String best;
 	Button success;
@@ -82,10 +82,8 @@ public class GPSTestActivity extends ZteActivity {
 			//dumpProviders();
 		} else {
 			show.setText(getString(R.string.gps_opening));
-//			Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-//					LocationManager.GPS_PROVIDER, true);
-			Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
-					android.provider.Settings.Secure.LOCATION_MODE_HIGH_ACCURACY);
+			Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+					LocationManager.GPS_PROVIDER, true);
 			// toggleGPS();
 			// Intent intent = new Intent();
 			// intent.setAction(GPS_ON);
@@ -132,7 +130,7 @@ public class GPSTestActivity extends ZteActivity {
 
 			@Override
 			public void onStatusChanged(String provider, int status,
-										Bundle extras) {
+					Bundle extras) {
 
 			}
 
@@ -290,10 +288,8 @@ public class GPSTestActivity extends ZteActivity {
 		super.onResume();
 		flag = location.isProviderEnabled(LocationManager.GPS_PROVIDER);
 		if(!flag){
-//			Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-//					LocationManager.GPS_PROVIDER, true);
-			Settings.Secure.putInt(getContentResolver(), Settings.Secure.LOCATION_MODE,
-					android.provider.Settings.Secure.LOCATION_MODE_HIGH_ACCURACY);
+			Settings.Secure.setLocationProviderEnabled(getContentResolver(),
+					LocationManager.GPS_PROVIDER, true);
 		}
 	}
 
@@ -313,19 +309,19 @@ public class GPSTestActivity extends ZteActivity {
 					android.provider.Settings.Secure.LOCATION_MODE_OFF);
 		}
 	}
-
+	
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-			case R.id.s_gps_test_pass:
-				finishSelf(RESULT_PASS);
-				break;
-			case R.id.s_gps_test_false:
-				finishSelf(RESULT_FALSE);
-				break;
-			default:
-				finishSelf(RESULT_PASS);
-				break;
+		case R.id.s_gps_test_pass:
+			finishSelf(RESULT_PASS);
+			break;
+		case R.id.s_gps_test_false:
+			finishSelf(RESULT_FALSE);
+			break;
+		default:
+			finishSelf(RESULT_PASS);
+			break;
 		}
 	}
 

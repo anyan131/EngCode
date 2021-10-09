@@ -84,6 +84,7 @@ public class SerialPort extends Activity implements View.OnClickListener {
         serialPortTest2.setOnClickListener(this);
         serialPortTest3 = (Button) findViewById(R.id.start3_btn);
         serialPortTest3.setOnClickListener(this);
+        serialPortTest3.setVisibility(View.GONE);
 
         pass = (Button) findViewById(R.id.pass);
         pass.setOnClickListener(this);
@@ -190,7 +191,7 @@ public class SerialPort extends Activity implements View.OnClickListener {
             SerialPort serialPort = serialPortWeakReference.get();
             switch (msg.what) {
                 case 0x0A:
-                    int ret = flag1 & flag2 & flag3;
+                    int ret = flag1 & flag2;
                     if (ret > 0) {
                         serialPort.pass.setEnabled(true);
                     } else {

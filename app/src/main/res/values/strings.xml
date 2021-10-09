@@ -15,7 +15,7 @@
     <string name="vibrator">震动测试</string>
     <string name="ringer">铃音测试</string>
     <string name="lcd_off">LCD Off</string>
-    <string name="sd_info">SD卡信息</string>
+    <string name="sd_info">SD Info</string>
     <string name="sd2_info">SD2 Info</string>
     <string name="otg_info">OTG Info</string>
     <string name="memory">Memory</string>
@@ -91,9 +91,9 @@
     <string name="state">State:</string>
     <string name="sd_mounted">State: Mounted</string>
     <string name="sd_removed">State: Removed</string>
-    <string name="sd_total">Total: %1sMB</string>
-    <string name="sd_used">Used: %1sMB</string>
-    <string name="sd_available">Available: %1sMB</string>
+    <string name="sd_total">Total:</string>
+    <string name="sd_used">Used:</string>
+    <string name="sd_available">Available:</string>
     <string name="bt_status">BT Status: %1s</string>
     <string name="bt_address_is">BT Address: %1s</string>
     <string name="bt_read_address">Reading, please wait&#8230;</string>

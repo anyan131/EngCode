@@ -11,7 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+import com.android.internal.telephony.PhoneConstants;
+import com.mediatek.telephony.TelephonyManagerEx;
 import android.os.SystemProperties;
 
 import java.lang.reflect.InvocationTargetException;
@@ -81,7 +82,7 @@ public class ImeiTest extends ZteActivity {
             }
 
         } else {
-                mIMEI = telephonyManager.getImei();
+                mIMEI = telephonyManager.getDeviceId();
 
             if (mIMEI == null) {
                 passBtn.setEnabled(false);
@@ -120,18 +121,18 @@ public class ImeiTest extends ZteActivity {
                         mIMEI2 =  imeiArray[1];
                         System.out.println("---lzg 1111111");
                     } else {
-                        mIMEI2 = telephonyManager.getImei(1);
+                        mIMEI2 = telephonyManager.getDeviceId(1);
                         System.out.println("---lzg 222222222");
                     }
                 } else {
-                    mIMEI1 = telephonyManager.getImei(0);
-                    mIMEI2 = telephonyManager.getImei(1);
+                    mIMEI1 = telephonyManager.getDeviceId(0);
+                    mIMEI2 = telephonyManager.getDeviceId(1);
                     System.out.println("---lzg 333333333");
                 }
             } else {
                 System.out.println("---lzg 44444444444");
-                mIMEI1 = telephonyManager.getImei(0);
-                mIMEI2 = telephonyManager.getImei(1);
+                mIMEI1 = telephonyManager.getDeviceId(0);
+                mIMEI2 = telephonyManager.getDeviceId(1);
             }
 
         } catch (ClassNotFoundException e) {

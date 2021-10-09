@@ -33,7 +33,7 @@ int SerialFd = -1;
 
 //we just rewrite the function.
 jint openSerialPort(JNIEnv *env, jobject jobject1, jint uartno) {
-    snprintf(ttyPath, 100, "/dev/ttyMT%d", uartno);
+    snprintf(ttyPath, 100, "/dev/ttyS%d", uartno);
 
     SerialFd = open(ttyPath, O_RDWR | O_NOCTTY | O_NONBLOCK);
 
@@ -82,7 +82,7 @@ jint UartTest(JNIEnv *env, jobject jobject1, jint uartno, jint Baud, jint Databi
          uartno, Baud, Databit, Parity, Stopbit);
 
 
-    snprintf(ttyPath, 100, "/dev/ttyMT%d", uartno);
+    snprintf(ttyPath, 100, "/dev/ttyS%d", uartno);
 
     SerialFd = open(ttyPath, O_RDWR | O_NOCTTY | O_NONBLOCK);
     if (SerialFd < 0) {

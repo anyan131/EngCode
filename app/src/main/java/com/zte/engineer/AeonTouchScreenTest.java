@@ -28,8 +28,8 @@ public class AeonTouchScreenTest extends ZteActivity {
         mRectangleView = findViewById(R.id.rectangleView);
 		mDoovCustomView = findViewById(R.id.doovCustomView);
 		
-//		mRectangleView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_GESTURE_ISOLATED);
-//		mDoovCustomView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_GESTURE_ISOLATED);
+		//mRectangleView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_GESTURE_ISOLATED);
+		//mDoovCustomView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_GESTURE_ISOLATED);
 		
 		registerReceiver(mReceiver, new IntentFilter(PRIVATE_ACTION));
 	}

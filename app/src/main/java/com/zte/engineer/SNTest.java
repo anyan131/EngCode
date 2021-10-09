@@ -21,9 +21,12 @@ public class SNTest extends ZteActivity {
 		mFailBt.setOnClickListener(this);
 		mSNText = (TextView)findViewById(R.id.sn_tv);
 		String snString = null;
-		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-			snString = Build.getSerial();
-		}
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            snString = Build.getSerial();
+		}else{
+            snString = Build.SERIAL;
+        }
+
 		if(snString != null && !snString.equals("")){
 			mSNText.setText("SN: " + snString);
 			mPassBt.setEnabled(true);
