@@ -314,9 +314,8 @@ public class EngineerCode extends Activity {
                 intent.setClass(this, ReciverTest.class);
             }
             break;*/
-
-            case R.string.audio_loop: {
-                intent.setClass(this, AudioLoopTest.class);
+            case R.string.audio_loop:{
+                intent.setClass(this,newCode.class);
             }
             break;
             case R.string.earphone_audio_loop: {

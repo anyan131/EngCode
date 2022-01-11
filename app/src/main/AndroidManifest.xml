@@ -44,7 +44,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="com.zte.engineer.action.TEST_LIST" />
@@ -404,6 +404,8 @@
             android:name=".SNTest"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".newCode"
+            android:screenOrientation="portrait"></activity>
         <!-- end lzg -->
         <service android:name="com.mediatek.fmradio.FmRadioService" />
         <service android:name=".Services.AlextaoFMService" />
