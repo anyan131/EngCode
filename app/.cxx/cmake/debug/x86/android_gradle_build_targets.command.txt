@@ -1,0 +1,13 @@
+Executable : C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\x86
+Serial
+SerialPort
+TestSign
+com_zte_engineer_jni
+iichelper
+ledhelper
+newmobi_gpio_jni
+jvmArgs : 
+

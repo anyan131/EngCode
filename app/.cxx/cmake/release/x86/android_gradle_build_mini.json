@@ -1,0 +1,61 @@
+{
+  "buildFiles": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "iichelper-Release-x86": {
+      "artifactName": "iichelper",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" iichelper",
+      "abi": "x86",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86\\libiichelper.so",
+      "runtimeFiles": []
+    },
+    "TestSign-Release-x86": {
+      "artifactName": "TestSign",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" TestSign",
+      "abi": "x86",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86\\libTestSign.so",
+      "runtimeFiles": []
+    },
+    "newmobi_gpio_jni-Release-x86": {
+      "artifactName": "newmobi_gpio_jni",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" newmobi_gpio_jni",
+      "abi": "x86",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86\\libnewmobi_gpio_jni.so",
+      "runtimeFiles": []
+    },
+    "SerialPort-Release-x86": {
+      "artifactName": "SerialPort",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" SerialPort",
+      "abi": "x86",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86\\libSerialPort.so",
+      "runtimeFiles": []
+    },
+    "com_zte_engineer_jni-Release-x86": {
+      "artifactName": "com_zte_engineer_jni",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" com_zte_engineer_jni",
+      "abi": "x86",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86\\libcom_zte_engineer_jni.so",
+      "runtimeFiles": []
+    },
+    "ledhelper-Release-x86": {
+      "artifactName": "ledhelper",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86\" ledhelper",
+      "abi": "x86",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86\\libledhelper.so",
+      "runtimeFiles": []
+    }
+  }
+}

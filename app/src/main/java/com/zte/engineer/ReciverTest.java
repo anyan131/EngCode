@@ -74,7 +74,7 @@ public class ReciverTest extends ZteActivity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		mPlayerHandler.sendEmptyMessage(MESSAGE_STOP_PLAY);
-		mAudioManager.abandonAudioFocusForCall();		
+//		mAudioManager.abandonAudioFocusForCall();
 		mAudioManager.setMode(0);
 	}
 
@@ -87,8 +87,8 @@ public class ReciverTest extends ZteActivity {
 		mAudioManager.setMode(AudioManager.MODE_IN_CALL);
 		//mAudioManager.setMode(0);
 		
-		mAudioManager.requestAudioFocusForCall(AudioManager.STREAM_VOICE_CALL,
-                    AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+//		mAudioManager.requestAudioFocusForCall(AudioManager.STREAM_VOICE_CALL,
+//                    AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 		mPlayerHandler.sendEmptyMessage(MESSAGE_START_PLAY);
 	}
 

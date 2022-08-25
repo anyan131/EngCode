@@ -21,7 +21,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_MODULE    := libSerialPort
 
-
+LOCAL_PROGUARD_ENABLED:= disabled
 include $(BUILD_SHARED_LIBRARY)
 
 

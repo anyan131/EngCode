@@ -1,0 +1,61 @@
+{
+  "buildFiles": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "TestSign-Release-arm64-v8a": {
+      "artifactName": "TestSign",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" TestSign",
+      "abi": "arm64-v8a",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libTestSign.so",
+      "runtimeFiles": []
+    },
+    "iichelper-Release-arm64-v8a": {
+      "artifactName": "iichelper",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" iichelper",
+      "abi": "arm64-v8a",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libiichelper.so",
+      "runtimeFiles": []
+    },
+    "ledhelper-Release-arm64-v8a": {
+      "artifactName": "ledhelper",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" ledhelper",
+      "abi": "arm64-v8a",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libledhelper.so",
+      "runtimeFiles": []
+    },
+    "newmobi_gpio_jni-Release-arm64-v8a": {
+      "artifactName": "newmobi_gpio_jni",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" newmobi_gpio_jni",
+      "abi": "arm64-v8a",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnewmobi_gpio_jni.so",
+      "runtimeFiles": []
+    },
+    "com_zte_engineer_jni-Release-arm64-v8a": {
+      "artifactName": "com_zte_engineer_jni",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" com_zte_engineer_jni",
+      "abi": "arm64-v8a",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libcom_zte_engineer_jni.so",
+      "runtimeFiles": []
+    },
+    "SerialPort-Release-arm64-v8a": {
+      "artifactName": "SerialPort",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\arm64-v8a\" SerialPort",
+      "abi": "arm64-v8a",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libSerialPort.so",
+      "runtimeFiles": []
+    }
+  }
+}

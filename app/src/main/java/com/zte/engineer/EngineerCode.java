@@ -73,57 +73,57 @@ public class EngineerCode extends Activity {
                     R.string.software_version,
                     //R.string.battery_info,
                     //R.string.lcd,
-                    R.string.backlight,
+//                    R.string.backlight,
                     //R.string.touchpanel,
-                    R.string.camera_front,
+//                    R.string.camera_front,
                     R.string.camera_back,
                     R.string.key_test,
-                    R.string.vibrator,
+//                    R.string.vibrator,
                     R.string.ringer,
                     R.string.audio_loop,
-                    R.string.audio_receiver_new,
+//                    R.string.audio_receiver_new,
                     R.string.SIM,
                     R.string.imei,
                     R.string.serial_number,
                     R.string.sd_info,
                     R.string.bt_address,
                     R.string.wifi_address,
-					//R.string.g_sensor,
+					R.string.g_sensor,
                     R.string.gyroscope_sensor,
-                    //R.string.m_sensor,
-                    //R.string.l_sensor,
-                    //R.string.p_sensor,
+                    R.string.m_sensor,
+                    R.string.l_sensor,
+                    R.string.p_sensor,
                     //R.string.usb_camera,
-                    //R.string.ethernet,
+//                    R.string.ethernet,
                     //R.string.NM_fm_test,
 
-                    //R.string.serial_port,
+                    R.string.serial_port,
                     R.string.NM_gps_test,
-                    //R.string.NM_i2c_test,
-                    R.string.earphone_audio_loop,
-                    //R.string.led_test,
-                    R.string.board_code,
+//                    R.string.NM_i2c_test,
+//                    R.string.earphone_audio_loop,
+                    R.string.led_test,
+//                    R.string.board_code,
                     //alextao add for led test.
                     R.string.gpio_test,
 
 
-                    //R.string.audio_receiver,
-                    //R.string.audio_receiver_new,
-                    //R.string.lcd_off,
-                    //R.string.memory,
-                    //R.string.bt_detect,
-                    //R.string.wifi_detect,
-                    //R.string.radio_info,
+//                    R.string.audio_receiver,
+//                    R.string.audio_receiver_new,
+//                    R.string.lcd_off,
+//                    R.string.memory,
+//                    R.string.bt_detect,
+//                    R.string.wifi_detect,
+//                    R.string.radio_info,
                     //R.string.fm_test,
-                    //R.string.imsi,
-                    //R.string.sensor,
-                    //R.string.g_sensor,
-                    //R.string.p_sensor,
+//                    R.string.imsi,
+//                    R.string.sensor,
+//                    R.string.g_sensor,
+//                    R.string.p_sensor,
                     //FN0001234:Added by shihaijun
                     //R.string.camera,
 
                     //End for FN0001234
-                    //R.string.gps,
+//                    R.string.gps,
                     //R.string.flash
             };
 
@@ -310,10 +310,10 @@ public class EngineerCode extends Activity {
     		}
     		break;*/
 
-           /* case R.string.audio_receiver: {
+           case R.string.audio_receiver: {
                 intent.setClass(this, ReciverTest.class);
             }
-            break;*/
+            break;
             case R.string.audio_loop:{
                 intent.setClass(this,newCode.class);
             }
@@ -329,10 +329,10 @@ public class EngineerCode extends Activity {
             /*
         R.string.touchscreen,
     		 */
-            case R.string.fm_test: {
-                intent.setClass(this, FMTest.class);
-            }
-            break;
+//            case R.string.fm_test: {
+//                intent.setClass(this, FMTest.class);
+//            }
+//            break;
 
             case R.string.camera: {
                 intent.setClassName(Launcher.CAMERA_PACKAGE,
@@ -371,7 +371,7 @@ public class EngineerCode extends Activity {
 //				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //				intent.putExtra(EXTRAS_CAMERA_FACING, android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT);
 //    			Log.i("CAMAPP","__________should to boot the front camera ...");
-                intent.setClass(this, AlexFrontCamera.class);
+       //         intent.setClass(this, AlexFrontCamera.class);
             }
             break;
 

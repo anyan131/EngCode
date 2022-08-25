@@ -69,7 +69,7 @@ public class TestflagCheck extends Activity {
 		if (16 > len) {
 			mTextViewIMEI = (TextView) findViewById(R.id.singlebutton_textview_2);
 			mTextViewIMEI
-					.setText("barcode length<16,it is invalid Serial Number:"
+					.setText("barcode length<16,it is invalid Serial.cpp Number:"
 							+ mbarcode);
 		} else {
 			String mSerialNumber = mbarcode.substring(0, 16);

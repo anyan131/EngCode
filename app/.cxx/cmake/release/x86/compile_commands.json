@@ -1,0 +1,55 @@
+[
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -DSerialPort_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\SerialPort\\CMakeFiles\\SerialPort.dir\\AlexTaoSerialPort.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\AlexTaoSerialPort.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/SerialPort/AlexTaoSerialPort.cpp"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dcom_zte_engineer_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\Sensors\\CMakeFiles\\com_zte_engineer_jni.dir\\com_zte_engineer_AlspsCali.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\com_zte_engineer_AlspsCali.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/Sensors/com_zte_engineer_AlspsCali.cpp"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dcom_zte_engineer_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\Sensors\\CMakeFiles\\com_zte_engineer_jni.dir\\com_zte_engineer_LcdPowerControl.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\com_zte_engineer_LcdPowerControl.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/Sensors/com_zte_engineer_LcdPowerControl.cpp"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dcom_zte_engineer_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\Sensors\\CMakeFiles\\com_zte_engineer_jni.dir\\gSensorCaliJni.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\gSensorCaliJni.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/Sensors/gSensorCaliJni.cpp"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnewmobi_gpio_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\GPIO\\CMakeFiles\\newmobi_gpio_jni.dir\\gpio_jni.c.o   -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\gpio_jni.c",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/GPIO/gpio_jni.c"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnewmobi_gpio_jni_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\GPIO\\CMakeFiles\\newmobi_gpio_jni.dir\\meta_gpio.c.o   -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\meta_gpio.c",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/GPIO/meta_gpio.c"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Diichelper_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\IIC\\CMakeFiles\\iichelper.dir\\NewMobiIICTest.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\NewMobiIICTest.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/IIC/NewMobiIICTest.cpp"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dledhelper_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\LED\\CMakeFiles\\ledhelper.dir\\LedHelper.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\LedHelper.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/LED/LedHelper.cpp"
+},
+
+{
+  "directory": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86",
+  "command": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -DTestSign_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o src\\main\\jni\\TestSign\\CMakeFiles\\TestSign.dir\\TestSign.cpp.o -c D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\TestSign.cpp",
+  "file": "D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/TestSign/TestSign.cpp"
+}
+]

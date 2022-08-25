@@ -1,0 +1,157 @@
+{
+  "stringTable": {
+    "0": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/release/x86_64",
+    "1": "--target=x86_64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DSerialPort_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC",
+    "2": "--target=x86_64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dcom_zte_engineer_jni_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC",
+    "3": "--target=x86_64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnewmobi_gpio_jni_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC",
+    "4": "--target=x86_64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Diichelper_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC",
+    "5": "--target=x86_64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dledhelper_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC",
+    "6": "--target=x86_64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DTestSign_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC"
+  },
+  "buildFiles": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "ledhelper-Release-x86_64": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" ledhelper",
+      "buildType": "release",
+      "toolchain": "330800456",
+      "abi": "x86_64",
+      "artifactName": "ledhelper",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\LedHelper.cpp",
+          "flagsOrdinal": 5,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libledhelper.so",
+      "runtimeFiles": []
+    },
+    "iichelper-Release-x86_64": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" iichelper",
+      "buildType": "release",
+      "toolchain": "330800456",
+      "abi": "x86_64",
+      "artifactName": "iichelper",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\NewMobiIICTest.cpp",
+          "flagsOrdinal": 4,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libiichelper.so",
+      "runtimeFiles": []
+    },
+    "TestSign-Release-x86_64": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" TestSign",
+      "buildType": "release",
+      "toolchain": "330800456",
+      "abi": "x86_64",
+      "artifactName": "TestSign",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\TestSign.cpp",
+          "flagsOrdinal": 6,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libTestSign.so",
+      "runtimeFiles": []
+    },
+    "newmobi_gpio_jni-Release-x86_64": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" newmobi_gpio_jni",
+      "buildType": "release",
+      "toolchain": "330800456",
+      "abi": "x86_64",
+      "artifactName": "newmobi_gpio_jni",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\gpio_jni.c",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\meta_gpio.c",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libnewmobi_gpio_jni.so",
+      "runtimeFiles": []
+    },
+    "SerialPort-Release-x86_64": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" SerialPort",
+      "buildType": "release",
+      "toolchain": "330800456",
+      "abi": "x86_64",
+      "artifactName": "SerialPort",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\AlexTaoSerialPort.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libSerialPort.so",
+      "runtimeFiles": []
+    },
+    "com_zte_engineer_jni-Release-x86_64": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" com_zte_engineer_jni",
+      "buildType": "release",
+      "toolchain": "330800456",
+      "abi": "x86_64",
+      "artifactName": "com_zte_engineer_jni",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\com_zte_engineer_AlspsCali.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\com_zte_engineer_LcdPowerControl.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\gSensorCaliJni.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libcom_zte_engineer_jni.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "330800456": {
+      "cCompilerExecutable": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

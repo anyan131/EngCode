@@ -1,0 +1,19 @@
+# ninja log v5
+1	17	0	clean	3f09b1c806b798b1
+58	286	683029607	src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/gpio_jni.c.o	5b842d374563d78f
+47	304	683029607	src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/meta_gpio.c.o	d11ce5b8845d507
+75	345	683029607	src/main/jni/IIC/CMakeFiles/iichelper.dir/NewMobiIICTest.cpp.o	ee27dc87548ca235
+3	892	683029607	src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_AlspsCali.cpp.o	c27e2f4606007610
+23	893	683029607	src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_LcdPowerControl.cpp.o	57e8855fb9be6738
+36	1405	683029607	src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/gSensorCaliJni.cpp.o	71bfe5488724864a
+92	1414	683029607	src/main/jni/LED/CMakeFiles/ledhelper.dir/LedHelper.cpp.o	45eae984c6325c16
+109	1423	683029607	src/main/jni/TestSign/CMakeFiles/TestSign.dir/TestSign.cpp.o	e75b73a340214255
+13	1434	683029607	src/main/jni/SerialPort/CMakeFiles/SerialPort.dir/AlexTaoSerialPort.cpp.o	2873fada81124191
+130	1445	683029607	src/main/jni/Serial/CMakeFiles/Serial.dir/Serial.cpp.o	9a90e2d6c8b987c1
+345	1916	683029607	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libiichelper.so	7251ff4bc5151bcd
+305	1916	683029607	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnewmobi_gpio_jni.so	a834dc8d549ddfac
+1423	2941	683029608	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libTestSign.so	d4b7895258e47260
+1414	2941	683029608	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libledhelper.so	7223262c3dc008ae
+1405	2941	683029608	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libcom_zte_engineer_jni.so	2017991b7b98c506
+1434	2941	683029608	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libSerialPort.so	3c26c8478af8ce46
+1445	2941	683029608	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libSerial.so	323fc940babe2564

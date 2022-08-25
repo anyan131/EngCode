@@ -25,12 +25,12 @@
 #include <fcntl.h>
 
 #define TAG "AlexT" //
-  
-#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__) //define LOGD 
+
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,TAG ,__VA_ARGS__) //define LOGD
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,TAG ,__VA_ARGS__) // define LOGI
-#define LOGW(...) __android_log_print(ANDROID_LOG_WARN,TAG ,__VA_ARGS__) // define LOGW 
-#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,TAG ,__VA_ARGS__) // define LOGE  
-#define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) // define LOGF   
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN,TAG ,__VA_ARGS__) // define LOGW
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,TAG ,__VA_ARGS__) // define LOGE
+#define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) // define LOGF
 
 static int fd = -1;
 static int fd1 = -1;
@@ -46,7 +46,7 @@ jboolean opend(JNIEnv* env,jclass clazz){
 	const char *path3 = "/dev/ttyMT0";
     //try to open the device.
     fd = open(path, O_RDWR);
-	
+
 	fd1 = open(path1,O_RDWR);
 	fd2 = open(path2,O_RDWR);
 	fd3 = open(path3,O_RDWR);
@@ -74,8 +74,8 @@ jboolean opend(JNIEnv* env,jclass clazz){
 		//LOGD("fd3 error! %d",fd);
         return JNI_FALSE;
     }
-	
-	
+
+
 
     //config the device ttyMT1.
     {
@@ -98,8 +98,8 @@ jboolean opend(JNIEnv* env,jclass clazz){
         }
        // return JNI_TRUE;
     }
-	
-	
+
+
 	//config the device ttyMT2.
     {
         struct termios cfg1;
@@ -121,7 +121,7 @@ jboolean opend(JNIEnv* env,jclass clazz){
         }
         //return JNI_TRUE;
     }
-	
+
 	//config the device ttyMT3.
     {
         struct termios cfg2;
@@ -143,7 +143,7 @@ jboolean opend(JNIEnv* env,jclass clazz){
         }
        // return JNI_TRUE;
     }
-	
+
 	//config the device ttyMT4.
     {
         struct termios cfg3;
@@ -166,7 +166,7 @@ jboolean opend(JNIEnv* env,jclass clazz){
 
     }
 	        return JNI_TRUE;
-	
+
 }
 
 void closed(){

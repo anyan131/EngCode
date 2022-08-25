@@ -150,10 +150,7 @@ public class ImeiTest extends ZteActivity {
     @Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.singlebutton_pass_button:
-			finishSelf(RESULT_PASS);
-			break;
-		case R.id.singlebutton_false_button:
+            case R.id.singlebutton_false_button:
 			finishSelf(RESULT_FALSE);
 			break;
 		default:

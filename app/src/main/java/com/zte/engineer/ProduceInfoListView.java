@@ -129,13 +129,13 @@ public class ProduceInfoListView extends Activity {
 
     private void getInfos() {
         /*
-		 * IBinder binder= ServiceManager.getService("NvRAMAgent"); NvRAMAgent
-		 * agent = NvRAMAgent.Stub.asInterface(binder); int file_lid=25;//The
-		 * lid of AP_CFG_REEB_PRODUCT_INFO_LID is 25 byte[] buff = null; try {
-		 * buff = agent.readFile(file_lid);//read buffer from
-		 * AP_CFG_REEB_PRODUCT_INFO_LID } catch (RemoteException e) { // TODO
-		 * Auto-generated catch block e.printStackTrace(); }
-		 */
+         * IBinder binder= ServiceManager.getService("NvRAMAgent"); NvRAMAgent
+         * agent = NvRAMAgent.Stub.asInterface(binder); int file_lid=25;//The
+         * lid of AP_CFG_REEB_PRODUCT_INFO_LID is 25 byte[] buff = null; try {
+         * buff = agent.readFile(file_lid);//read buffer from
+         * AP_CFG_REEB_PRODUCT_INFO_LID } catch (RemoteException e) { // TODO
+         * Auto-generated catch block e.printStackTrace(); }
+         */
 
         infos[SOFTWARE_VERSION] = Build.DISPLAY;
 		/*
@@ -186,7 +186,7 @@ public class ProduceInfoListView extends Activity {
 
     @Override
     public void onDestroy() {
-      //  unregisterReceiver(mBluetoothReceiver);
+        //  unregisterReceiver(mBluetoothReceiver);
         //if (true == isManualTurnOn) {
         //    mBluetooth.disable();
         //}
@@ -268,17 +268,13 @@ public class ProduceInfoListView extends Activity {
     View.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch(v.getId()){
+            switch (v.getId()) {
                 case R.id.pass_info:
                     setResult(10);
                     finish();
                     break;
                 case R.id.fail_info:
                     setResult(20);
-                    finish();
-                    break;
-                default:
-                    setResult(10);
                     finish();
                     break;
             }

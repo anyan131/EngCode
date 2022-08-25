@@ -32,7 +32,6 @@ public class LedTest extends Activity {
         blue.setOnClickListener(clickListener);
         green = (Button) findViewById(R.id.green_led);
         green.setOnClickListener(clickListener);
-		green.setVisibility(View.GONE);
         pass = (Button) findViewById(R.id.led_pass);
         pass.setOnClickListener(clickListener);
         fail = (Button) findViewById(R.id.led_fail);
@@ -47,21 +46,15 @@ public class LedTest extends Activity {
             switch (v.getId()) {
                 case R.id.red_led:
                     flag = 0;
-                   boolean i= LEDHelper.JNIcontrolLed(flag);
-                   //TestSign.JNISignflagAllClear();
-                   // TestSign.JNISignInit();
-                    //SignData =  TestSign.JNISignAllRead();
-                    //SignData[5] = 'X';
-                    //TestSign.JNISignAllWrite(SignData);
-                    //Log.d("sign",SignData.toString());
+                    FileUtils.writePath("255", "sys/class/leds/mt6360_pmu_led1/brightness");
                     break;
                 case R.id.blue_led:
                     flag = 1;
-                    LEDHelper.JNIcontrolLed(flag);
+                    FileUtils.writePath("255", "sys/class/leds/mt6360_pmu_led3/brightness");
                     break;
                 case R.id.green_led:
                     flag = 2;
-                    LEDHelper.JNIcontrolLed(flag);
+                    FileUtils.writePath("255", "sys/class/leds/mt6360_pmu_led2/brightness");
                     break;
 
                 case R.id.led_pass:
@@ -83,5 +76,13 @@ public class LedTest extends Activity {
         setResult(20);
         finish();
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FileUtils.writePath("0", "sys/class/leds/mt6360_pmu_led1/brightness");
+        FileUtils.writePath("0", "sys/class/leds/mt6360_pmu_led2/brightness");
+        FileUtils.writePath("0", "sys/class/leds/mt6360_pmu_led3/brightness");
     }
 }

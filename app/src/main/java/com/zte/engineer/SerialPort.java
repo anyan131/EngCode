@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.io.Closeable;
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -37,13 +39,13 @@ public class SerialPort extends Activity implements View.OnClickListener {
 
     private static int flag1, flag2, flag3;
 
-    private Button serialPortTest1, serialPortTest2, serialPortTest3;
+    private Button serialPortTest1, serialPortTest2;
 
     private Button pass, fail;
 
-    private TextView testResult1, testResult2, testResult3;
-
-    private MyHandler myHandler = new MyHandler(this);
+    private TextView testResult2;
+    private FileInputStream fileInputStream;
+    private boolean isOpen;
 
 
     @Override
@@ -53,24 +55,6 @@ public class SerialPort extends Activity implements View.OnClickListener {
 
 
         initWidgets();
-        // pass.setEnabled(false);
-
-        if (openSerialPort(1) < 0) {
-            Toast.makeText(this, "can not open serial port 1", Toast.LENGTH_SHORT).show();
-            pass.setEnabled(false);
-        }
-        if (openSerialPort(2) < 0) {
-            Toast.makeText(this, "can not open serial port 2", Toast.LENGTH_SHORT).show();
-            pass.setEnabled(false);
-        }
-        if (openSerialPort(3) < 0) {
-            Toast.makeText(this, "can not open serial port 3", Toast.LENGTH_SHORT).show();
-            pass.setEnabled(false);
-        }
-
-        pass.setEnabled(false);
-
-
     }
 
 
@@ -82,89 +66,65 @@ public class SerialPort extends Activity implements View.OnClickListener {
         serialPortTest1.setOnClickListener(this);
         serialPortTest2 = (Button) findViewById(R.id.start2_btn);
         serialPortTest2.setOnClickListener(this);
-        serialPortTest3 = (Button) findViewById(R.id.start3_btn);
-        serialPortTest3.setOnClickListener(this);
-        serialPortTest3.setVisibility(View.GONE);
+
 
         pass = (Button) findViewById(R.id.pass);
         pass.setOnClickListener(this);
         fail = (Button) findViewById(R.id.fail);
         fail.setOnClickListener(this);
 
-        testResult1 = (TextView) findViewById(R.id.serial_port1_result);
+
         testResult2 = (TextView) findViewById(R.id.serial_port2_result);
-        testResult3 = (TextView) findViewById(R.id.serial_port3_result);
+
     }
 
     @Override
     protected void onDestroy() {
 
-
+        FileUtils.writePath("out 183 0", "sys/devices/platform/pinctrl/mt_gpio");
         super.onDestroy();
     }
 
 
     @Override
     public void onBackPressed() {
-       setResult(20);
+        setResult(20);
         finish();
         super.onBackPressed();
     }
 
 
-    //here is the native method about.
-    static {
-        System.loadLibrary("SerialPort");
-    }
-
-    public static native int UartTest(int uartNo, int baudrate, int dataBit, int Parity, int stopBit);
-
-    public static native int openSerialPort(int uartNo);
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start_btn:
-                //serial port1
-                if (UartTest(1, 921600, 8, 0, 1) == 1) {
-                    testResult1.setText(R.string.pass);
-                    flag1 = 1;
-                    testResult1.setTextColor(Color.GREEN);
-                } else {
-                    flag1 = 0;
-                    testResult1.setText(R.string.fail);
-                    testResult1.setTextColor(Color.RED);
-                }
-                myHandler.sendEmptyMessage(0x0A);
+                FileUtils.writePath("out 183 1", "sys/devices/platform/pinctrl/mt_gpio");
+
+                FileDescriptor qx = Serial.getInstance().open("/dev/ttyS1", 9600, 0);
+                fileInputStream = new FileInputStream(qx);
+                isOpen = true;
+                thread.start();
+
+
                 break;
             case R.id.start2_btn:
                 //serial port2
-                if (UartTest(2, 921600, 8, 0, 1) == 1) {
-                    testResult2.setText(R.string.pass);
-                    flag2 = 1;
-                    testResult2.setTextColor(Color.GREEN);
-                } else {
-                    flag2 = 0;
-                    testResult2.setText(R.string.fail);
-                    testResult2.setTextColor(Color.RED);
+                try {
+                    FileUtils.writePath("out 183 1", "sys/devices/platform/pinctrl/mt_gpio");
+
+
+                    FileDescriptor shuang = Serial.getInstance().open("/dev/ttyS1", 115200, 0);
+                    fileInputStream = new FileInputStream(shuang);
+                    isOpen = true;
+                    thread.start();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                myHandler.sendEmptyMessage(0x0A);
+
                 break;
 
-            case R.id.start3_btn:
 
-                //serial port3
-                if (UartTest(3, 921600, 8, 0, 1) == 1) {
-                    testResult3.setText(R.string.pass);
-                    flag3 = 1;
-                    testResult3.setTextColor(Color.GREEN);
-                } else {
-                    flag3 = 0;
-                    testResult3.setText(R.string.fail);
-                    testResult3.setTextColor(Color.RED);
-                }
-                myHandler.sendEmptyMessage(0x0A);
-                break;
             case R.id.pass:
                 setResult(10);
                 finish();
@@ -179,29 +139,36 @@ public class SerialPort extends Activity implements View.OnClickListener {
     }
 
 
-    static class MyHandler extends Handler {
-        WeakReference<SerialPort> serialPortWeakReference;
-
-        MyHandler(SerialPort serialPort) {
-            serialPortWeakReference = new WeakReference<SerialPort>(serialPort);
-        }
-
+    private Thread thread = new Thread() {
         @Override
-        public void handleMessage(Message msg) {
-            SerialPort serialPort = serialPortWeakReference.get();
-            switch (msg.what) {
-                case 0x0A:
-                    int ret = flag1 & flag2;
-                    if (ret > 0) {
-                        serialPort.pass.setEnabled(true);
-                    } else {
-                        serialPort.pass.setEnabled(false);
-                    }
+        public void run() {
+            while (isOpen) {
+                byte[] bys = new byte[5012];
+                try {
+                    int read = fileInputStream.read(bys);
+                    String s = new String(bys, 0, read);
+                    Log.e("TAG", "run: " + s);
 
-                    break;
+                    runOnUiThread(() -> {
+                                testResult2.setText(s);
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        testResult2.setText("");
+                                    }
+                                }, 1000);
+
+                            }
+                    );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
+
         }
-    }
+    };
+
 
 }
 

@@ -1,0 +1,176 @@
+{
+  "stringTable": {
+    "0": "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a",
+    "1": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DSerialPort_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "2": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dcom_zte_engineer_jni_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "3": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnewmobi_gpio_jni_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "4": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Diichelper_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "5": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dledhelper_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "6": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DTestSign_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "7": "--target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DSerial_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Serial\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "SerialPort-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" SerialPort",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "SerialPort",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\AlexTaoSerialPort.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libSerialPort.so",
+      "runtimeFiles": []
+    },
+    "newmobi_gpio_jni-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" newmobi_gpio_jni",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "newmobi_gpio_jni",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\gpio_jni.c",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\meta_gpio.c",
+          "flagsOrdinal": 3,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libnewmobi_gpio_jni.so",
+      "runtimeFiles": []
+    },
+    "TestSign-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" TestSign",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "TestSign",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\TestSign.cpp",
+          "flagsOrdinal": 6,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libTestSign.so",
+      "runtimeFiles": []
+    },
+    "com_zte_engineer_jni-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" com_zte_engineer_jni",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "com_zte_engineer_jni",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\com_zte_engineer_AlspsCali.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\com_zte_engineer_LcdPowerControl.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\gSensorCaliJni.cpp",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libcom_zte_engineer_jni.so",
+      "runtimeFiles": []
+    },
+    "Serial-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" Serial",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "Serial",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Serial\\Serial.cpp",
+          "flagsOrdinal": 7,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libSerial.so",
+      "runtimeFiles": []
+    },
+    "ledhelper-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" ledhelper",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "ledhelper",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\LedHelper.cpp",
+          "flagsOrdinal": 5,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libledhelper.so",
+      "runtimeFiles": []
+    },
+    "iichelper-Debug-arm64-v8a": {
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" iichelper",
+      "buildType": "debug",
+      "toolchain": "330800456",
+      "abi": "arm64-v8a",
+      "artifactName": "iichelper",
+      "files": [
+        {
+          "src": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\NewMobiIICTest.cpp",
+          "flagsOrdinal": 4,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libiichelper.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "330800456": {
+      "cCompilerExecutable": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

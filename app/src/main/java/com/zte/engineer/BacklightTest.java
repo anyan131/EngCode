@@ -43,30 +43,30 @@ public class BacklightTest extends ZteActivity {
 
 	// Backlight range is from 0 - 255. Need to make sure that user
 	// doesn't set the backlight to 0 and get stuck
-	private static final int MINIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_OFF + 10;//10
-	private static final int MAXIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_ON;//255
+//	private static final int MINIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_OFF + 10;//10
+//	private static final int MAXIMUM_BACKLIGHT = android.os.PowerManager.BRIGHTNESS_ON;//255
     private static final int AUTOMATIC_ENABLED = 1;
     private static final int AUTOMATIC_DISABLED = 0;
 
-	private static int mCurrentBrightness = 0;
+//	private static int mCurrentBrightness = 0;
     private static int mAutomatic = 0;
 	// timer handle event
 	private static final int BACKLIGHT_TIMER_EVENT_TICK = 1;
-
-	/**
-	 * Switch the backlight brightness
-	 * 
-	 * @author WeiBo
-	 */
-	private void changeBrightness() {
-		if (MINIMUM_BACKLIGHT == mCurrentBrightness) {
-			mCurrentBrightness = MAXIMUM_BACKLIGHT;
-		} else if (MAXIMUM_BACKLIGHT == mCurrentBrightness) {
-			mCurrentBrightness = MINIMUM_BACKLIGHT;
-		}
-
-		setBrightness(mCurrentBrightness);
-	}
+//
+//	/**
+//	 * Switch the backlight brightness
+//	 *
+//	 * @author WeiBo
+//	 */
+//	private void changeBrightness() {
+//		if (MINIMUM_BACKLIGHT == mCurrentBrightness) {
+//			mCurrentBrightness = MAXIMUM_BACKLIGHT;
+//		} else if (MAXIMUM_BACKLIGHT == mCurrentBrightness) {
+//			mCurrentBrightness = MINIMUM_BACKLIGHT;
+//		}
+//
+//		setBrightness(mCurrentBrightness);
+//	}
 
 	// TIMER_EVENT_TICK handler
 	private Handler mHandler = new Handler() {
@@ -74,9 +74,9 @@ public class BacklightTest extends ZteActivity {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case BACKLIGHT_TIMER_EVENT_TICK:
-				changeBrightness();
+//				changeBrightness();
 				// send new TIMER_EVENT_TICK message
-				sendEmptyMessageDelayed(BACKLIGHT_TIMER_EVENT_TICK, 1500);
+//				sendEmptyMessageDelayed(BACKLIGHT_TIMER_EVENT_TICK, 1500);
 				break;
 			}
 		}
@@ -126,8 +126,8 @@ public class BacklightTest extends ZteActivity {
             setMode(AUTOMATIC_DISABLED);
         }
 		// Set backlight bright as 255
-		mCurrentBrightness = MAXIMUM_BACKLIGHT;
-		setBrightness(mCurrentBrightness);
+//		mCurrentBrightness = MAXIMUM_BACKLIGHT;
+//		setBrightness(mCurrentBrightness);
 
 		// Start time handle event delay
 		mHandler.sendEmptyMessageDelayed(BACKLIGHT_TIMER_EVENT_TICK, 1000);
@@ -152,7 +152,7 @@ public class BacklightTest extends ZteActivity {
 		} catch (SettingNotFoundException snfe) {
 			// if can't get the initializing backlight brightness, set
 			// systemBright max.
-			systemBrightness = MAXIMUM_BACKLIGHT;
+//			systemBrightness = MAXIMUM_BACKLIGHT;
 		}
 		setBrightness(systemBrightness);
 	}

@@ -8,49 +8,80 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 
 public class newCode extends ZteActivity {
+    private static final String TAG = newCode.class.getSimpleName();
     private String FileName = null;
-    private Button pass,fail;
+    private Button pass, fail;
 
     private Button startRecord;
     private Button startPlay;
     private Button stopRecord;
     private Button stopPlay;
 
+    private TextView getDb;
+
     private MediaPlayer mPlayer = null;
     private MediaRecorder mRecorder = null;
-    private int mRecord_Size;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newtest);
 
-        startRecord = (Button)findViewById(R.id.new_sound);
+        startRecord = (Button) findViewById(R.id.new_sound);
         startRecord.setOnClickListener(new startRecordListener());
 
-        startPlay = (Button)findViewById(R.id.new_play);
+        startPlay = (Button) findViewById(R.id.new_play);
         startPlay.setOnClickListener(new startPlayListener());
         startPlay.setEnabled(false);
 
         FileName = Environment.getExternalStorageDirectory().getAbsolutePath();
         FileName += "/audiorecordtest.3gp";
 
-        pass = (Button)findViewById(R.id.all_pass_button);
+        pass = findViewById(R.id.all_pass_button);
         pass.setOnClickListener(this);
         pass.setEnabled(false);
-        fail = (Button)findViewById(R.id.all_false_button);
+        fail = findViewById(R.id.all_false_button);
         fail.setOnClickListener(this);
+
+        getDb = findViewById(R.id.getDb);
     }
 
-    private static void newOne(Context context){    };
+
+    private final Handler mHandler = new Handler();
+    private Runnable mUpdateMicStatusTimer = () -> updateMicStatus();
+
+    /**
+     * 更新话筒状态
+     */
+    private int BASE = 1;
+    private int SPACE = 100;// 间隔取样时间
+
+    private void updateMicStatus() {
+        if (mRecorder != null) {
+            double ratio = (double) mRecorder.getMaxAmplitude() / BASE;
+            double db = 0;// 分贝
+            if (ratio > 1)
+                db = 20 * Math.log10(ratio);
+            Log.e(TAG, "updateMicStatus: " + db);
+
+            getDb.setText("分贝值： " + db);
+            mHandler.postDelayed(mUpdateMicStatusTimer, SPACE);
+        }
+    }
+
 
     class startRecordListener implements View.OnClickListener {
 
@@ -72,6 +103,9 @@ public class newCode extends ZteActivity {
 
             }
             mRecorder.start();
+
+
+            updateMicStatus();
             startRecord.setEnabled(false);
             startPlay.setEnabled(true);
         }
@@ -104,7 +138,6 @@ public class newCode extends ZteActivity {
     }
 
 
-
     @Override
     public void onPause() {
         super.onPause();
@@ -117,6 +150,7 @@ public class newCode extends ZteActivity {
         mPlayer = null;
 
     }
+
     protected void onDestroy() {
 
         super.onDestroy();

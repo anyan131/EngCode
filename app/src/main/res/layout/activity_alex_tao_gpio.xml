@@ -1,61 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <EditText
-        android:visibility="gone"
-        android:inputType="number"
-        android:id="@+id/gpio_edittext_index"
-        android:hint="@string/gpio_hint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手电筒" />
+
+    <Button
+        android:id="@+id/ser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/light"
+        android:text="激光" />
+
+    <Button
+        android:id="@+id/location_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ser"
+        android:text="定位供电" />
+
+    <Button
+        android:id="@+id/walk_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location_gpio"
+        android:text="对讲供电" />
+
+    <Button
+        android:id="@+id/near1_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/walk_gpio"
+        android:text="近电1" />
+
+    <Button
+        android:id="@+id/near2_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/near1_gpio"
+        android:text="近电2" />
+
+    <Button
+        android:id="@+id/near3_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/near2_gpio"
+        android:text="近电3" />
+
+    <Button
+        android:id="@+id/near4_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/near3_gpio"
+        android:text="近电4" />
+
+    <Button
+        android:id="@+id/near5_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/near4_gpio"
+        android:text="近电5" />
+
+    <Button
+        android:id="@+id/near6_gpio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/near5_gpio"
+        android:text="近电6" />
+
+
+    <TextView
+        android:id="@+id/logCat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/light"
+        android:padding="20dp" />
+
+
     <LinearLayout
-        android:id="@+id/layout1"
-        android:layout_alignParentStart="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
         <Button
-            android:id="@+id/gpio_btn_setOutput"
-            android:text="@string/gpio_btn_setOutput"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_below="@id/layout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/gpio_btn_setHigh"
-            android:text="@string/gpio_btn_setHigh"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/gpio_btn_setLow"
-            android:text="@string/gpio_btn_setLow"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
             android:id="@+id/gpio_pass"
-            android:text="@string/pass"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/pass" />
+
         <Button
             android:id="@+id/gpio_fail"
-            android:text="@string/fail"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fail" />
     </LinearLayout>
 
 </RelativeLayout>

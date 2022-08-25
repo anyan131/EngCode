@@ -26,9 +26,15 @@
             android:id="@+id/new_sound"
             android:text="录制"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
-             >
+            android:layout_height="wrap_content">
         </Button>
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/getDb"
+            android:text="分贝值："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 <!--        <Button-->
 <!--            android:id="@+id/new_statr"-->

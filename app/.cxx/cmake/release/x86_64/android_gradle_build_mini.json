@@ -1,0 +1,61 @@
+{
+  "buildFiles": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
+    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "ledhelper-Release-x86_64": {
+      "artifactName": "ledhelper",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" ledhelper",
+      "abi": "x86_64",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libledhelper.so",
+      "runtimeFiles": []
+    },
+    "iichelper-Release-x86_64": {
+      "artifactName": "iichelper",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" iichelper",
+      "abi": "x86_64",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libiichelper.so",
+      "runtimeFiles": []
+    },
+    "TestSign-Release-x86_64": {
+      "artifactName": "TestSign",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" TestSign",
+      "abi": "x86_64",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libTestSign.so",
+      "runtimeFiles": []
+    },
+    "newmobi_gpio_jni-Release-x86_64": {
+      "artifactName": "newmobi_gpio_jni",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" newmobi_gpio_jni",
+      "abi": "x86_64",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libnewmobi_gpio_jni.so",
+      "runtimeFiles": []
+    },
+    "SerialPort-Release-x86_64": {
+      "artifactName": "SerialPort",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" SerialPort",
+      "abi": "x86_64",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libSerialPort.so",
+      "runtimeFiles": []
+    },
+    "com_zte_engineer_jni-Release-x86_64": {
+      "artifactName": "com_zte_engineer_jni",
+      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\release\\x86_64\" com_zte_engineer_jni",
+      "abi": "x86_64",
+      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libcom_zte_engineer_jni.so",
+      "runtimeFiles": []
+    }
+  }
+}

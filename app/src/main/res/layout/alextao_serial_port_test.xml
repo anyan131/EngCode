@@ -7,163 +7,140 @@
     tools:context="com.zte.engineer.SerialPort">
 
     <!--<LinearLayout-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:id="@+id/linearLayout1"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:id="@+id/linearLayout1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
 
-        <!--<TextView-->
-            <!--android:visibility="gone"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="@string/serial_port1"-->
-            <!--android:textSize="24sp" />-->
+    <!--<TextView-->
+    <!--android:visibility="gone"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/serial_port1"-->
+    <!--android:textSize="24sp" />-->
 
-        <!--<TextView-->
-            <!--android:visibility="gone"-->
-            <!--android:id="@+id/SendBytesTV"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="@string/zero"-->
-            <!--android:textSize="24sp" />-->
+    <!--<TextView-->
+    <!--android:visibility="gone"-->
+    <!--android:id="@+id/SendBytesTV"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/zero"-->
+    <!--android:textSize="24sp" />-->
     <!--</LinearLayout>-->
 
     <!--<LinearLayout-->
-        <!--android:id="@+id/linearLayout2"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
+    <!--android:id="@+id/linearLayout2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
 
-        <!--<TextView-->
-            <!--android:visibility="gone"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="@string/serial_port2"-->
-            <!--android:textSize="24sp" />-->
+    <!--<TextView-->
+    <!--android:visibility="gone"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/serial_port2"-->
+    <!--android:textSize="24sp" />-->
 
-        <!--<TextView-->
-            <!--android:visibility="gone"-->
-            <!--android:id="@+id/ReceiveBytesTV"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="@string/zero"-->
-            <!--android:textSize="24sp" />-->
+    <!--<TextView-->
+    <!--android:visibility="gone"-->
+    <!--android:id="@+id/ReceiveBytesTV"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/zero"-->
+    <!--android:textSize="24sp" />-->
     <!--</LinearLayout>-->
 
     <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
 
-        <!--<TextView-->
-            <!--android:visibility="gone"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="@string/serial_port3"-->
-            <!--android:textSize="24sp" />-->
+    <!--<TextView-->
+    <!--android:visibility="gone"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/serial_port3"-->
+    <!--android:textSize="24sp" />-->
 
-        <!--<TextView-->
-            <!--android:visibility="gone"-->
-            <!--android:id="@+id/LostBytesTV"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="@string/zero"-->
-            <!--android:textSize="24sp" />-->
+    <!--<TextView-->
+    <!--android:visibility="gone"-->
+    <!--android:id="@+id/LostBytesTV"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/zero"-->
+    <!--android:textSize="24sp" />-->
     <!--</LinearLayout>-->
     <LinearLayout
-        android:layout_alignParentStart="true"
         android:id="@+id/linearLayout1"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/start_btn"
-        android:text="@string/serial_port_test1"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/serial_port1_result"
-        android:layout_gravity="center_vertical"
-        android:textSize="20sp"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="千寻测试" />
+
     </LinearLayout>
 
 
-
-
     <LinearLayout
-        android:layout_below="@id/linearLayout1"
         android:id="@+id/linearLayout2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/start2_btn"
-        android:text="@string/serial_port_test2"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/serial_port2_result"
-            android:layout_gravity="center_vertical"
-            android:textSize="20sp"
-            android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start2_btn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="双频测试" />
+
     </LinearLayout>
 
+    <TextView
+        android:layout_below="@+id/linearLayout2"
+        android:id="@+id/serial_port2_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp" />
 
-    <LinearLayout
-        android:layout_below="@id/linearLayout2"
-        android:id="@+id/linearLayout3"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/start3_btn"
-        android:text="@string/serial_port_test3"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/serial_port3_result"
-            android:layout_gravity="center_vertical"
-            android:textSize="20sp"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+
 
     <!--bottom buttons.-->
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:text="@string/pass"
-            android:id="@+id/pass"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <Button
-            android:text="@string/fail"
-            android:id="@+id/fail"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/pass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/pass" />
+
+        <Button
+            android:id="@+id/fail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fail" />
+    </LinearLayout>
 
 
 </RelativeLayout>

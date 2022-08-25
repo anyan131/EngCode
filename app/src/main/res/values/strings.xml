@@ -85,6 +85,10 @@
     <string name="key_6">6</string>
     <string name="key_7">7</string>
     <string name="key_8">8</string>
+    <string name="key_A">A</string>
+    <string name="key_B">B</string>
+    <string name="key_C">C</string>
+    <string name="key_D">D</string>
 
     <string name="sd_test">SD Test</string>
     <string name="sd_title">SDcard%1s Information</string>
