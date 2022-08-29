@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\x86",
-    "cmakeServerLogFile": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\x86\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cxx\\debug\\x86",
+    "cmakeArtifactsBaseFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86",
+    "cmakeServerLogFile": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86/cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cxx/debug/x86",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,13 +15,13 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\x86",
-      "cmakeToolchain": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cmakeExecutable": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "buildRoot": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86",
+      "cmakeToolchain": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake",
+      "cmakeExecutable": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake",
       "variables": [
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\prefab\\x86\\prefab"
+          "value": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/prefab/x86/prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -29,7 +29,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
+          "value": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -37,7 +37,7 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+          "value": "/Users/yanhaoliang/NDKlocation/android-ndk-r21"
         },
         {
           "name": "ANDROID_PLATFORM",
@@ -49,7 +49,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+          "value": "/Users/yanhaoliang/NDKlocation/android-ndk-r21"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -57,11 +57,11 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\x86"
+          "value": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/x86"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
-          "value": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+          "value": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja"
         },
         {
           "name": "CMAKE_SYSTEM_NAME",
@@ -74,14 +74,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\x86",
+  "cxxBuildFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86",
   "info": {
     "abi": "X86",
     "bitness": 32,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\x86",
+  "originalCxxBuildFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -92,24 +92,24 @@
     "module": {
       "buildSystem": "CMAKE",
       "cmake": {
-        "cmakeExe": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "cmakeExe": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake",
         "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        "ninjaExe": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja"
       },
-      "cmakeToolchainFile": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx",
+      "cmakeToolchainFile": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake",
+      "cxxFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates",
-      "makeFile": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
-      "moduleBuildFile": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build.gradle",
-      "moduleRootFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app",
+      "intermediatesFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates",
+      "makeFile": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt",
+      "moduleBuildFile": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build.gradle",
+      "moduleRootFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
+      "ndkFolder": "/Users/yanhaoliang/NDKlocation/android-ndk-r21",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI_V7A",
@@ -166,29 +166,29 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "21.0.6113669",
       "project": {
-        "compilerSettingsCacheFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\.cxx",
-        "cxxFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\.cxx",
+        "compilerSettingsCacheFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/.cxx",
+        "cxxFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "D:\\WORKSPACE\\6873_android11_newEngCode",
-        "sdkFolder": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk",
+        "rootBuildGradleFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode",
+        "sdkFolder": "/Users/yanhaoliang/Library/Android/sdk",
         "isPrefabEnabled": false
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
-          "ARM64_V8A": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-          "X86": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
-          "X86_64": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+          "ARMEABI_V7A": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
         "SYSTEM": {}
       }
     },
-    "objFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "objFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj",
     "variantName": "debug",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -196,8 +196,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\prefab",
+    "prefabDirectory": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\prefab\\x86"
+  "prefabFolder": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/prefab/x86"
 }

@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule CXX_COMPILER__SerialPort
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -33,7 +33,7 @@ rule CXX_COMPILER__SerialPort
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__SerialPort
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -44,7 +44,7 @@ rule CXX_SHARED_LIBRARY_LINKER__SerialPort
 rule CXX_COMPILER__com_zte_engineer_jni
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -52,7 +52,7 @@ rule CXX_COMPILER__com_zte_engineer_jni
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__com_zte_engineer_jni
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -63,7 +63,7 @@ rule CXX_SHARED_LIBRARY_LINKER__com_zte_engineer_jni
 rule C_COMPILER__newmobi_gpio_jni
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building C object $out
 
 
@@ -71,7 +71,7 @@ rule C_COMPILER__newmobi_gpio_jni
 # Rule for linking C shared library.
 
 rule C_SHARED_LIBRARY_LINKER__newmobi_gpio_jni
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking C shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -82,7 +82,7 @@ rule C_SHARED_LIBRARY_LINKER__newmobi_gpio_jni
 rule CXX_COMPILER__iichelper
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -90,7 +90,7 @@ rule CXX_COMPILER__iichelper
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__iichelper
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -101,7 +101,7 @@ rule CXX_SHARED_LIBRARY_LINKER__iichelper
 rule CXX_COMPILER__ledhelper
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -109,7 +109,7 @@ rule CXX_COMPILER__ledhelper
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__ledhelper
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -120,7 +120,7 @@ rule CXX_SHARED_LIBRARY_LINKER__ledhelper
 rule CXX_COMPILER__TestSign
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -128,7 +128,7 @@ rule CXX_COMPILER__TestSign
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__TestSign
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -139,7 +139,7 @@ rule CXX_SHARED_LIBRARY_LINKER__TestSign
 rule CXX_COMPILER__Serial
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -147,7 +147,7 @@ rule CXX_COMPILER__Serial
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__Serial
-  command = cmd.exe /C "$PRE_LINK && C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = $PRE_LINK && /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --gcc-toolchain=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -156,7 +156,7 @@ rule CXX_SHARED_LIBRARY_LINKER__Serial
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a
+  command = /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   description = Re-running CMake...
   generator = 1
 
@@ -165,7 +165,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe -t clean
+  command = /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -t clean
   description = Cleaning all built files...
 
 
@@ -173,6 +173,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe -t targets
+  command = /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -t targets
   description = All primary targets available:
 

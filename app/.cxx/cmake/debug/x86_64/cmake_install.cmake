@@ -1,8 +1,8 @@
-# Install script for directory: D:/WORKSPACE/6873_android11_newEngCode/app
+# Install script for directory: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,13 +39,13 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/SerialPort/cmake_install.cmake")
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/Sensors/cmake_install.cmake")
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/GPIO/cmake_install.cmake")
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/IIC/cmake_install.cmake")
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/LED/cmake_install.cmake")
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/TestSign/cmake_install.cmake")
-  include("D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/Serial/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/SerialPort/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/Sensors/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/GPIO/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/IIC/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/LED/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/TestSign/cmake_install.cmake")
+  include("/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/src/main/jni/Serial/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

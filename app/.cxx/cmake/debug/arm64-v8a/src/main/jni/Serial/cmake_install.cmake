@@ -1,8 +1,8 @@
-# Install script for directory: D:/WORKSPACE/6873_android11_newEngCode/app/src/main/jni/Serial
+# Install script for directory: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/Serial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

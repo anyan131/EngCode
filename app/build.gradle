@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'android'
             keyPassword "android"
-            storeFile file('D:/WORKSPACE/platform.jks')
+            storeFile file('/Users/yanhaoliang/jks/platform.jks')
             storePassword "android"
         }
     }

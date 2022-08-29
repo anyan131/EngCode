@@ -1,20 +1,20 @@
-Executable : C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+Executable : /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
 arguments : 
--HD:\WORKSPACE\6873_android11_newEngCode\app
--DCMAKE_FIND_ROOT_PATH=D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\prefab\x86_64\prefab
+-H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app
+-DCMAKE_FIND_ROOT_PATH=/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/prefab/x86_64/prefab
 -DCMAKE_BUILD_TYPE=Debug
--DCMAKE_TOOLCHAIN_FILE=C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
+-DCMAKE_TOOLCHAIN_FILE=/Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake
 -DANDROID_ABI=x86_64
--DANDROID_NDK=C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669
+-DANDROID_NDK=/Users/yanhaoliang/NDKlocation/android-ndk-r21
 -DANDROID_PLATFORM=android-23
 -DCMAKE_ANDROID_ARCH_ABI=x86_64
--DCMAKE_ANDROID_NDK=C:\Users\yanha\AppData\Local\Android\Sdk\ndk\21.0.6113669
+-DCMAKE_ANDROID_NDK=/Users/yanhaoliang/NDKlocation/android-ndk-r21
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\WORKSPACE\6873_android11_newEngCode\app\build\intermediates\cmake\debug\obj\x86_64
--DCMAKE_MAKE_PROGRAM=C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/x86_64
+-DCMAKE_MAKE_PROGRAM=/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=23
--BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\x86_64
+-B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86_64
 -GNinja
 jvmArgs : 
 

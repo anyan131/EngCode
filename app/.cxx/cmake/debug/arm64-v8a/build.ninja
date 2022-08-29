@@ -31,28 +31,47 @@ include rules.ninja
 
 
 #############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build edit_cache: phony CMakeFiles/edit_cache.util
-
-#############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build edit_cache: phony CMakeFiles/edit_cache.util
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
 # =============================================================================
 
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/main/jni/SerialPort/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/SerialPort && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+build src/main/jni/SerialPort/rebuild_cache: phony src/main/jni/SerialPort/CMakeFiles/rebuild_cache.util
+
+#############################################
+# Utility command for edit_cache
+
+build src/main/jni/SerialPort/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/SerialPort && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build src/main/jni/SerialPort/edit_cache: phony src/main/jni/SerialPort/CMakeFiles/edit_cache.util
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target SerialPort
 
@@ -63,59 +82,50 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 build cmake_object_order_depends_target_SerialPort: phony
 build src/main/jni/SerialPort/CMakeFiles/SerialPort.dir/AlexTaoSerialPort.cpp.o: CXX_COMPILER__SerialPort ../../../../src/main/jni/SerialPort/AlexTaoSerialPort.cpp || cmake_object_order_depends_target_SerialPort
   DEFINES = -DSerialPort_EXPORTS
-  DEP_FILE = src\main\jni\SerialPort\CMakeFiles\SerialPort.dir\AlexTaoSerialPort.cpp.o.d
+  DEP_FILE = src/main/jni/SerialPort/CMakeFiles/SerialPort.dir/AlexTaoSerialPort.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\SerialPort\CMakeFiles\SerialPort.dir
-  OBJECT_FILE_DIR = src\main\jni\SerialPort\CMakeFiles\SerialPort.dir
+  OBJECT_DIR = src/main/jni/SerialPort/CMakeFiles/SerialPort.dir
+  OBJECT_FILE_DIR = src/main/jni/SerialPort/CMakeFiles/SerialPort.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target SerialPort
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libSerialPort.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerialPort.so
 
-build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerialPort.so: CXX_SHARED_LIBRARY_LINKER__SerialPort src/main/jni/SerialPort/CMakeFiles/SerialPort.dir/AlexTaoSerialPort.cpp.o | C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
+build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerialPort.so: CXX_SHARED_LIBRARY_LINKER__SerialPort src/main/jni/SerialPort/CMakeFiles/SerialPort.dir/AlexTaoSerialPort.cpp.o | /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -llog -latomic -lm
-  OBJECT_DIR = src\main\jni\SerialPort\CMakeFiles\SerialPort.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/SerialPort/CMakeFiles/SerialPort.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libSerialPort.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libSerialPort.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerialPort.so
   TARGET_PDB = SerialPort.so.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
+# =============================================================================
 
-#############################################
-# Utility command for edit_cache
-
-build src/main/jni/SerialPort/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\SerialPort && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build src/main/jni/SerialPort/edit_cache: phony src/main/jni/SerialPort/CMakeFiles/edit_cache.util
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/main/jni/SerialPort/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\SerialPort && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+build src/main/jni/Sensors/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Sensors && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
-build src/main/jni/SerialPort/rebuild_cache: phony src/main/jni/SerialPort/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
-# =============================================================================
-
+build src/main/jni/Sensors/rebuild_cache: phony src/main/jni/Sensors/CMakeFiles/rebuild_cache.util
 
 #############################################
 # Utility command for edit_cache
 
 build src/main/jni/Sensors/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\Sensors && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Sensors && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 build src/main/jni/Sensors/edit_cache: phony src/main/jni/Sensors/CMakeFiles/edit_cache.util
@@ -129,56 +139,65 @@ build src/main/jni/Sensors/edit_cache: phony src/main/jni/Sensors/CMakeFiles/edi
 build cmake_object_order_depends_target_com_zte_engineer_jni: phony
 build src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_AlspsCali.cpp.o: CXX_COMPILER__com_zte_engineer_jni ../../../../src/main/jni/Sensors/com_zte_engineer_AlspsCali.cpp || cmake_object_order_depends_target_com_zte_engineer_jni
   DEFINES = -Dcom_zte_engineer_jni_EXPORTS
-  DEP_FILE = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir\com_zte_engineer_AlspsCali.cpp.o.d
+  DEP_FILE = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_AlspsCali.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
-  OBJECT_FILE_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
+  OBJECT_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
+  OBJECT_FILE_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
 build src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_LcdPowerControl.cpp.o: CXX_COMPILER__com_zte_engineer_jni ../../../../src/main/jni/Sensors/com_zte_engineer_LcdPowerControl.cpp || cmake_object_order_depends_target_com_zte_engineer_jni
   DEFINES = -Dcom_zte_engineer_jni_EXPORTS
-  DEP_FILE = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir\com_zte_engineer_LcdPowerControl.cpp.o.d
+  DEP_FILE = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_LcdPowerControl.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
-  OBJECT_FILE_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
+  OBJECT_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
+  OBJECT_FILE_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
 build src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/gSensorCaliJni.cpp.o: CXX_COMPILER__com_zte_engineer_jni ../../../../src/main/jni/Sensors/gSensorCaliJni.cpp || cmake_object_order_depends_target_com_zte_engineer_jni
   DEFINES = -Dcom_zte_engineer_jni_EXPORTS
-  DEP_FILE = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir\gSensorCaliJni.cpp.o.d
+  DEP_FILE = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/gSensorCaliJni.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
-  OBJECT_FILE_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
+  OBJECT_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
+  OBJECT_FILE_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target com_zte_engineer_jni
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libcom_zte_engineer_jni.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcom_zte_engineer_jni.so
 
 build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcom_zte_engineer_jni.so: CXX_SHARED_LIBRARY_LINKER__com_zte_engineer_jni src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_AlspsCali.cpp.o src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/com_zte_engineer_LcdPowerControl.cpp.o src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir/gSensorCaliJni.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -latomic -lm
-  OBJECT_DIR = src\main\jni\Sensors\CMakeFiles\com_zte_engineer_jni.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/Sensors/CMakeFiles/com_zte_engineer_jni.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libcom_zte_engineer_jni.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libcom_zte_engineer_jni.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcom_zte_engineer_jni.so
   TARGET_PDB = com_zte_engineer_jni.so.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
+# =============================================================================
+
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/main/jni/Sensors/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\Sensors && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+build src/main/jni/GPIO/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/GPIO && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
-build src/main/jni/Sensors/rebuild_cache: phony src/main/jni/Sensors/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
-# =============================================================================
+build src/main/jni/GPIO/rebuild_cache: phony src/main/jni/GPIO/CMakeFiles/rebuild_cache.util
 
+#############################################
+# Utility command for edit_cache
+
+build src/main/jni/GPIO/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/GPIO && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build src/main/jni/GPIO/edit_cache: phony src/main/jni/GPIO/CMakeFiles/edit_cache.util
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target newmobi_gpio_jni
 
@@ -189,59 +208,59 @@ build src/main/jni/Sensors/rebuild_cache: phony src/main/jni/Sensors/CMakeFiles/
 build cmake_object_order_depends_target_newmobi_gpio_jni: phony
 build src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/gpio_jni.c.o: C_COMPILER__newmobi_gpio_jni ../../../../src/main/jni/GPIO/gpio_jni.c || cmake_object_order_depends_target_newmobi_gpio_jni
   DEFINES = -Dnewmobi_gpio_jni_EXPORTS
-  DEP_FILE = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir\gpio_jni.c.o.d
+  DEP_FILE = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/gpio_jni.c.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir
-  OBJECT_FILE_DIR = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir
+  OBJECT_DIR = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir
+  OBJECT_FILE_DIR = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir
 build src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/meta_gpio.c.o: C_COMPILER__newmobi_gpio_jni ../../../../src/main/jni/GPIO/meta_gpio.c || cmake_object_order_depends_target_newmobi_gpio_jni
   DEFINES = -Dnewmobi_gpio_jni_EXPORTS
-  DEP_FILE = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir\meta_gpio.c.o.d
+  DEP_FILE = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/meta_gpio.c.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir
-  OBJECT_FILE_DIR = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir
+  OBJECT_DIR = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir
+  OBJECT_FILE_DIR = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target newmobi_gpio_jni
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libnewmobi_gpio_jni.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnewmobi_gpio_jni.so
 
 build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnewmobi_gpio_jni.so: C_SHARED_LIBRARY_LINKER__newmobi_gpio_jni src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/gpio_jni.c.o src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir/meta_gpio.c.o
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -latomic -lm
-  OBJECT_DIR = src\main\jni\GPIO\CMakeFiles\newmobi_gpio_jni.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/GPIO/CMakeFiles/newmobi_gpio_jni.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libnewmobi_gpio_jni.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libnewmobi_gpio_jni.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnewmobi_gpio_jni.so
   TARGET_PDB = newmobi_gpio_jni.so.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
+# =============================================================================
 
-#############################################
-# Utility command for edit_cache
-
-build src/main/jni/GPIO/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\GPIO && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build src/main/jni/GPIO/edit_cache: phony src/main/jni/GPIO/CMakeFiles/edit_cache.util
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/main/jni/GPIO/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\GPIO && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+build src/main/jni/IIC/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/IIC && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
-build src/main/jni/GPIO/rebuild_cache: phony src/main/jni/GPIO/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
-# =============================================================================
+build src/main/jni/IIC/rebuild_cache: phony src/main/jni/IIC/CMakeFiles/rebuild_cache.util
 
+#############################################
+# Utility command for edit_cache
+
+build src/main/jni/IIC/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/IIC && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build src/main/jni/IIC/edit_cache: phony src/main/jni/IIC/CMakeFiles/edit_cache.util
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target iichelper
 
@@ -252,53 +271,53 @@ build src/main/jni/GPIO/rebuild_cache: phony src/main/jni/GPIO/CMakeFiles/rebuil
 build cmake_object_order_depends_target_iichelper: phony
 build src/main/jni/IIC/CMakeFiles/iichelper.dir/NewMobiIICTest.cpp.o: CXX_COMPILER__iichelper ../../../../src/main/jni/IIC/NewMobiIICTest.cpp || cmake_object_order_depends_target_iichelper
   DEFINES = -Diichelper_EXPORTS
-  DEP_FILE = src\main\jni\IIC\CMakeFiles\iichelper.dir\NewMobiIICTest.cpp.o.d
+  DEP_FILE = src/main/jni/IIC/CMakeFiles/iichelper.dir/NewMobiIICTest.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\IIC\CMakeFiles\iichelper.dir
-  OBJECT_FILE_DIR = src\main\jni\IIC\CMakeFiles\iichelper.dir
+  OBJECT_DIR = src/main/jni/IIC/CMakeFiles/iichelper.dir
+  OBJECT_FILE_DIR = src/main/jni/IIC/CMakeFiles/iichelper.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target iichelper
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libiichelper.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libiichelper.so
 
-build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libiichelper.so: CXX_SHARED_LIBRARY_LINKER__iichelper src/main/jni/IIC/CMakeFiles/iichelper.dir/NewMobiIICTest.cpp.o | C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
+build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libiichelper.so: CXX_SHARED_LIBRARY_LINKER__iichelper src/main/jni/IIC/CMakeFiles/iichelper.dir/NewMobiIICTest.cpp.o | /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -llog -latomic -lm
-  OBJECT_DIR = src\main\jni\IIC\CMakeFiles\iichelper.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/IIC/CMakeFiles/iichelper.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libiichelper.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libiichelper.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libiichelper.so
   TARGET_PDB = iichelper.so.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
+# =============================================================================
 
-#############################################
-# Utility command for edit_cache
-
-build src/main/jni/IIC/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\IIC && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build src/main/jni/IIC/edit_cache: phony src/main/jni/IIC/CMakeFiles/edit_cache.util
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/main/jni/IIC/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\IIC && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+build src/main/jni/LED/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/LED && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
-build src/main/jni/IIC/rebuild_cache: phony src/main/jni/IIC/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
-# =============================================================================
+build src/main/jni/LED/rebuild_cache: phony src/main/jni/LED/CMakeFiles/rebuild_cache.util
 
+#############################################
+# Utility command for edit_cache
+
+build src/main/jni/LED/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/LED && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build src/main/jni/LED/edit_cache: phony src/main/jni/LED/CMakeFiles/edit_cache.util
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target ledhelper
 
@@ -309,53 +328,53 @@ build src/main/jni/IIC/rebuild_cache: phony src/main/jni/IIC/CMakeFiles/rebuild_
 build cmake_object_order_depends_target_ledhelper: phony
 build src/main/jni/LED/CMakeFiles/ledhelper.dir/LedHelper.cpp.o: CXX_COMPILER__ledhelper ../../../../src/main/jni/LED/LedHelper.cpp || cmake_object_order_depends_target_ledhelper
   DEFINES = -Dledhelper_EXPORTS
-  DEP_FILE = src\main\jni\LED\CMakeFiles\ledhelper.dir\LedHelper.cpp.o.d
+  DEP_FILE = src/main/jni/LED/CMakeFiles/ledhelper.dir/LedHelper.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\LED\CMakeFiles\ledhelper.dir
-  OBJECT_FILE_DIR = src\main\jni\LED\CMakeFiles\ledhelper.dir
+  OBJECT_DIR = src/main/jni/LED/CMakeFiles/ledhelper.dir
+  OBJECT_FILE_DIR = src/main/jni/LED/CMakeFiles/ledhelper.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target ledhelper
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libledhelper.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libledhelper.so
 
-build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libledhelper.so: CXX_SHARED_LIBRARY_LINKER__ledhelper src/main/jni/LED/CMakeFiles/ledhelper.dir/LedHelper.cpp.o | C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
+build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libledhelper.so: CXX_SHARED_LIBRARY_LINKER__ledhelper src/main/jni/LED/CMakeFiles/ledhelper.dir/LedHelper.cpp.o | /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -llog -latomic -lm
-  OBJECT_DIR = src\main\jni\LED\CMakeFiles\ledhelper.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/LED/CMakeFiles/ledhelper.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libledhelper.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libledhelper.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libledhelper.so
   TARGET_PDB = ledhelper.so.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
+# =============================================================================
 
-#############################################
-# Utility command for edit_cache
-
-build src/main/jni/LED/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\LED && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build src/main/jni/LED/edit_cache: phony src/main/jni/LED/CMakeFiles/edit_cache.util
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/main/jni/LED/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\LED && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+build src/main/jni/TestSign/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/TestSign && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
-build src/main/jni/LED/rebuild_cache: phony src/main/jni/LED/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
-# =============================================================================
+build src/main/jni/TestSign/rebuild_cache: phony src/main/jni/TestSign/CMakeFiles/rebuild_cache.util
 
+#############################################
+# Utility command for edit_cache
+
+build src/main/jni/TestSign/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/TestSign && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build src/main/jni/TestSign/edit_cache: phony src/main/jni/TestSign/CMakeFiles/edit_cache.util
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target TestSign
 
@@ -366,53 +385,53 @@ build src/main/jni/LED/rebuild_cache: phony src/main/jni/LED/CMakeFiles/rebuild_
 build cmake_object_order_depends_target_TestSign: phony
 build src/main/jni/TestSign/CMakeFiles/TestSign.dir/TestSign.cpp.o: CXX_COMPILER__TestSign ../../../../src/main/jni/TestSign/TestSign.cpp || cmake_object_order_depends_target_TestSign
   DEFINES = -DTestSign_EXPORTS
-  DEP_FILE = src\main\jni\TestSign\CMakeFiles\TestSign.dir\TestSign.cpp.o.d
+  DEP_FILE = src/main/jni/TestSign/CMakeFiles/TestSign.dir/TestSign.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\TestSign\CMakeFiles\TestSign.dir
-  OBJECT_FILE_DIR = src\main\jni\TestSign\CMakeFiles\TestSign.dir
+  OBJECT_DIR = src/main/jni/TestSign/CMakeFiles/TestSign.dir
+  OBJECT_FILE_DIR = src/main/jni/TestSign/CMakeFiles/TestSign.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target TestSign
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libTestSign.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libTestSign.so
 
-build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libTestSign.so: CXX_SHARED_LIBRARY_LINKER__TestSign src/main/jni/TestSign/CMakeFiles/TestSign.dir/TestSign.cpp.o | C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
+build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libTestSign.so: CXX_SHARED_LIBRARY_LINKER__TestSign src/main/jni/TestSign/CMakeFiles/TestSign.dir/TestSign.cpp.o | /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -llog -latomic -lm
-  OBJECT_DIR = src\main\jni\TestSign\CMakeFiles\TestSign.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/TestSign/CMakeFiles/TestSign.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libTestSign.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libTestSign.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libTestSign.so
   TARGET_PDB = TestSign.so.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt
+# =============================================================================
 
-#############################################
-# Utility command for edit_cache
-
-build src/main/jni/TestSign/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\TestSign && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build src/main/jni/TestSign/edit_cache: phony src/main/jni/TestSign/CMakeFiles/edit_cache.util
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/main/jni/TestSign/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\TestSign && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
+build src/main/jni/Serial/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Serial && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -H/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app -B/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
-build src/main/jni/TestSign/rebuild_cache: phony src/main/jni/TestSign/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# D:/WORKSPACE/6873_android11_newEngCode/app/CMakeLists.txt
-# =============================================================================
+build src/main/jni/Serial/rebuild_cache: phony src/main/jni/Serial/CMakeFiles/rebuild_cache.util
 
+#############################################
+# Utility command for edit_cache
+
+build src/main/jni/Serial/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Serial && /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+build src/main/jni/Serial/edit_cache: phony src/main/jni/Serial/CMakeFiles/edit_cache.util
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target Serial
 
@@ -423,48 +442,29 @@ build src/main/jni/TestSign/rebuild_cache: phony src/main/jni/TestSign/CMakeFile
 build cmake_object_order_depends_target_Serial: phony
 build src/main/jni/Serial/CMakeFiles/Serial.dir/Serial.cpp.o: CXX_COMPILER__Serial ../../../../src/main/jni/Serial/Serial.cpp || cmake_object_order_depends_target_Serial
   DEFINES = -DSerial_EXPORTS
-  DEP_FILE = src\main\jni\Serial\CMakeFiles\Serial.dir\Serial.cpp.o.d
+  DEP_FILE = src/main/jni/Serial/CMakeFiles/Serial.dir/Serial.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = src\main\jni\Serial\CMakeFiles\Serial.dir
-  OBJECT_FILE_DIR = src\main\jni\Serial\CMakeFiles\Serial.dir
+  OBJECT_DIR = src/main/jni/Serial/CMakeFiles/Serial.dir
+  OBJECT_FILE_DIR = src/main/jni/Serial/CMakeFiles/Serial.dir
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target Serial
 
 
 #############################################
-# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libSerial.so
+# Link the shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerial.so
 
-build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerial.so: CXX_SHARED_LIBRARY_LINKER__Serial src/main/jni/Serial/CMakeFiles/Serial.dir/Serial.cpp.o | C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
+build ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerial.so: CXX_SHARED_LIBRARY_LINKER__Serial src/main/jni/Serial/CMakeFiles/Serial.dir/Serial.cpp.o | /Users/yanhaoliang/NDKlocation/android-ndk-r21/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/23/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -llog -latomic -lm
-  OBJECT_DIR = src\main\jni\Serial\CMakeFiles\Serial.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
+  OBJECT_DIR = src/main/jni/Serial/CMakeFiles/Serial.dir
+  POST_BUILD = :
+  PRE_LINK = :
   SONAME = libSerial.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libSerial.so
+  TARGET_FILE = ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libSerial.so
   TARGET_PDB = Serial.so.dbg
-
-#############################################
-# Utility command for edit_cache
-
-build src/main/jni/Serial/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\Serial && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build src/main/jni/Serial/edit_cache: phony src/main/jni/Serial/CMakeFiles/edit_cache.util
-
-#############################################
-# Utility command for rebuild_cache
-
-build src/main/jni/Serial/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a\src\main\jni\Serial && C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\WORKSPACE\6873_android11_newEngCode\app -BD:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\arm64-v8a"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-build src/main/jni/Serial/rebuild_cache: phony src/main/jni/Serial/CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
@@ -489,43 +489,43 @@ build newmobi_gpio_jni: phony ../../../../build/intermediates/cmake/debug/obj/ar
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/GPIO
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/GPIO
 
 build  src/main/jni/GPIO/all: phony newmobi_gpio_jni
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/IIC
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/IIC
 
 build  src/main/jni/IIC/all: phony iichelper
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/LED
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/LED
 
 build  src/main/jni/LED/all: phony ledhelper
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Sensors
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Sensors
 
 build  src/main/jni/Sensors/all: phony com_zte_engineer_jni
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Serial
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/Serial
 
 build  src/main/jni/Serial/all: phony Serial
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/SerialPort
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/SerialPort
 
 build  src/main/jni/SerialPort/all: phony SerialPort
 # =============================================================================
 
 #############################################
-# Folder: D:/WORKSPACE/6873_android11_newEngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/TestSign
+# Folder: /Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a/src/main/jni/TestSign
 
 build  src/main/jni/TestSign/all: phony TestSign
 # =============================================================================
@@ -545,13 +545,13 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../../../../CMakeLists.txt ../../../../src/main/jni/GPIO/CMakeLists.txt ../../../../src/main/jni/IIC/CMakeLists.txt ../../../../src/main/jni/LED/CMakeLists.txt ../../../../src/main/jni/Sensors/CMakeLists.txt ../../../../src/main/jni/SerialPort/CMakeLists.txt ../../../../src/main/jni/Serial/CMakeLists.txt ../../../../src/main/jni/TestSign/CMakeLists.txt C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../../../../CMakeLists.txt ../../../../src/main/jni/GPIO/CMakeLists.txt ../../../../src/main/jni/IIC/CMakeLists.txt ../../../../src/main/jni/LED/CMakeLists.txt ../../../../src/main/jni/Sensors/CMakeLists.txt ../../../../src/main/jni/Serial/CMakeLists.txt ../../../../src/main/jni/SerialPort/CMakeLists.txt ../../../../src/main/jni/TestSign/CMakeLists.txt /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake /Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake /Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake CMakeFiles/feature_tests.c CMakeFiles/feature_tests.cxx
   pool = console
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../../../../CMakeLists.txt ../../../../src/main/jni/GPIO/CMakeLists.txt ../../../../src/main/jni/IIC/CMakeLists.txt ../../../../src/main/jni/LED/CMakeLists.txt ../../../../src/main/jni/Sensors/CMakeLists.txt ../../../../src/main/jni/SerialPort/CMakeLists.txt ../../../../src/main/jni/Serial/CMakeLists.txt ../../../../src/main/jni/TestSign/CMakeLists.txt C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/android.toolchain.cmake C$:/Users/yanha/AppData/Local/Android/Sdk/ndk/21.0.6113669/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake: phony
+build ../../../../CMakeLists.txt ../../../../src/main/jni/GPIO/CMakeLists.txt ../../../../src/main/jni/IIC/CMakeLists.txt ../../../../src/main/jni/LED/CMakeLists.txt ../../../../src/main/jni/Sensors/CMakeLists.txt ../../../../src/main/jni/Serial/CMakeLists.txt ../../../../src/main/jni/SerialPort/CMakeLists.txt ../../../../src/main/jni/TestSign/CMakeLists.txt /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake /Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake /Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake CMakeFiles/feature_tests.c CMakeFiles/feature_tests.cxx: phony
 
 #############################################
 # Clean all the built files.

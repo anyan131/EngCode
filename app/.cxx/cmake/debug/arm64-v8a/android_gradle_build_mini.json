@@ -1,68 +1,68 @@
 {
   "buildFiles": [
-    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Sensors\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\TestSign\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\Serial\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\LED\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\SerialPort\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\GPIO\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\CMakeLists.txt",
-    "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\src\\main\\jni\\IIC\\CMakeLists.txt"
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/Sensors/CMakeLists.txt",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/TestSign/CMakeLists.txt",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/Serial/CMakeLists.txt",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/LED/CMakeLists.txt",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/SerialPort/CMakeLists.txt",
+    "/Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/android.toolchain.cmake",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/GPIO/CMakeLists.txt",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/CMakeLists.txt",
+    "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/src/main/jni/IIC/CMakeLists.txt",
+    "/Users/yanhaoliang/NDKlocation/android-ndk-r21/build/cmake/platforms.cmake"
   ],
   "cleanCommands": [
-    "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" clean"
+    "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "SerialPort-Debug-arm64-v8a": {
       "artifactName": "SerialPort",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" SerialPort",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" SerialPort",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libSerialPort.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libSerialPort.so",
       "runtimeFiles": []
     },
     "newmobi_gpio_jni-Debug-arm64-v8a": {
       "artifactName": "newmobi_gpio_jni",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" newmobi_gpio_jni",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" newmobi_gpio_jni",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libnewmobi_gpio_jni.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnewmobi_gpio_jni.so",
       "runtimeFiles": []
     },
     "TestSign-Debug-arm64-v8a": {
       "artifactName": "TestSign",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" TestSign",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" TestSign",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libTestSign.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libTestSign.so",
       "runtimeFiles": []
     },
     "com_zte_engineer_jni-Debug-arm64-v8a": {
       "artifactName": "com_zte_engineer_jni",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" com_zte_engineer_jni",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" com_zte_engineer_jni",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libcom_zte_engineer_jni.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libcom_zte_engineer_jni.so",
       "runtimeFiles": []
     },
     "Serial-Debug-arm64-v8a": {
       "artifactName": "Serial",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" Serial",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" Serial",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libSerial.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libSerial.so",
       "runtimeFiles": []
     },
     "ledhelper-Debug-arm64-v8a": {
       "artifactName": "ledhelper",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" ledhelper",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" ledhelper",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libledhelper.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libledhelper.so",
       "runtimeFiles": []
     },
     "iichelper-Debug-arm64-v8a": {
       "artifactName": "iichelper",
-      "buildCommand": "C:\\Users\\yanha\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\WORKSPACE\\6873_android11_newEngCode\\app\\.cxx\\cmake\\debug\\arm64-v8a\" iichelper",
+      "buildCommand": "/Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/arm64-v8a\" iichelper",
       "abi": "arm64-v8a",
-      "output": "D:\\WORKSPACE\\6873_android11_newEngCode\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libiichelper.so",
+      "output": "/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/build/intermediates/cmake/debug/obj/arm64-v8a/libiichelper.so",
       "runtimeFiles": []
     }
   }

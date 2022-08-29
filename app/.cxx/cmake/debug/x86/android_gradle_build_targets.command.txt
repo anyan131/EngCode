@@ -1,7 +1,7 @@
-Executable : C:\Users\yanha\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+Executable : /Users/yanhaoliang/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
 arguments : 
 -C
-D:\WORKSPACE\6873_android11_newEngCode\app\.cxx\cmake\debug\x86
+/Users/yanhaoliang/WorkSpace/Engcode/EngCode/app/.cxx/cmake/debug/x86
 Serial
 SerialPort
 TestSign

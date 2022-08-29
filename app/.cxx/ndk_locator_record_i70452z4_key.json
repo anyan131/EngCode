@@ -1,0 +1,9 @@
+{
+  "ndkDirProperty": "/Users/yanhaoliang/NDKlocation/android-ndk-r21",
+  "sdkFolder": "/Users/yanhaoliang/Library/Android/sdk",
+  "sideBySideNdkFolderNames": [
+    "21.0.6113669",
+    "25.1.8937393",
+    "22.1.7171670"
+  ]
+}
